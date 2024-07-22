@@ -5,6 +5,31 @@ import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/../public/corpcomment.png";
 import rmtdevImg from "@/../public/rmtdev.png";
 import wordanalyticsImg from "@/../public/wordanalytics.png";
+import { title } from "process";
+import { ImShield } from "react-icons/im";
+import { FaBalanceScale } from "react-icons/fa";
+import supportedSoldier from "@/../public/supportedSoldier.svg";
+
+export const SupportTabsData = [
+  {
+    title: "Reliability",
+    description:
+      "Years of experience in supporting and printing resin miniatures ensure extremely low rate of print fails.",
+    imageUrl: supportedSoldier,
+  },
+  {
+    title: "Support removal",
+    description:
+      "Despite the high reliability of our supports they are easy to remove and don't leave large marks.",
+    imageUrl: supportedSoldier,
+  },
+  {
+    title: "Working with you",
+    description:
+      "Each resin supporting order includes help in determining the cause of any issues due to ",
+    imageUrl: supportedSoldier,
+  },
+];
 
 export const links = [
   {
