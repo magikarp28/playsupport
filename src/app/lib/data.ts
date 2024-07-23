@@ -14,19 +14,19 @@ export const SupportTabsData = [
   {
     title: "Reliability",
     description:
-      "Years of experience in supporting and printing resin miniatures ensure extremely low rate of print fails.",
+      "Careful manual support placement and island checking ensures the best print sucess rate possible.",
     imageUrl: supportedSoldier,
   },
   {
-    title: "Support removal",
+    title: "Easy support removal",
     description:
       "Despite the high reliability of our supports they are easy to remove and don't leave large marks.",
     imageUrl: supportedSoldier,
   },
   {
-    title: "Working with you",
+    title: "Hollowing large files",
     description:
-      "Each resin supporting order includes help in determining the cause of any issues due to ",
+      "To make sure you don't waste resin and printer lifetime we hollow wherever appropriate.",
     imageUrl: supportedSoldier,
   },
 ];

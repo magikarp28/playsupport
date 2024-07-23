@@ -14,9 +14,9 @@ function Supporting() {
         Supporting miniatures for resin 3d printing
       </h2>
       <p>
-        We provide professional manual supports for your 3D models, made with
-        Lychee Pro software, allowing us to make optimal results for resin 3D
-        printing.
+        We provide professional manual supports for your warhammer, DnD or any
+        other miniatures or 3D models, made with Lychee Pro software, allowing
+        us to make optimal results for resin 3D printing.
       </p>
       <p>
         You can download a free sample below to see the quality of our work.
