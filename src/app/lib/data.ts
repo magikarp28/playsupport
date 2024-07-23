@@ -8,7 +8,7 @@ import wordanalyticsImg from "@/../public/wordanalytics.png";
 import { title } from "process";
 import { ImShield } from "react-icons/im";
 import { FaBalanceScale } from "react-icons/fa";
-import supportedSoldier from "@/../public/supportedSoldier.svg";
+import supportedSoldier from "@/../public/SupportedSoldier.svg";
 
 export const SupportTabsData = [
   {
