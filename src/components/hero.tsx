@@ -2,6 +2,7 @@ import React from "react";
 import { Vortex } from "./ui/vortex";
 import { getGalleryImages } from "@/helpers/galleryImages";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+import DesktopVortex from "./DesktopVortex";
 
 function Hero() {
   const imageSrcs: string[] = getGalleryImages().map((image) => image.src);
@@ -34,17 +35,10 @@ function Hero() {
         </div>
         <InfiniteMovingCards
           items={imageSrcs}
-          className="overflow-hidden z-10"
+          className="overflow-hidden z-10 mt-5 sm:mt-0"
         />
       </div>
-      <Vortex
-        backgroundColor="slate-950"
-        baseRadius={4}
-        rangeY={300}
-        particleCount={100}
-        baseHue={270}
-        className="absolute z-0 "
-      ></Vortex>
+      <DesktopVortex />
     </div>
   );
 }

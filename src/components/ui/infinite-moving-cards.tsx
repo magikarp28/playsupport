@@ -85,7 +85,7 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <BackgroundGradient
             key={"imagesReel" + idx}
-            className="w-[26rem] h-[24rem]"
+            className="w-[16rem] h-[16rem] sm:w-[26rem] sm:h-[24rem]"
           >
             <Image
               sizes="100vw"

@@ -248,10 +248,7 @@ export const Vortex = (props: VortexProps) => {
         ref={containerRef}
         className="absolute w-screen h-full inset-0 z-0 flex items-center justify-center"
       >
-        <canvas
-          className="max-w-full max-h-[45rem] bg-slate-950 hidden sm:block"
-          ref={canvasRef}
-        ></canvas>
+        <canvas className="w-full  bg-slate-950" ref={canvasRef}></canvas>
       </motion.div>
     </div>
   );
