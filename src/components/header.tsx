@@ -4,53 +4,55 @@ import { motion } from "framer-motion";
 import { links } from "@/app/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
+import LogoImg from "@/../public/PlaySupportLogoFinal.svg";
+import Image from "next/image";
 
 function Header() {
-  const [activeSection, setActiveSection] = useState("Home");
+  const [activeSection, setActiveSection] = useState("home");
   return (
-    <header className="z-[999] relative">
-      <motion.div
-        initial={{ x: "-50%", y: -100, opacity: 0 }}
-        animate={{ x: "-50%", y: 0, opacity: 1 }}
-        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border 
-      border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] 
-      backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"
-      ></motion.div>
-      <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-        <ul
-          className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500
-            sm:w-[initial] sm:flex-nowrap sm:gap-5 
-          "
+    <header className="z-[999] absolute">
+      <nav
+        className="fixed  left-1/2 w-full sm:w-[30rem] sm:bg-transparent bg-opacity-80 -translate-x-1/2 sm:rounded-full
+                  flex items-center justify-between sm:gap-2 bg-slate-800 overflow-hidden min-h-[5rem]"
+      >
+        <Link
+          className="sm:w-16 sm:h-16 bg-gradient-to-r p-1 from-rose-600 to-fuchsia-600  
+        sm:flex justify-center items-center relative bg-black rounded-full  hidden"
+          onClick={() => {
+            console.log("clicked");
+            setActiveSection("home");
+          }}
+          href={"#home"}
         >
+          <Image
+            className="w-full h-full bg-black rounded-full"
+            src={LogoImg}
+            alt="Logo Image"
+          />
+        </Link>
+        <ul className="relative flex flex-wrap items-center justify-center sm:justify-between text-center gap-3 w-[25rem] sm:bg-slate-800 sm:bg-opacity-80 py-4 px-4 sm:px-6 rounded-full">
           {links.map((link) => (
-            <motion.li
-              className="h-3/4 flex items-center justify-center relative"
-              key={link.hash}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+            <Link
+              className={clsx("text-gray-50 px-2 py-1 relative z-20", {
+                "text-gray-950": activeSection === link.name,
+              })}
+              key={"link" + link.hash}
+              href={link.hash}
+              onClick={() => setActiveSection(link.name)}
             >
-              <Link
-                className={clsx(
-                  "flex w-full items-center justify-center p-3 hover:text-gray-900 transition-all duration-500 ease-in-out",
-                  { "text-gray-950": activeSection === link.name }
-                )}
-                href={link.hash}
-                onClick={() => setActiveSection(link.name)}
-              >
-                {link.name}
-                {link.name === activeSection && (
-                  <motion.span
-                    className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
-                    layoutId="activeSection"
-                    transition={{
-                      type: "spring",
-                      stiffness: 380,
-                      damping: 30,
-                    }}
-                  ></motion.span>
-                )}
-              </Link>
-            </motion.li>
+              {link.name}
+              {link.name === activeSection && (
+                <motion.span
+                  className="bg-gray-100 rounded-full absolute inset-0 -z-10"
+                  layoutId="activeSection"
+                  transition={{
+                    type: "spring",
+                    stiffness: 380,
+                    damping: 30,
+                  }}
+                ></motion.span>
+              )}
+            </Link>
           ))}
         </ul>
       </nav>

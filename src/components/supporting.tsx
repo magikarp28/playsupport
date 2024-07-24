@@ -1,19 +1,21 @@
 import React from "react";
-import { BackgroundGradient } from "./ui/background-gradient";
 import { HiOutlineDownload } from "react-icons/hi";
 import Link from "next/link";
 import Supportperks from "./support-perks";
 
 function Supporting() {
   return (
-    <section className="w-full bg-gradient-to-b text-center from-black to-slate-950 h-fit flex flex-col justify-center gap-2 items-center text-white">
+    <section
+      id="supporting"
+      className="w-full bg-gradient-to-b text-center from-black to-slate-950 h-fit flex flex-col justify-center gap-2 items-center text-white px-3"
+    >
       <h2
         className="text-3xl bg-clip-text text-transparent mt-4 mb-1
         bg-gradient-to-b from-white to-slate-400 sm:text-4xl pb-2 font-semibold"
       >
         Supporting miniatures for resin 3d printing
       </h2>
-      <p>
+      <p className="max-w-screen-xl">
         We provide professional manual supports for your warhammer, DnD or any
         other miniatures or 3D models, made with Lychee Pro software, allowing
         us to make optimal results for resin 3D printing.

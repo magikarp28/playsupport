@@ -3,14 +3,26 @@ import { Vortex } from "./ui/vortex";
 import { getGalleryImages } from "@/helpers/galleryImages";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import DesktopVortex from "./DesktopVortex";
+import LogoImg from "@/../public/PlaySupportLogoFinal.svg";
+import Image from "next/image";
 
 function Hero() {
   const imageSrcs: string[] = getGalleryImages().map((image) => image.src);
   return (
-    <div className="w-screen h-fit relative overflow-hidden bg-black flex justify-center items-center">
+    <section
+      id="home"
+      className="w-screen h-fit relative overflow-hidden bg-black flex justify-center items-center"
+    >
       <div className="absolute top-10 left-20 transform w-[12rem] h-24 blur-[8rem]  sm:w-[28rem] sm:h-48 bg-rose-800 z-10 sm:blur-[16rem]" />
       <div className="absolute top-10 right-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[28rem] sm:h-48 bg-sky-800 z-10 sm:blur-[16rem]" />
-      <div className="flex flex-row flex-wrap pt-32 text-center pl-2 pb-10 bg-transparent w-full max-w-screen-2xl justify-center z-10">
+      <div className="flex flex-row flex-wrap pt-24 text-center pl-2 pb-10 bg-transparent w-full max-w-screen-2xl justify-center z-10">
+        <div className="mb-4 w-44 h-44 flex justify-center items-center relative bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-full overflow-hidden sm:hidden p-[4px]">
+          <Image
+            className="rounded-full bg-black w-full h-full"
+            src={LogoImg}
+            alt="Logo Image"
+          />
+        </div>
         <div className="px-5">
           <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 h-20">
             PlaySupport
@@ -39,7 +51,7 @@ function Hero() {
         />
       </div>
       <DesktopVortex />
-    </div>
+    </section>
   );
 }
 

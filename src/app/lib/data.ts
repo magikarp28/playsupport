@@ -5,9 +5,6 @@ import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/../public/corpcomment.png";
 import rmtdevImg from "@/../public/rmtdev.png";
 import wordanalyticsImg from "@/../public/wordanalytics.png";
-import { title } from "process";
-import { ImShield } from "react-icons/im";
-import { FaBalanceScale } from "react-icons/fa";
 import supportedSoldier from "@/../public/SupportedSoldier.svg";
 
 export const SupportTabsData = [
@@ -16,44 +13,39 @@ export const SupportTabsData = [
     description:
       "Careful manual support placement and island checking ensures the best print sucess rate possible.",
     imageUrl: supportedSoldier,
+    video: "/videos/reliability.mp4",
   },
   {
     title: "Easy support removal",
     description:
       "Despite the high reliability of our supports they are easy to remove and don't leave large marks.",
     imageUrl: supportedSoldier,
+    video: "/videos/reliability.mp4",
   },
   {
     title: "Hollowing large files",
     description:
-      "To make sure you don't waste resin and printer lifetime we hollow wherever appropriate.",
+      "To make sure you don't waste resin and printer lifetime we hollow your miniatures wherever appropriate.",
     imageUrl: supportedSoldier,
+    video: "/videos/reliability.mp4",
   },
 ];
 
 export const links = [
   {
-    name: "Home",
+    name: "home",
     hash: "#home",
   },
   {
-    name: "About",
-    hash: "#about",
+    name: "supporting",
+    hash: "#supporting",
   },
   {
-    name: "Projects",
-    hash: "#projects",
+    name: "painting",
+    hash: "#painting",
   },
   {
-    name: "Skills",
-    hash: "#skills",
-  },
-  {
-    name: "Experience",
-    hash: "#experience",
-  },
-  {
-    name: "Contact",
+    name: "contact",
     hash: "#contact",
   },
 ] as const;
