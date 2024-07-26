@@ -1,11 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Vortex } from "./ui/vortex";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import DesktopVortex from "./DesktopVortex";
 import LogoImg from "@/../public/PlaySupportLogoFinal.svg";
 import Image from "next/image";
 import { getGalleryImages } from "@/helpers/galleryImages";
+import { useInView } from "framer-motion";
+import { useActiveSection } from "./context/active-section-context";
 
 function Hero() {
   const [images, setImages] = useState<string[]>([]);
@@ -14,8 +16,20 @@ function Hero() {
     setImages(images);
   }, []);
 
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const { setActiveSection } = useActiveSection();
+
+  useEffect(() => {
+    console.log("isInView", isInView);
+    if (isInView) {
+      setActiveSection("home");
+    }
+  }, [isInView]);
+
   return (
     <section
+      ref={ref}
       id="home"
       className="w-screen h-fit relative overflow-hidden bg-black flex justify-center items-center"
     >
