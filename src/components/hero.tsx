@@ -17,11 +17,10 @@ function Hero() {
   }, []);
 
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { amount: 0.7 });
   const { setActiveSection } = useActiveSection();
 
   useEffect(() => {
-    console.log("isInView", isInView);
     if (isInView) {
       setActiveSection("home");
     }

@@ -8,7 +8,7 @@ import { useActiveSection } from "./context/active-section-context";
 
 function Supporting() {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { amount: 0.7 });
   const { setActiveSection } = useActiveSection();
 
   useEffect(() => {

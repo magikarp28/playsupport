@@ -5,11 +5,10 @@ import { useActiveSection } from "./context/active-section-context";
 
 function ContactSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { amount: 0.7 });
   const { setActiveSection } = useActiveSection();
 
   useEffect(() => {
-    console.log("isInView", isInView);
     if (isInView) {
       setActiveSection("contact");
     }

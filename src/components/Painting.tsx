@@ -5,11 +5,10 @@ import { useInView } from "framer-motion";
 
 function Painting() {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { amount: 0.7 });
   const { setActiveSection } = useActiveSection();
 
   useEffect(() => {
-    console.log("isInView", isInView);
     if (isInView) {
       setActiveSection("painting");
     }
