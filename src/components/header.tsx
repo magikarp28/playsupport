@@ -1,19 +1,20 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { links } from "@/app/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import LogoImg from "@/../public/PlaySupportLogoFinal.svg";
 import Image from "next/image";
+import { useActiveSection } from "@/components/context/active-section-context";
 
 function Header() {
-  const [activeSection, setActiveSection] = useState("home");
+  const { activeSection, setActiveSection } = useActiveSection();
   return (
     <header className="z-[999] absolute">
       <nav
         className="fixed  left-1/2 w-full sm:w-[30rem] sm:bg-transparent bg-opacity-80 -translate-x-1/2 sm:rounded-full
-                  flex items-center justify-between sm:gap-2 bg-slate-800 overflow-hidden min-h-[5rem]"
+                  flex items-center justify-between sm:gap-2 bg-slate-800 overflow-hidden min-h-[5rem] sm:backdrop-blur-none "
       >
         <Link
           className="sm:w-16 sm:h-16 bg-gradient-to-r p-1 from-rose-600 to-fuchsia-600  
@@ -30,10 +31,10 @@ function Header() {
             alt="Logo Image"
           />
         </Link>
-        <ul className="relative flex flex-wrap items-center justify-center sm:justify-between text-center gap-3 w-[25rem] sm:bg-slate-800 sm:bg-opacity-80 py-4 px-4 sm:px-6 rounded-full">
+        <ul className="relative flex flex-wrap items-center justify-center sm:justify-between text-center gap-3 w-[25rem] sm:bg-slate-800  sm:bg-opacity-80 py-4 px-4 sm:px-6 rounded-full">
           {links.map((link) => (
             <Link
-              className={clsx("text-gray-50 px-2 py-1 relative z-20", {
+              className={clsx("text-gray-50 px-2 py-1 relative z-20 ", {
                 "text-gray-950": activeSection === link.name,
               })}
               key={"link" + link.hash}

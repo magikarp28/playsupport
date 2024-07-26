@@ -1,4 +1,7 @@
+"use client";
 import React from "react";
+import { useInView } from "framer-motion";
+import { useActiveSection } from "./context/active-section-context";
 
 function ContactSection() {
   return (

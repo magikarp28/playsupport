@@ -1,17 +1,13 @@
-import fs from "fs";
-import path from "path";
-
 export function getGalleryImages() {
-  const imagesDirectory = path.join(
-    process.cwd(),
-    "public",
-    "images/minisReel"
+  const imagesContext = require.context(
+    "../../public/images/minisReel",
+    false,
+    /\.(png|jpe?g|svg)$/
   );
-  const filenames = fs.readdirSync(imagesDirectory);
 
-  const images = filenames.map((filename) => ({
-    src: `/images/minisReel/${filename}`,
-  }));
+  const images = imagesContext
+    .keys()
+    .map((filename) => imagesContext(filename).default);
 
   return images;
 }

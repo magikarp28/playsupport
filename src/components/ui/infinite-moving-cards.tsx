@@ -91,10 +91,11 @@ export const InfiniteMovingCards = ({
               sizes="(max-width: 768px) 70vw, 500px"
               src={item}
               alt={"image " + item}
-              layout="fill"
               quality={90}
+              width={400}
+              height={400}
               style={{ objectFit: "cover" }}
-              className="rounded-3xl"
+              className="rounded-3xl w-full h-full"
             />
           </BackgroundGradient>
         ))}

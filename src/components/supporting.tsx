@@ -1,11 +1,26 @@
-import React from "react";
+"use client";
+import React, { useRef, useEffect } from "react";
 import { HiOutlineDownload } from "react-icons/hi";
 import Link from "next/link";
 import Supportperks from "./support-perks";
+import { useInView } from "framer-motion";
+import { useActiveSection } from "./context/active-section-context";
 
 function Supporting() {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const { setActiveSection } = useActiveSection();
+
+  useEffect(() => {
+    console.log("isInView", isInView);
+    if (isInView) {
+      setActiveSection("supporting");
+    }
+  }, [isInView]);
+
   return (
     <section
+      ref={ref}
       id="supporting"
       className="w-full bg-gradient-to-b text-center from-black to-slate-950 h-fit flex flex-col justify-center gap-2 items-center text-white px-3"
     >

@@ -1,13 +1,19 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Vortex } from "./ui/vortex";
-import { getGalleryImages } from "@/helpers/galleryImages";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import DesktopVortex from "./DesktopVortex";
 import LogoImg from "@/../public/PlaySupportLogoFinal.svg";
 import Image from "next/image";
+import { getGalleryImages } from "@/helpers/galleryImages";
 
 function Hero() {
-  const imageSrcs: string[] = getGalleryImages().map((image) => image.src);
+  const [images, setImages] = useState<string[]>([]);
+  useEffect(() => {
+    const images = getGalleryImages();
+    setImages(images);
+  }, []);
+
   return (
     <section
       id="home"
@@ -46,7 +52,7 @@ function Hero() {
           </div>
         </div>
         <InfiniteMovingCards
-          items={imageSrcs}
+          items={images}
           className="overflow-hidden z-10 mt-5 sm:mt-0"
         />
       </div>
