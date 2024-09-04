@@ -4,6 +4,8 @@ import React, { createContext, useState } from "react";
 type ActiveSectionContext = {
   activeSection: string;
   setActiveSection: React.Dispatch<React.SetStateAction<string>>;
+  disableHeader: boolean;
+  setDisableHeader: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const ActiveSectionContext = createContext<ActiveSectionContext | null>(
@@ -16,8 +18,16 @@ export default function ActiveSectionContextProvider({
   children: React.ReactNode;
 }) {
   const [activeSection, setActiveSection] = useState("home");
+  const [disableHeader, setDisableHeader] = useState(false);
   return (
-    <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
+    <ActiveSectionContext.Provider
+      value={{
+        activeSection,
+        setActiveSection,
+        disableHeader,
+        setDisableHeader,
+      }}
+    >
       {children}
     </ActiveSectionContext.Provider>
   );

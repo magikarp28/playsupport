@@ -7,6 +7,33 @@ import rmtdevImg from "@/../public/rmtdev.png";
 import wordanalyticsImg from "@/../public/wordanalytics.png";
 import supportedSoldier from "@/../public/SupportedSoldier.svg";
 
+export const PaintingShowcaseData = [
+  {
+    title: "Sons of Horus",
+    level: 1,
+    Image: "/images/paintShowcase/paintShowcase1.jpg",
+    colspan: 1,
+  },
+  {
+    title: "Sons of Horus 2",
+    level: 2,
+    Image: "/images/paintShowcase/paintShowcase2.jpg",
+    colspan: 2,
+  },
+  {
+    title: "Sons of Horus 3",
+    level: 3,
+    Image: "/images/paintShowcase/paintShowcase3.jpg",
+    colspan: 2,
+  },
+  {
+    title: "Sons of Horus 4",
+    level: 1,
+    Image: "/images/paintShowcase/paintShowcase4.jpg",
+    colspan: 1,
+  },
+];
+
 export const SupportTabsData = [
   {
     title: "Reliability",

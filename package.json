@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-email/components": "^0.0.25",
+    "@react-email/render": "1.0.1",
+    "@react-email/tailwind": "^0.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.12",
@@ -17,11 +20,13 @@
     "next": "14.2.4",
     "next-themes": "^0.3.0",
     "next-videos": "^1.4.1",
+    "nodemailer": "^6.9.14",
     "path": "^0.12.7",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-intersection-observer": "^9.13.0",
+    "resend": "^4.0.0",
     "simplex-noise": "^4.0.2",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"

@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { links } from "@/app/lib/data";
 import Link from "next/link";
@@ -9,7 +9,20 @@ import Image from "next/image";
 import { useActiveSection } from "@/components/context/active-section-context";
 
 function Header() {
-  const { activeSection, setActiveSection } = useActiveSection();
+  const { activeSection, setActiveSection, setDisableHeader, disableHeader } =
+    useActiveSection();
+
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+    if (disableHeader) {
+      timeoutId = setTimeout(() => {
+        setDisableHeader(false);
+        console.log("Timeout stvar");
+      }, 500);
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [disableHeader]);
   return (
     <header className="z-[999] absolute">
       <nav
@@ -20,8 +33,8 @@ function Header() {
           className="sm:w-16 sm:h-16 bg-gradient-to-r p-1 from-rose-600 to-fuchsia-600  
         sm:flex justify-center items-center relative bg-black rounded-full  hidden"
           onClick={() => {
-            console.log("clicked");
             setActiveSection("home");
+            setDisableHeader(true);
           }}
           href={"#home"}
         >
@@ -39,7 +52,10 @@ function Header() {
               })}
               key={"link" + link.hash}
               href={link.hash}
-              onClick={() => setActiveSection(link.name)}
+              onClick={() => {
+                setActiveSection(link.name);
+                setDisableHeader(true);
+              }}
             >
               {link.name}
               {link.name === activeSection && (

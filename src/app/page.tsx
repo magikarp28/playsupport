@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import Supporting from "@/components/supporting";
 import Painting from "@/components/Painting";
 import Header from "@/components/header";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Supporting />
       <Painting />
       <ContactSection />
+      <Footer />
     </main>
   );
 }

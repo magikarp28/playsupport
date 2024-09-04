@@ -67,3 +67,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.purpleBackground {
+  @apply bg-gradient-to-r from-rose-600 to-fuchsia-600;
+}

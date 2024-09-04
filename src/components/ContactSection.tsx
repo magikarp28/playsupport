@@ -2,14 +2,15 @@
 import React, { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import { useActiveSection } from "./context/active-section-context";
+import ContactForm from "./ContactForm";
 
 function ContactSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.7 });
-  const { setActiveSection } = useActiveSection();
+  const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !disableHeader) {
       setActiveSection("contact");
     }
   }, [isInView]);
@@ -18,8 +19,24 @@ function ContactSection() {
       ref={ref}
       id="contact"
       className="w-full bg-black 
-    h-fit flex flex-col justify-center gap-2 items-center text-white px-3"
-    ></section>
+    h-fit flex flex-col justify-center gap-2 items-center text-white px-3 text-center"
+    >
+      <h2
+        className="text-3xl bg-clip-text text-transparent mt-4 mb-1
+        bg-gradient-to-b from-white to-slate-400 sm:text-4xl pb-2 font-semibold"
+      >
+        Contact
+      </h2>
+      <p className="max-w-screen-xl">
+        Ask for a commision or any other question you have in mind at
+      </p>
+      <p>
+        <a href="mailto:playsuppminis@gmail.com" className="underline">
+          playsuppminis@gmail.com
+        </a>
+      </p>
+      <ContactForm />
+    </section>
   );
 }
 

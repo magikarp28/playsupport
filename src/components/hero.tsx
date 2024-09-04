@@ -18,10 +18,10 @@ function Hero() {
 
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.7 });
-  const { setActiveSection } = useActiveSection();
+  const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !disableHeader) {
       setActiveSection("home");
     }
   }, [isInView]);
