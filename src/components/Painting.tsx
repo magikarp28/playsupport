@@ -3,10 +3,12 @@ import React, { useEffect, useRef } from "react";
 import { useActiveSection } from "./context/active-section-context";
 import { useInView } from "framer-motion";
 import PaintingShowcase from "./PaintingShowcase";
+import useIsMobile from "@/lib/useIsMobile";
 
 function Painting() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.7 });
+  const isMobile = useIsMobile();
+  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 0.7 });
   const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {
@@ -18,8 +20,8 @@ function Painting() {
     <section
       ref={ref}
       id="painting"
-      className="w-full bg-gradient-to-b text-center from-slate-950 to-black 
-    h-fit flex flex-col justify-center gap-2 items-center text-white px-3"
+      className="w-full bg-gradient-to-b text-center from-black to-slate-950  
+    h-fit flex flex-col justify-center gap-2 items-center text-white px-3 z-10"
     >
       <h2
         className="text-3xl bg-clip-text text-transparent mt-4 mb-1

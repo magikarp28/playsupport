@@ -28,8 +28,9 @@ function PaintingShowcase() {
           <Image
             src={item.Image}
             alt={item.title}
-            layout="fill"
-            objectFit="cover"
+            fill={true}
+            sizes="(max-width: 768px) 70vw, 60vw"
+            style={{ objectFit: "cover" }}
             className="rounded-xl p-1"
           />
         </div>

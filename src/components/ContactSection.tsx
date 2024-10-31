@@ -3,10 +3,12 @@ import React, { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import { useActiveSection } from "./context/active-section-context";
 import ContactForm from "./ContactForm";
+import useIsMobile from "@/lib/useIsMobile";
 
 function ContactSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.7 });
+  const isMobile = useIsMobile();
+  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 0.7 });
   const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {

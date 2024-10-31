@@ -10,8 +10,8 @@ export default function Home() {
     <main className="max-w-[100vw]">
       <Header />
       <Hero />
-      <Supporting />
       <Painting />
+      <Supporting />
       <ContactSection />
       <Footer />
     </main>

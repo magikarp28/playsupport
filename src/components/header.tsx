@@ -7,6 +7,7 @@ import clsx from "clsx";
 import LogoImg from "@/../public/PlaySupportLogoFinal.svg";
 import Image from "next/image";
 import { useActiveSection } from "@/components/context/active-section-context";
+import { BsInstagram } from "react-icons/bs";
 
 function Header() {
   const { activeSection, setActiveSection, setDisableHeader, disableHeader } =
@@ -17,7 +18,6 @@ function Header() {
     if (disableHeader) {
       timeoutId = setTimeout(() => {
         setDisableHeader(false);
-        console.log("Timeout stvar");
       }, 500);
     }
 
@@ -26,7 +26,7 @@ function Header() {
   return (
     <header className="z-[999] absolute">
       <nav
-        className="fixed  left-1/2 w-full sm:w-[30rem] sm:bg-transparent bg-opacity-80 -translate-x-1/2 sm:rounded-full
+        className="fixed  left-1/2 w-full sm:w-[32rem] sm:bg-transparent bg-opacity-80 -translate-x-1/2 sm:rounded-full
                   flex items-center justify-between sm:gap-2 bg-slate-800 overflow-hidden min-h-[5rem] sm:backdrop-blur-none "
       >
         <Link
@@ -44,7 +44,7 @@ function Header() {
             alt="Logo Image"
           />
         </Link>
-        <ul className="relative flex flex-wrap items-center justify-center sm:justify-between text-center gap-3 w-[25rem] sm:bg-slate-800  sm:bg-opacity-80 py-4 px-4 sm:px-6 rounded-full">
+        <ul className="relative flex flex-wrap items-center justify-center sm:justify-between text-center gap-3 w-[28rem] sm:bg-slate-800  sm:bg-opacity-80 py-4 px-4 sm:px-6 rounded-full">
           {links.map((link) => (
             <Link
               className={clsx("text-gray-50 px-2 py-1 relative z-20 ", {
@@ -71,6 +71,13 @@ function Header() {
               )}
             </Link>
           ))}
+          <Link
+            href={"https://www.instagram.com/playsupport/"}
+            className="text-white"
+            target="_blank"
+          >
+            <BsInstagram className="text-lg" />
+          </Link>
         </ul>
       </nav>
     </header>
