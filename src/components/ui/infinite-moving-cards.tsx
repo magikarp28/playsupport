@@ -1,5 +1,4 @@
 "use client";
-
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { BackgroundGradient } from "./background-gradient";
@@ -70,7 +69,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20  max-w-2xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "w-[30vw] scroller relative z-20  max-w-2xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
@@ -103,3 +102,5 @@ export const InfiniteMovingCards = ({
     </div>
   );
 };
+
+export default InfiniteMovingCards;

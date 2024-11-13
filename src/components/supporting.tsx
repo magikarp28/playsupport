@@ -10,7 +10,7 @@ import useIsMobile from "@/lib/useIsMobile";
 function Supporting() {
   const ref = useRef(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 0.7 });
+  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 1 });
   const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {
@@ -32,9 +32,9 @@ function Supporting() {
         Supporting miniatures for resin 3d printing
       </h2>
       <p className="max-w-screen-xl">
-        We provide professional manual supports for your warhammer, DnD or any
-        other miniatures or 3D models, made with Lychee Pro software, allowing
-        us to make optimal results for resin 3D printing.
+        We provide professional manual supports service for your warhammer, DnD
+        or any other miniatures or 3D models, made with Lychee Pro software,
+        allowing us to make optimal results for resin 3D printing.
       </p>
       <p>
         You can download a free sample below to see the quality of our work.

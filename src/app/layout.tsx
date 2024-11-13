@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "PlaySupport",
-  description: "Miniature painting and resin printing supporting service.",
+  description: "Miniature painting and resin 3d print presupporting service.",
 };
 
 export default function RootLayout({

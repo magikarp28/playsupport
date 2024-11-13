@@ -1,8 +1,6 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
-import { Vortex } from "./ui/vortex";
-import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
-import DesktopVortex from "./DesktopVortex";
+import React, { useEffect, useState, useRef, Suspense } from "react";
+import InfiniteMovingCards from "./ui/infinite-moving-cards";
 import LogoImg from "@/../public/PlaySupportLogoFinal.svg";
 import Image from "next/image";
 import { getGalleryImages } from "@/helpers/galleryImages";
@@ -10,9 +8,12 @@ import { useInView } from "framer-motion";
 import { useActiveSection } from "./context/active-section-context";
 import useIsMobile from "@/lib/useIsMobile";
 import Link from "next/link";
+import { FaPaintBrush } from "react-icons/fa";
+import { Gi3dMeeple } from "react-icons/gi";
 
 function Hero() {
   const [images, setImages] = useState<string[]>([]);
+  const DesktopVortex = React.lazy(() => import("./DesktopVortex"));
   useEffect(() => {
     const images = getGalleryImages();
     setImages(images);
@@ -46,19 +47,37 @@ function Hero() {
             alt="Logo Image"
           />
         </div>
-        <div className="px-5">
+        <div className="px-5 sm:text-left">
           <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 pb-3">
             PlaySupport
           </h1>
-          <p className="text-white text-lg max-w-xl mt-6">
-            Welcome to Playsupport, your premier destination for expert
-            miniature painting and resin 3D printing services. At Playsupport,
-            we bring your gaming visions to life with meticulous attention to
-            detail and craftsmanship. Whether you're a tabletop enthusiast
-            looking to enhance your collection or a hobbyist seeking custom
-            creations, our dedicated team combines artistic expertise with
-            cutting-edge technology to deliver stunning results.
-          </p>
+          <div className="text-white text-lg md:text-xl max-w-xl mt-6 flex flex-col gap-4">
+            <p>
+              There is no worse fate for a hobby than it becoming a chore. Our
+              lives are filled with enough obligations as it is. We are here to
+              support you so that you can focus on playing.
+            </p>
+            <div className="flex flex-col gap-2">
+              <div>
+                <div className="bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-300 inline font-bold ">
+                  Playsupport
+                </div>{" "}
+                offers you support with:
+              </div>
+              <ul className="list-none space-y-2 text-lg">
+                <li className="ml-2 flex items-start">
+                  <FaPaintBrush className="inline mr-2 mt-1 text-3xl" />
+                  Getting your miniatures ready for the tabletop – painting,
+                  assembling, magnetizing
+                </li>
+                <li className="ml-2 flex items-start">
+                  <Gi3dMeeple className="inline mr-2 mt-1 text-3xl" />
+                  Supporting your 3D miniatures for resin 3D printing so they
+                  print properly every time
+                </li>
+              </ul>
+            </div>
+          </div>
           <div className="w-full flex justify-center">
             <div className="p-[3px] relative mt-7">
               <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-full" />
@@ -75,17 +94,19 @@ function Hero() {
             </div>
           </div>
         </div>
+        {!isMobile && (
+          <InfiniteMovingCards
+            items={images}
+            className="overflow-hidden z-10 mt-5 sm:mt-0"
+            speed="fast"
+          />
+        )}
       </div>
-      <DesktopVortex />
+      <Suspense>
+        <DesktopVortex />
+      </Suspense>
     </section>
   );
 }
 
 export default Hero;
-
-/*
-        <InfiniteMovingCards
-          items={images}
-          className="overflow-hidden z-10 mt-5 sm:mt-0"
-        />
-*/

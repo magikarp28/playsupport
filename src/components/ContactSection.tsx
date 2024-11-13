@@ -8,7 +8,7 @@ import useIsMobile from "@/lib/useIsMobile";
 function ContactSection() {
   const ref = useRef(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 0.7 });
+  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 1 });
   const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {
@@ -30,7 +30,8 @@ function ContactSection() {
         Contact
       </h2>
       <p className="max-w-screen-xl">
-        Ask for a commision or any other question you have in mind at
+        Ask for a commision, pricing info or any other question you have in mind
+        at
       </p>
       <p>
         <a href="mailto:playsuppminis@gmail.com" className="underline">

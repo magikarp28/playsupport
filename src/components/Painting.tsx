@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useActiveSection } from "./context/active-section-context";
 import { useInView } from "framer-motion";
 import PaintingShowcase from "./PaintingShowcase";
@@ -30,9 +30,44 @@ function Painting() {
         Army and display painting miniatures
       </h2>
       <p className="max-w-screen-xl">
-        Take a look at our amazing painting skillz gallery lorem ipsum dolor sit
-        amet, consectetur adipiscing elit.
+        Have a look at the gallery with over 2 decades of painting experience
+        and countless national and international painting awards!
       </p>
+      <div className="max-w-screen-xl">
+        We offer 3 standard quality tiers:{" "}
+        <p
+          className="inline text-3xl font-bold bg-clip-text text-transparent"
+          style={{
+            background:
+              "linear-gradient(to bottom, #b37952 27%, #e0af81 40%, #5a3116 78%)",
+            WebkitBackgroundClip: "text",
+          }}
+        >
+          Bronze
+        </p>
+        ,{" "}
+        <p
+          className="inline text-3xl font-bold bg-clip-text text-transparent"
+          style={{
+            background:
+              "linear-gradient(to bottom, #8B9FA9 27%, #d9e5ee 40%, #404c52 78%)",
+            WebkitBackgroundClip: "text",
+          }}
+        >
+          Silver
+        </p>{" "}
+        and{" "}
+        <p
+          className="inline text-3xl font-bold bg-clip-text text-transparent"
+          style={{
+            background:
+              "linear-gradient(to bottom, #e2c78c 27%, #fff4d1 40%, #533f15 78%)",
+            WebkitBackgroundClip: "text",
+          }}
+        >
+          Gold
+        </p>
+      </div>
       <PaintingShowcase />
     </section>
   );

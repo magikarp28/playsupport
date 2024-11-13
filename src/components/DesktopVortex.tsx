@@ -29,9 +29,11 @@ const DesktopVortex = () => {
     <Vortex
       backgroundColor="slate-950"
       baseRadius={4}
-      rangeY={300}
-      particleCount={100}
+      rangeY={160}
+      particleCount={80}
       baseHue={270}
+      baseSpeed={0.2}
+      rangeSpeed={0.4}
       className="absolute z-0 top-0 left-0 w-full h-full"
     ></Vortex>
   );
