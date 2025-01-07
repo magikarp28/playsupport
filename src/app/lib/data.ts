@@ -16,13 +16,13 @@ export const PaintingShowcaseData = [
   {
     title: "Sisters of battle image",
     level: 2,
-    Image: "/images/minisReel/sisters.jpg",
+    Image: "/images/minisReel/Sisters.jpg",
     colspan: 2,
   },
   {
     title: "Sons of Horus 4",
     level: 3,
-    Image: "/images/minisReel/lizard2.jpg",
+    Image: "/images/minisReel/Lizard2.jpg",
     colspan: 1,
   },
 ];
