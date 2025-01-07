@@ -31,7 +31,7 @@ function PaintingShowcase() {
             fill={true}
             sizes="(max-width: 768px) 70vw, 60vw"
             style={{ objectFit: "cover" }}
-            className="rounded-xl p-1"
+            className="rounded-xl p-[0.5rem]"
           />
         </div>
       ))}

@@ -8,7 +8,7 @@ import useIsMobile from "@/lib/useIsMobile";
 function Painting() {
   const ref = useRef(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 0.7 });
+  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 1 });
   const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {
@@ -18,7 +18,6 @@ function Painting() {
   }, [isInView]);
   return (
     <section
-      ref={ref}
       id="painting"
       className="w-full bg-gradient-to-b text-center from-black to-slate-950  
     h-fit flex flex-col justify-center gap-2 items-center text-white px-3 z-10"
@@ -68,7 +67,9 @@ function Painting() {
           Gold
         </p>
       </div>
-      <PaintingShowcase />
+      <div className="w-full" ref={ref}>
+        <PaintingShowcase />
+      </div>
     </section>
   );
 }

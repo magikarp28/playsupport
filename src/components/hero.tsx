@@ -10,6 +10,7 @@ import useIsMobile from "@/lib/useIsMobile";
 import Link from "next/link";
 import { FaPaintBrush } from "react-icons/fa";
 import { Gi3dMeeple } from "react-icons/gi";
+import image from "@/../public/images/paintShowcase/lizard.jpg";
 
 function Hero() {
   const [images, setImages] = useState<string[]>([]);
@@ -21,7 +22,7 @@ function Hero() {
 
   const ref = useRef(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 0.7 });
+  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 0.6 });
   const { setActiveSection, disableHeader, setDisableHeader } =
     useActiveSection();
 
@@ -95,11 +96,14 @@ function Hero() {
           </div>
         </div>
         {!isMobile && (
-          <InfiniteMovingCards
-            items={images}
-            className="overflow-hidden z-10 mt-5 sm:mt-0"
-            speed="fast"
-          />
+          <div className="p-[3px] relative w-[40%] max-h-[440px] overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-2xl" />
+            <Image
+              src={image}
+              alt="showcaseImage"
+              className="p-1 flex relative group rounded-2xl w-full h-full object-cover object-top"
+            />
+          </div>
         )}
       </div>
       <Suspense>
@@ -110,3 +114,9 @@ function Hero() {
 }
 
 export default Hero;
+
+/*<InfiniteMovingCards
+items={images}
+className="overflow-hidden z-10 mt-5 sm:mt-0"
+speed="fast"
+/>*/

@@ -39,7 +39,10 @@ function Supporting() {
       <p>
         You can download a free sample below to see the quality of our work.
       </p>
-      <Link className="p-[3px] relative mt-2" href="#download">
+      <Link
+        className="p-[3px] relative mt-2"
+        href="https://drive.google.com/file/d/1gQ1jys31MxcdCZwI0_iRmyEE_07Hnftf/view?usp=drive_link"
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-full" />
         <div className=" bg-slate-950  relative group transition duration-200 text-white hover:bg-transparent px-3 py-2 rounded-full flex justify-center items-center">
           Free sample
