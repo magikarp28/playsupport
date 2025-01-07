@@ -13,18 +13,6 @@ export const PaintingShowcaseData = [
     Image: "/images/minisReel/horus.jpg",
     colspan: 2,
   },
-  {
-    title: "Sisters of battle image",
-    level: 2,
-    Image: "/images/minisReel/Sisters.jpg",
-    colspan: 2,
-  },
-  {
-    title: "Sons of Horus 4",
-    level: 3,
-    Image: "/images/minisReel/Lizard2.jpg",
-    colspan: 1,
-  },
 ];
 
 export const SupportTabsData = [
