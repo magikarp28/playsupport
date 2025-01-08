@@ -32,6 +32,7 @@ function PaintingShowcase() {
             sizes="(max-width: 768px) 70vw, 60vw"
             style={{ objectFit: "cover" }}
             className="rounded-xl p-[0.5rem]"
+            priority={index === 1}
           />
         </div>
       ))}
