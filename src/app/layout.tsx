@@ -7,8 +7,10 @@ import ActiveSectionContextProvider from "@/components/context/active-section-co
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PlaySupport",
-  description: "Miniature painting and resin 3d print presupporting service.",
+  title:
+    "PlaySupport - Miniature painting and resin 3d print presupporting service",
+  description:
+    "We offer professional miniature painting service and creating high quality manual supports for 3d printing miniatures in resin. Based in EU.",
   icons: {
     icon: "/icon.png",
     shortcut: "/favicon.ico",

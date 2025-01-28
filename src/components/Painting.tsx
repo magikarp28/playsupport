@@ -28,12 +28,17 @@ function Painting() {
       >
         Army and display painting miniatures
       </h2>
-      <p className="max-w-screen-xl">
-        Have a look at the gallery with over 2 decades of painting experience
-        and countless national and international painting awards!
+      <p className="max-w-screen-xl text-lg">
+        We paint any kind of miniatures from tabletop games like warhammer to
+        dungeons and dragons or display pieces.
       </p>
-      <div className="max-w-screen-xl">
-        We offer 3 standard quality tiers:{" "}
+      <p className="max-w-screen-xl text-lg">
+        Have a look at the gallery of commision painted minis with over 2
+        decades of miniature painting experience and countless national and
+        international painting awards between our 2 painters!
+      </p>
+      <div className="max-w-screen-xl text-lg">
+        We offer 3 standard quality tiers:
         <p
           className="inline text-3xl font-bold bg-clip-text text-transparent"
           style={{
