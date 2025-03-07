@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 
 type TabProps = {
@@ -11,6 +12,14 @@ type TabProps = {
 };
 
 function SupportingTab({ tabProps }: TabProps) {
+  const [videoUrl, setVideoUrl] = useState(tabProps.video);
+
+  useEffect(() => {
+    if (tabProps.video.startsWith("/")) {
+      const absoluteUrl = `${window.location.origin}${tabProps.video}`;
+      setVideoUrl(absoluteUrl);
+    }
+  }, [tabProps.video]);
   return (
     <div className="p-[3px] relative mt-2 w-[18rem] sm:w-[24rem] lg:w-[28rem]">
       <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-2xl" />
@@ -20,7 +29,7 @@ function SupportingTab({ tabProps }: TabProps) {
             muted
             autoPlay={true}
             loop
-            src={tabProps.video}
+            src={videoUrl}
             className="rounded-2xl mb-4 w-full h-auto"
           ></video>
           <h3
