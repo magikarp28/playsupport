@@ -2,9 +2,21 @@ import supportedSoldier from "@/../public/SupportedSoldier.svg";
 
 export const PaintingShowcaseData = [
   {
+    title: "Ork Warboss",
+    level: 3,
+    Image: "/images/minisReel/ork.jpg",
+    colspan: 1,
+  },
+  {
     title: "Blood Angel image",
     level: 2,
     Image: "/images/minisReel/angel.jpg",
+    colspan: 1,
+  },
+  {
+    title: "Arabaxia",
+    level: 3,
+    Image: "/images/minisReel/lizard2.jpg",
     colspan: 1,
   },
   {
@@ -14,15 +26,21 @@ export const PaintingShowcaseData = [
     colspan: 2,
   },
   {
+    title: "Night lord terminators",
+    level: 3,
+    Image: "/images/minisReel/nightLords.jpg",
+    colspan: 1,
+  },
+  {
     title: "Sisters of battle image",
     level: 2,
     Image: "/images/minisReel/sisters.jpg",
     colspan: 2,
   },
   {
-    title: "Sons of Horus 4",
+    title: "Blue marine image",
     level: 3,
-    Image: "/images/minisReel/lizard2.jpg",
+    Image: "/images/minisReel/blue marine.jpg",
     colspan: 1,
   },
 ];
