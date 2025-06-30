@@ -1,4 +1,51 @@
 import supportedSoldier from "@/../public/SupportedSoldier.svg";
+import { title } from "process";
+
+type Testimonial = {
+  quote: string;
+  name: string;
+  designation: string;
+  src: string;
+  link?: string;
+};
+
+export const testemonialsData: Testimonial[] = [
+  {
+    quote:
+      "Always a pleasure working with PlaySupport! Perfect supports every time has us always coming back to get our monthly terrain packs professionally supported. Communication is always top notch!",
+    name: "Eons of Battle",
+    designation:
+      "Youtube channel and high quality miniature terrain for 3d printing",
+    src: "/images/testimonials/EOB_LOGO.png",
+    link: "https://eonsofbattle.com/",
+  },
+  {
+    quote:
+      "I have an excellent experience with PlaySupport, their communication is top-notch and makes the entire process smooth. The quality of their work is impressively clean.",
+    name: "Deathpunk Studio",
+    designation: "High quality miniaturs for 3d printing",
+    src: "/images/testimonials/deathpunk.avif",
+    link: "https://www.myminifactory.com/users/deathpunk-studio?show=store#/",
+  },
+];
+
+export const LevelImages = [
+  {
+    src: "/images/lelevImages/level1.jpg",
+    title: "Army Tier",
+    text: "Clean transitions and highlights for an awsome army.",
+  },
+  {
+    src: "/images/lelevImages/level2.jpg",
+    title: "Hero Tier",
+    text: "More attention given to every detail with more advanced techniques.",
+  },
+  {
+    src: "/images/lelevImages/level3.jpg",
+    title: "Art Tier",
+    text: "Every surface has its own texture, every miniature a unique story.",
+  },
+];
 
 export const PaintingShowcaseData = [
   {
@@ -81,6 +128,10 @@ export const links = [
   {
     name: "supporting",
     hash: "#supporting",
+  },
+  {
+    name: "testimonials",
+    hash: "#testimonials",
   },
   {
     name: "contact",

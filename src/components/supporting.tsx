@@ -10,7 +10,7 @@ import useIsMobile from "@/lib/useIsMobile";
 function Supporting() {
   const ref = useRef(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 1 });
+  const isInView = useInView(ref, { amount: isMobile ? 0.2 : 1 });
   const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {

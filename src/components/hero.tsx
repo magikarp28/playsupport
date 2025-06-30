@@ -10,7 +10,8 @@ import useIsMobile from "@/lib/useIsMobile";
 import Link from "next/link";
 import { FaPaintBrush } from "react-icons/fa";
 import { Gi3dMeeple } from "react-icons/gi";
-import image from "@/../public/images/paintShowcase/lizard.jpg";
+import image from "@/../public/images/paintShowcase/lizard.png";
+import { AuroraBackground } from "./ui/aurora-background";
 
 function Hero() {
   const [images, setImages] = useState<string[]>([]);
@@ -96,13 +97,12 @@ function Hero() {
           </div>
         </div>
         {!isMobile && (
-          <div className="p-[3px] relative w-[40%] max-h-[440px] overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-2xl" />
-            <Image
-              src={image}
-              alt="showcaseImage"
-              className="p-1 flex relative group rounded-2xl w-full h-full object-cover object-top"
-            />
+          <div className="p-[3px] relative w-full max-w-[450px] h-full overflow-hidden flex justify-center items-center">
+            <AuroraBackground className="rounded-2xl w-full h-full overflow-hidden ">
+              <div className="w-full h-full flex justify-center items-center">
+                <Image src={image} alt="showcaseImage" className="w" priority />
+              </div>
+            </AuroraBackground>
           </div>
         )}
       </div>

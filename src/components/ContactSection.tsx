@@ -20,7 +20,7 @@ function ContactSection() {
     <section
       ref={ref}
       id="contact"
-      className="w-full bg-black 
+      className="w-full bg-gradient-to-b from-slate-950  to-black
     h-fit flex flex-col justify-center gap-2 items-center text-white px-3 text-center"
     >
       <h2
