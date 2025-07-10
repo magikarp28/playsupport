@@ -1,7 +1,9 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { PaintingShowcaseData } from "@/app/lib/data";
 import clsx from "clsx";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const BackgroundGradients = [
   "linear-gradient(to bottom, #b37952 27%, #e0af81 40%, #462611 78%)",
@@ -10,6 +12,8 @@ const BackgroundGradients = [
 ];
 
 function PaintingShowcase() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <div
       className="w-full grid auto-rows-[22rem] md:auto-rows-[25rem] 
@@ -19,7 +23,7 @@ function PaintingShowcase() {
         <div
           key={index}
           className={clsx(
-            "relative rounded-xl",
+            "relative rounded-xl cursor-pointer",
             item.colspan === 1
               ? "col-span-1 md:col-span-1"
               : "col-span-1 md:col-span-2"
@@ -27,6 +31,7 @@ function PaintingShowcase() {
           style={{
             backgroundImage: BackgroundGradients[item.level - 1],
           }}
+          onClick={() => setOpenIndex(index)}
         >
           <Image
             src={item.Image}
@@ -39,6 +44,17 @@ function PaintingShowcase() {
           />
         </div>
       ))}
+      {openIndex !== null && (
+        <Lightbox
+          open={openIndex !== null}
+          close={() => setOpenIndex(null)}
+          index={openIndex}
+          slides={PaintingShowcaseData.map((item) => ({
+            src: item.Image,
+            alt: item.title,
+          }))}
+        />
+      )}
     </div>
   );
 }

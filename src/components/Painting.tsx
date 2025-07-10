@@ -5,6 +5,8 @@ import { useInView } from "framer-motion";
 import PaintingShowcase from "./PaintingShowcase";
 import useIsMobile from "@/lib/useIsMobile";
 import PaintingTiers from "./PaintingTiers";
+import { BsInstagram } from "react-icons/bs";
+import Link from "next/link";
 
 function Painting() {
   const ref = useRef(null);
@@ -47,6 +49,21 @@ function Painting() {
       >
         Gallery
       </h4>
+      <div className="flex gap-2 items-center justify-center">
+        <p className="max-w-screen-xl text-md">
+          For more images including our personal competiotion painting work
+          check our
+        </p>
+        <Link
+          href={"https://www.instagram.com/playsupport/"}
+          className="text-white"
+          target="_blank"
+        >
+          <BsInstagram className="text-lg" />
+        </Link>
+        <p>page.</p>
+      </div>
+
       <PaintingShowcase />
     </section>
   );

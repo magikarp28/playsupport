@@ -21,6 +21,13 @@ export const testemonialsData: Testimonial[] = [
   },
   {
     quote:
+      "Playsupport's services were impeccable, creating beautiful minis that matched exactly what I was hoping for. Not only were the minis completed with incredible quality, but also added with features, terrain and styling that made them truly come alive. All in all, if you want your minis to shine, send them to Playsupport!",
+    name: "Brian",
+    designation: "",
+    src: "/images/testimonials/Dred.jpg",
+  },
+  {
+    quote:
       "I have an excellent experience with PlaySupport, their communication is top-notch and makes the entire process smooth. The quality of their work is impressively clean.",
     name: "Deathpunk Studio",
     designation: "High quality miniaturs for 3d printing",
@@ -49,9 +56,9 @@ export const LevelImages = [
 
 export const PaintingShowcaseData = [
   {
-    title: "Ork Warboss",
+    title: "Belakor",
     level: 3,
-    Image: "/images/minisReel/ork.jpg",
+    Image: "/images/minisReel/belakor.jpg",
     colspan: 1,
   },
   {
@@ -61,15 +68,16 @@ export const PaintingShowcaseData = [
     colspan: 1,
   },
   {
-    title: "Arabaxia",
-    level: 3,
-    Image: "/images/minisReel/lizard2.jpg",
+    title: "Harpies Age of Sigmar",
+    level: 1,
+    Image: "/images/minisReel/Harpies Warhammer.jpg",
     colspan: 1,
   },
+
   {
     title: "Sons of Horus image",
     level: 1,
-    Image: "/images/minisReel/horus.jpg",
+    Image: "/images/minisReel/tyranid guards.jpg",
     colspan: 2,
   },
   {
@@ -79,16 +87,16 @@ export const PaintingShowcaseData = [
     colspan: 1,
   },
   {
-    title: "Sisters of battle image",
-    level: 2,
-    Image: "/images/minisReel/sisters.jpg",
-    colspan: 2,
-  },
-  {
     title: "Blue marine image",
     level: 3,
     Image: "/images/minisReel/blue marine.jpg",
     colspan: 1,
+  },
+  {
+    title: "Sisters of battle image",
+    level: 2,
+    Image: "/images/minisReel/sisters.jpg",
+    colspan: 2,
   },
 ];
 
