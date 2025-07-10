@@ -18,7 +18,7 @@ function Header() {
     if (disableHeader) {
       timeoutId = setTimeout(() => {
         setDisableHeader(false);
-      }, 500);
+      }, 1000);
     }
 
     return () => clearTimeout(timeoutId);

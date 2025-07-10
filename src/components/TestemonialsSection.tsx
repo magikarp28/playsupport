@@ -9,7 +9,7 @@ import { testemonialsData } from "@/app/lib/data";
 function TestemonialsSection() {
   const ref = useRef(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref, { amount: isMobile ? 0.3 : 0.8 });
+  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 0.8 });
   const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {
@@ -20,9 +20,9 @@ function TestemonialsSection() {
 
   return (
     <section
-      id="painting"
+      id="testimonials"
       className="w-full bg-gradient-to-b text-center from-black to-slate-950  
-    h-fit flex flex-col justify-center gap-2 items-center text-white px-3 z-10"
+     flex flex-col justify-center gap-2 items-center text-white px-3 z-10"
       ref={ref}
     >
       <AnimatedTestimonials testimonials={testemonialsData} />
