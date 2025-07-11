@@ -61,9 +61,9 @@ function Hero() {
             </p>
             <div className="flex flex-col gap-2">
               <div>
-                <div className="bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-300 inline font-bold ">
+                <p className="bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-300 inline font-bold ">
                   Playsupport
-                </div>{" "}
+                </p>{" "}
                 offers you support with:
               </div>
               <ul className="list-none space-y-2 text-lg">
@@ -79,6 +79,7 @@ function Hero() {
                 </li>
               </ul>
             </div>
+            <p className="max-w-screen-xl text-base">Based in Croatia, EU.</p>
           </div>
           <div className="w-full flex justify-center">
             <div className="p-[3px] relative mt-7">
