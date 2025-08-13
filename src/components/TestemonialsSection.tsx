@@ -25,6 +25,12 @@ function TestemonialsSection() {
      flex flex-col justify-center gap-2 items-center text-white px-3 z-10"
       ref={ref}
     >
+      <h4
+        className="text-lg bg-clip-text text-transparent mt-6
+        bg-gradient-to-b from-white to-slate-400 sm:text-2xl font-semibold"
+      >
+        Testimonials
+      </h4>
       <AnimatedTestimonials testimonials={testemonialsData} />
     </section>
   );
