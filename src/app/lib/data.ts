@@ -23,7 +23,7 @@ export const testemonialsData: Testimonial[] = [
     quote:
       "Playsupport's services were impeccable, creating beautiful minis that matched exactly what I was hoping for. Not only were the minis completed with incredible quality, but also added with features, terrain and styling that made them truly come alive. All in all, if you want your minis to shine, send them to Playsupport!",
     name: "Brian",
-    designation: "",
+    designation: "Multiple Art tier commisions",
     src: "/images/testimonials/Dred.jpg",
   },
   {
@@ -33,6 +33,13 @@ export const testemonialsData: Testimonial[] = [
     designation: "High quality miniaturs for 3d printing",
     src: "/images/testimonials/deathpunk.avif",
     link: "https://www.myminifactory.com/users/deathpunk-studio?show=store#/",
+  },
+  {
+    quote:
+      "Playsupport did a fantastic job on the Slaves to darkness commission. They took great direction from example work and delivered well within the time table that they initially provided. It's always very smooth and professional working with them and will do so again soon in the future.",
+    name: "Eric",
+    src: "/images/testimonials/eric.jpg",
+    designation: "Large slaves to darkness commission",
   },
 ];
 

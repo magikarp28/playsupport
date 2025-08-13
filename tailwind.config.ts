@@ -22,6 +22,11 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        hero: ['"Grenze Gotisch"', "serif"],
+        army: ['"IM Fell French Canon"', "serif"],
+        art: ['"Dynalight"', "serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

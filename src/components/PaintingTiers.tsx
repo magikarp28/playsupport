@@ -1,7 +1,6 @@
 import React from "react";
 import { LevelImages } from "@/app/lib/data";
 import Image from "next/image";
-import clsx from "clsx";
 
 const BackgroundGradients = [
   "linear-gradient(to bottom, #b37952 27%, #e0af81 40%, #462611 78%)",
@@ -10,6 +9,8 @@ const BackgroundGradients = [
 ];
 
 const BackgroundColors = ["#b37952", "#8B9FA9", "#e2c78c"];
+
+const fonts = ["font-army", "font-hero", "font-art"];
 
 function PaintingTiers() {
   return (
@@ -39,7 +40,7 @@ function PaintingTiers() {
               }}
             >
               <h4
-                className="font-bold  bg-clip-text text-transparent text-2xl text-left"
+                className={`font-bold bg-clip-text text-transparent text-3xl text-left  ${fonts[index]}`}
                 style={{
                   backgroundImage: BackgroundGradients[index],
                   WebkitBackgroundClip: "text",
