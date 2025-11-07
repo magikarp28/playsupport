@@ -15,7 +15,7 @@ const fonts = ["font-army", "font-hero", "font-art"];
 function PaintingTiers() {
   return (
     <div className="w-full flex flex-wrap">
-      <div className="w-full grid auto-rows-[22rem] md:auto-rows-[25rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto my-5 relative px-5 md:px-0">
+      <div className="w-full grid auto-rows-[22rem] md:auto-rows-[25rem] grid-cols-1 md:grid-cols-3 gap-4 mx-auto my-5 relative px-5 md:px-0">
         {LevelImages.map((item, index) => (
           <div
             className="relative rounded-xl"

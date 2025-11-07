@@ -26,17 +26,17 @@ function Header() {
   return (
     <header className="z-[999] absolute ">
       <nav
-        className="fixed  left-1/2 w-full sm:w-[40rem] sm:bg-transparent bg-opacity-80 -translate-x-1/2 sm:rounded-full
+        className="fixed  left-1/2 w-full sm:w-[45rem] sm:bg-transparent bg-opacity-80 -translate-x-1/2 sm:rounded-full
                   flex items-center justify-between sm:gap-2 bg-slate-800 overflow-hidden min-h-[5rem] sm:backdrop-blur-none "
       >
         <Link
           className="sm:w-16 sm:h-16 bg-gradient-to-r p-1 from-rose-600 to-fuchsia-600  
         sm:flex justify-center items-center relative bg-black rounded-full  hidden"
           onClick={() => {
-            setActiveSection("home");
+            setActiveSection("Home");
             setDisableHeader(true);
           }}
-          href={"#home"}
+          href={"#Home"}
         >
           <Image
             className="w-full h-full bg-black rounded-full"
@@ -44,7 +44,7 @@ function Header() {
             alt="Logo Image"
           />
         </Link>
-        <ul className="relative flex flex-wrap items-center justify-center sm:justify-between text-center gap-3 w-[36rem] sm:bg-slate-800  sm:bg-opacity-80 py-4 px-4 sm:px-6 rounded-full">
+        <ul className="relative flex flex-wrap items-center justify-center sm:justify-between text-center gap-3  sm:bg-slate-800  sm:bg-opacity-80 py-4 px-4 sm:px-6 rounded-full">
           {links.map((link) => (
             <Link
               className={clsx("text-gray-50 px-2 py-1 relative z-20 ", {

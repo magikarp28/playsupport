@@ -133,23 +133,27 @@ export const SupportTabsData = [
 
 export const links = [
   {
-    name: "home",
-    hash: "#home",
+    name: "Home",
+    hash: "#Home",
   },
   {
-    name: "painting",
-    hash: "#painting",
+    name: "Painting",
+    hash: "#Painting",
   },
   {
-    name: "supporting",
-    hash: "#supporting",
+    name: "Pricing",
+    hash: "#Pricing",
   },
   {
-    name: "testimonials",
-    hash: "#testimonials",
+    name: "Supporting",
+    hash: "#Supporting",
   },
   {
-    name: "contact",
-    hash: "#contact",
+    name: "Testimonials",
+    hash: "#Testimonials",
+  },
+  {
+    name: "Contact",
+    hash: "#Contact",
   },
 ] as const;

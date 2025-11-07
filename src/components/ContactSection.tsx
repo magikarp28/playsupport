@@ -13,13 +13,13 @@ function ContactSection() {
 
   useEffect(() => {
     if (isInView && !disableHeader) {
-      setActiveSection("contact");
+      setActiveSection("Contact");
     }
   }, [isInView]);
   return (
     <section
       ref={ref}
-      id="contact"
+      id="Contact"
       className="w-full bg-gradient-to-b from-slate-950  to-black
     h-fit flex flex-col justify-center gap-2 items-center text-white px-3 text-center"
     >

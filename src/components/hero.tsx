@@ -29,19 +29,19 @@ function Hero() {
 
   useEffect(() => {
     if (isInView && !disableHeader) {
-      setActiveSection("home");
+      setActiveSection("Home");
     }
   }, [isInView]);
 
   return (
     <section
       ref={ref}
-      id="home"
+      id="Home"
       className="w-screen h-fit relative overflow-hidden bg-black flex justify-center items-center z-20"
     >
       <div className="absolute top-10 left-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[28rem] sm:h-48 bg-rose-800 z-10 sm:blur-[14rem]" />
       <div className="absolute top-10 right-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[28rem] sm:h-48 bg-sky-800 z-10 sm:blur-[14rem]" />
-      <div className="flex flex-row flex-wrap pt-24 text-center pl-2 pb-10 bg-transparent w-full max-w-screen-2xl justify-center z-10">
+      <div className="flex flex-row flex-wrap pt-24 text-center pl-2 pb-10 bg-transparent w-full max-w-screen-xl justify-between z-10 ">
         <div className="mb-4 w-44 h-44 flex justify-center items-center relative bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-full overflow-hidden sm:hidden p-[4px]">
           <Image
             className="rounded-full bg-black w-full h-full"
@@ -49,7 +49,7 @@ function Hero() {
             alt="Logo Image"
           />
         </div>
-        <div className="px-5 sm:text-left">
+        <div className="px-5 sm:text-left ">
           <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 pb-3">
             PlaySupport
           </h1>
@@ -85,10 +85,10 @@ function Hero() {
             <div className="p-[3px] relative mt-7">
               <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-full" />
               <Link
-                href="#contact"
+                href="#Contact"
                 className="px-8 py-2 flex bg-slate-950 rounded-full relative group transition duration-200 text-white hover:bg-transparent"
                 onClick={() => {
-                  setActiveSection("contact");
+                  setActiveSection("Contact");
                   setDisableHeader(true);
                 }}
               >

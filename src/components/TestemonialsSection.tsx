@@ -14,13 +14,13 @@ function TestemonialsSection() {
 
   useEffect(() => {
     if (isInView && !disableHeader) {
-      setActiveSection("testimonials");
+      setActiveSection("Testimonials");
     }
   }, [isInView]);
 
   return (
     <section
-      id="testimonials"
+      id="Testimonials"
       className="w-full bg-gradient-to-b text-center from-black to-slate-950  
      flex flex-col justify-center gap-2 items-center text-white px-3 z-10"
       ref={ref}

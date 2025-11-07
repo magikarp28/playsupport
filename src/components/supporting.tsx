@@ -15,14 +15,14 @@ function Supporting() {
 
   useEffect(() => {
     if (isInView && !disableHeader) {
-      setActiveSection("supporting");
+      setActiveSection("Supporting");
     }
   }, [isInView]);
 
   return (
     <section
       ref={ref}
-      id="supporting"
+      id="Supporting"
       className="w-full bg-gradient-to-b text-center from-slate-950 to-black   h-fit flex flex-col justify-center gap-2 items-center text-white px-3"
     >
       <h2
