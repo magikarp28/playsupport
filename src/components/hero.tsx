@@ -41,7 +41,7 @@ function Hero() {
     >
       <div className="absolute top-10 left-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[28rem] sm:h-48 bg-rose-800 z-10 sm:blur-[14rem]" />
       <div className="absolute top-10 right-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[28rem] sm:h-48 bg-sky-800 z-10 sm:blur-[14rem]" />
-      <div className="flex flex-row flex-wrap pt-24 text-center pl-2 pb-10 bg-transparent w-full max-w-screen-xl justify-between z-10 ">
+      <div className="flex flex-row flex-wrap pt-24 text-center pb-10 w-full max-w-screen-xl z-10 justify-center items-center">
         <div className="mb-4 w-44 h-44 flex justify-center items-center relative bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-full overflow-hidden sm:hidden p-[4px]">
           <Image
             className="rounded-full bg-black w-full h-full"
