@@ -7,9 +7,11 @@ import { AnimatedTestimonials } from "./ui/AnimatedTestimonials";
 import { testemonialsData } from "@/app/lib/data";
 
 function TestemonialsSection() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 0.8 });
+  const isInView = useInView(ref as React.RefObject<Element>, {
+    amount: isMobile ? 0.1 : 0.8,
+  });
   const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {

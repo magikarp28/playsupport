@@ -21,9 +21,11 @@ function Hero() {
     setImages(images);
   }, []);
 
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 0.6 });
+  const isInView = useInView(ref as React.RefObject<Element>, {
+    amount: isMobile ? 0.1 : 0.6,
+  });
   const { setActiveSection, disableHeader, setDisableHeader } =
     useActiveSection();
 

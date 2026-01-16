@@ -9,9 +9,11 @@ import { BsInstagram } from "react-icons/bs";
 import Link from "next/link";
 
 function Painting() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 0.3 });
+  const isInView = useInView(ref as React.RefObject<Element>, {
+    amount: isMobile ? 0.1 : 0.3,
+  });
   const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {

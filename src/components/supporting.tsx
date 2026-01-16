@@ -8,9 +8,11 @@ import { useActiveSection } from "./context/active-section-context";
 import useIsMobile from "@/lib/useIsMobile";
 
 function Supporting() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref, { amount: isMobile ? 0.2 : 1 });
+  const isInView = useInView(ref as React.RefObject<Element>, {
+    amount: isMobile ? 0.2 : 1,
+  });
   const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {

@@ -6,9 +6,11 @@ import ContactForm from "./ContactForm";
 import useIsMobile from "@/lib/useIsMobile";
 
 function ContactSection() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref, { amount: isMobile ? 0.1 : 1 });
+  const isInView = useInView(ref as React.RefObject<Element>, {
+    amount: isMobile ? 0.1 : 1,
+  });
   const { setActiveSection, disableHeader } = useActiveSection();
 
   useEffect(() => {
