@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from "react";
 import { HiOutlineDownload } from "react-icons/hi";
 import Link from "next/link";
 import Supportperks from "./support-perks";
-import { useInView } from "framer-motion";
+import { useInView } from "motion/react";
 import { useActiveSection } from "./context/active-section-context";
 import useIsMobile from "@/lib/useIsMobile";
 
