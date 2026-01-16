@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { useInView } from "framer-motion";
+import { useInView } from "motion/react";
 import { useActiveSection } from "./context/active-section-context";
 import useIsMobile from "@/lib/useIsMobile";
 
