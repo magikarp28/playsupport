@@ -6,6 +6,8 @@ const require = createRequire(import.meta.url);
 const withVideos = require("next-videos");
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  turbopack: {},
+};
 
 export default withVideos(nextConfig);
