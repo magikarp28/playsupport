@@ -25,8 +25,13 @@ function PricingSection() {
   }, [isInView, disableHeader, setActiveSection]);
 
   const pricing = [
-    { category: "Small infantry", army: "6–12€", hero: "9–18€", art: "20–60€" },
-    { category: "Infantry", army: "9–20€", hero: "15–35€", art: "50–150€" },
+    {
+      category: "Small infantry",
+      army: "8–14€",
+      hero: "12–22€",
+      art: "25–60€",
+    },
+    { category: "Infantry", army: "10–20€", hero: "22–36€", art: "50–150€" },
     {
       category: "Large infantry",
       army: "15–35€",

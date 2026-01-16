@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://playsupport.art/",
-    siteName: "PlaySupport",
+    siteName: "PlaySupport.art",
     title: "PlaySupport - Miniature painting & resin 3D print presupporting",
     description:
       "Professional miniature painting and high-quality manual supports for resin 3D printing. Based in the EU.",
