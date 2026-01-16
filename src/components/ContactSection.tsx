@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { useInView } from "framer-motion";
+import { useInView } from "motion/react";
 import { useActiveSection } from "./context/active-section-context";
 import ContactForm from "./ContactForm";
 import useIsMobile from "@/lib/useIsMobile";
@@ -8,7 +8,7 @@ import useIsMobile from "@/lib/useIsMobile";
 function ContactSection() {
   const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
-  const isInView = useInView(ref as React.RefObject<Element>, {
+  const isInView = useInView(ref, {
     amount: isMobile ? 0.1 : 1,
   });
   const { setActiveSection, disableHeader } = useActiveSection();
@@ -17,7 +17,7 @@ function ContactSection() {
     if (isInView && !disableHeader) {
       setActiveSection("Contact");
     }
-  }, [isInView]);
+  }, [isInView, disableHeader]);
   return (
     <section
       ref={ref}

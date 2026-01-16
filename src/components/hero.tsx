@@ -4,7 +4,7 @@ import InfiniteMovingCards from "./ui/infinite-moving-cards";
 import LogoImg from "@/../public/PlaySupportLogoFinal.svg";
 import Image from "next/image";
 import { getGalleryImages } from "@/helpers/galleryImages";
-import { useInView } from "framer-motion";
+import { useInView } from "motion/react";
 import { useActiveSection } from "./context/active-section-context";
 import useIsMobile from "@/lib/useIsMobile";
 import Link from "next/link";

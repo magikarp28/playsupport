@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { useActiveSection } from "./context/active-section-context";
-import { useInView } from "framer-motion";
+import { useInView } from "motion/react";
 import PaintingShowcase from "./PaintingShowcase";
 import useIsMobile from "@/lib/useIsMobile";
 import PaintingTiers from "./PaintingTiers";

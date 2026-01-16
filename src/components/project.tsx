@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 
 type ProjectProps = {
   title: string;
