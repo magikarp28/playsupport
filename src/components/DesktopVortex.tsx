@@ -27,7 +27,7 @@ const DesktopVortex = () => {
 
   return (
     <Vortex
-      backgroundColor="slate-950"
+      backgroundColor="transparent"
       baseRadius={4}
       rangeY={160}
       particleCount={80}

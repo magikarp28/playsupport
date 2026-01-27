@@ -1,117 +1,50 @@
-"use client";
-import React, { useEffect, useState, useRef, Suspense } from "react";
-import InfiniteMovingCards from "./ui/infinite-moving-cards";
-import LogoImg from "@/../public/PlaySupportLogoFinal.svg";
+import React, { Suspense } from "react";
 import Image from "next/image";
-import { getGalleryImages } from "@/helpers/galleryImages";
-import { useInView } from "motion/react";
-import { useActiveSection } from "./context/active-section-context";
-import useIsMobile from "@/lib/useIsMobile";
-import Link from "next/link";
-import { FaPaintBrush } from "react-icons/fa";
-import { Gi3dMeeple } from "react-icons/gi";
-import image from "@/../public/images/paintShowcase/lizard.png";
-import { AuroraBackground } from "./ui/aurora-background";
+import image from "@/../public/images/paintShowcase/horse man.png";
+import image2 from "@/../public/images/paintShowcase/imperial fist.png";
+import HeroText from "./HeroText";
 
 function Hero() {
-  const [images, setImages] = useState<string[]>([]);
   const DesktopVortex = React.lazy(() => import("./DesktopVortex"));
-  useEffect(() => {
-    const images = getGalleryImages();
-    setImages(images);
-  }, []);
-
-  const ref = useRef<HTMLElement>(null);
-  const isMobile = useIsMobile();
-  const isInView = useInView(ref as React.RefObject<Element>, {
-    amount: isMobile ? 0.1 : 0.6,
-  });
-  const { setActiveSection, disableHeader, setDisableHeader } =
-    useActiveSection();
-
-  useEffect(() => {
-    if (isInView && !disableHeader) {
-      setActiveSection("Home");
-    }
-  }, [isInView]);
-
   return (
     <section
-      ref={ref}
       id="Home"
-      className="w-screen h-fit relative overflow-hidden bg-black flex justify-center items-center z-20"
+      className=" w-screen h-fit relative overflow-hidden flex justify-center items-center z-20 bg-gradient-to-r from-rose-950 to-slate-950"
     >
-      <div className="absolute top-10 left-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[28rem] sm:h-48 bg-rose-800 z-10 sm:blur-[14rem]" />
-      <div className="absolute top-10 right-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[28rem] sm:h-48 bg-sky-800 z-10 sm:blur-[14rem]" />
-      <div className="flex flex-row flex-wrap pt-24 text-center pb-10 w-full max-w-screen-xl z-10 justify-center items-center">
-        <div className="mb-4 w-44 h-44 flex justify-center items-center relative bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-full overflow-hidden sm:hidden p-[4px]">
+      <div
+        className="absolute inset-0 z-0 block md:hidden"
+        style={{
+          backgroundImage: `url(${image.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.2,
+        }}
+        aria-hidden="true"
+      />
+      <div className="absolute top-10 left-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[38rem] sm:h-56 bg-rose-800 z-10 sm:blur-[14rem]" />
+      <div className="absolute top-10 right-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[38rem] sm:h-56 bg-sky-800 z-10 sm:blur-[14rem]" />
+      <div className="flex flex-row flex-wrap items-stretch pt-24 2xl:pt-10 px-4 md:px-16 text-center pb-10 w-full max-w-screen z-10 justify-between">
+        <div className="hidden md:basis-1/3 2xl:flex justify-center md:justify-start mb-6 md:mb-0 h-full self-end">
           <Image
-            className="rounded-full bg-black w-full h-full"
-            src={LogoImg}
-            alt="Logo Image"
+            src={image2}
+            alt="Warhammer painting showcase image 1"
+            className="w-full max-w-[70%] h-auto max-h-[100%]"
           />
         </div>
-        <div className="px-5 sm:text-left ">
-          <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 pb-3">
-            PlaySupport
-          </h1>
-          <div className="text-white text-lg md:text-xl max-w-xl mt-6 flex flex-col gap-4">
-            <p>
-              There is no worse fate for a hobby than it becoming a chore. Our
-              lives are filled with enough obligations as it is. We are here to
-              support you so that you can focus on playing.
-            </p>
-            <div className="flex flex-col gap-2">
-              <div>
-                <p className="bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-300 inline font-bold ">
-                  Playsupport
-                </p>{" "}
-                offers you support with:
-              </div>
-              <ul className="list-none space-y-2 text-lg">
-                <li className="ml-2 flex items-start">
-                  <FaPaintBrush className="inline mr-2 mt-1 text-3xl" />
-                  Getting your miniatures ready for the tabletop – painting,
-                  assembling, magnetizing
-                </li>
-                <li className="ml-2 flex items-start">
-                  <Gi3dMeeple className="inline mr-2 mt-1 text-3xl" />
-                  Supporting your 3D miniatures for resin 3D printing so they
-                  print properly every time
-                </li>
-              </ul>
-            </div>
-            <p className="max-w-screen-xl text-base">Based in Croatia, EU.</p>
-          </div>
-          <div className="w-full flex justify-center">
-            <div className="p-[3px] relative mt-7">
-              <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-full" />
-              <Link
-                href="#Contact"
-                className="px-8 py-2 flex bg-slate-950 rounded-full relative group transition duration-200 text-white hover:bg-transparent"
-                onClick={() => {
-                  setActiveSection("Contact");
-                  setDisableHeader(true);
-                }}
-              >
-                Get In Touch
-              </Link>
-            </div>
-          </div>
+        <HeroText />
+        <div className="hidden md:basis-1/3 md:flex justify-end md:justify-end mb-6 md:mb-0">
+          <Image
+            src={image}
+            alt="Warhammer painting showcase image 2"
+            className="w-full max-w-[90%] xl:max-w-[65%] h-auto max-h-[100%]"
+          />
         </div>
-        {!isMobile && (
-          <div className="p-[3px] relative w-full max-w-[450px] h-full overflow-hidden flex justify-center items-center">
-            <AuroraBackground className="rounded-2xl w-full h-full overflow-hidden ">
-              <div className="w-full h-full flex justify-center items-center">
-                <Image src={image} alt="showcaseImage" className="w" priority />
-              </div>
-            </AuroraBackground>
-          </div>
-        )}
       </div>
-      <Suspense>
-        <DesktopVortex />
-      </Suspense>
+      <div className="hidden lg:block">
+        <Suspense>
+          <DesktopVortex />
+        </Suspense>
+      </div>
     </section>
   );
 }

@@ -28,6 +28,7 @@ export async function sendEmail(formData: FormData) {
   const message = formData.get("message");
   const email = formData.get("email");
   const name = formData.get("name");
+  const inquiryType = formData.get("inquiryType");
 
   if (
     !validateString(message, 1000) ||
@@ -44,6 +45,7 @@ export async function sendEmail(formData: FormData) {
       message: message as string,
       senderEmail: email as string,
       senderName: name as string,
+      inquiryType: inquiryType as string,
     }),
     {
       pretty: true,

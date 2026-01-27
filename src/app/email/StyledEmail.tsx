@@ -16,6 +16,7 @@ interface StyledEmailProps {
   message: string;
   senderEmail: string;
   senderName: string;
+  inquiryType: string;
 }
 
 function StyledEmail(StyledEmailProps: StyledEmailProps) {
@@ -31,6 +32,7 @@ function StyledEmail(StyledEmailProps: StyledEmailProps) {
               <Hr />
               <Text>Message: {StyledEmailProps.message}</Text>
               <Hr />
+              <Text>Inquiry Type: {StyledEmailProps.inquiryType}</Text>
               <Text>Email: {StyledEmailProps.senderEmail}</Text>
               <Text>Name: {StyledEmailProps.senderName}</Text>
             </Section>

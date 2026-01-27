@@ -1,4 +1,3 @@
-import React from "react";
 import { LevelImages } from "@/app/lib/data";
 import Image from "next/image";
 
@@ -58,38 +57,3 @@ function PaintingTiers() {
 }
 
 export default PaintingTiers;
-
-/*
-        <p
-          className="inline text-3xl font-bold bg-clip-text text-transparent"
-          style={{
-            background:
-              "linear-gradient(to bottom, #b37952 27%, #e0af81 40%, #5a3116 78%)",
-            WebkitBackgroundClip: "text",
-          }}
-        >
-          Bronze
-        </p>
-        ,{" "}
-        <p
-          className="inline text-3xl font-bold bg-clip-text text-transparent"
-          style={{
-            background:
-              "linear-gradient(to bottom, #8B9FA9 27%, #d9e5ee 40%, #404c52 78%)",
-            WebkitBackgroundClip: "text",
-          }}
-        >
-          Silver
-        </p>{" "}
-        and{" "}
-        <p
-          className="inline text-3xl font-bold bg-clip-text text-transparent"
-          style={{
-            background:
-              "linear-gradient(to bottom, #e2c78c 27%, #fff4d1 40%, #533f15 78%)",
-            WebkitBackgroundClip: "text",
-          }}
-        >
-          Gold
-        </p>
-*/

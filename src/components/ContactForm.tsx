@@ -45,6 +45,25 @@ function ContactForm() {
             placeholder="Name"
             className="p-2 rounded-lg border border-transparent focus:border-fuchsia-600 focus:outline-none transition duration-300"
           />
+          <div className="flex w-full justify-between items-center gap-2">
+            <label
+              htmlFor="inquiryType"
+              className="text-md font-medium text-slate-200"
+            >
+              Inquiry type:
+            </label>
+            <select
+              id="inquiryType"
+              name="inquiryType"
+              required
+              className="flex-1 p-2 rounded-lg border border-transparent focus:border-fuchsia-600 focus:outline-none transition duration-300 text-slate-100"
+              defaultValue="painting commission"
+            >
+              <option value="painting commission">Painting commission</option>
+              <option value="pressuport service">Pressuport service</option>
+              <option value="general inquiry">General inquiry</option>
+            </select>
+          </div>
           <textarea
             name="message"
             maxLength={1000}

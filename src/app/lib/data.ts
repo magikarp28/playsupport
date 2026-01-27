@@ -41,6 +41,14 @@ export const testemonialsData: Testimonial[] = [
     src: "/images/testimonials/eric.jpg",
     designation: "Large slaves to darkness commission",
   },
+  {
+    quote:
+      "Pleasure to work with, Great communication, fast turn around and supports on models are a joy to just pop away. Couldn't recommend enough.",
+    name: "White Dragon Miniatures",
+    src: "/images/testimonials/whitedragon.webp",
+    designation: "3D printed army miniatures",
+    link: "https://whitedragonminiatures.co.uk/",
+  },
 ];
 
 export const LevelImages = [
@@ -59,6 +67,12 @@ export const LevelImages = [
     title: "Art Tier",
     text: "Every surface has its own texture, every miniature a unique story.",
   },
+];
+
+export const testImageArray = [
+  "/images/minisReel/belakor.jpg",
+  "/images/minisReel/angel.jpg",
+  "/images/minisReel/Harpies Warhammer.jpg",
 ];
 
 export const PaintingShowcaseData = [
@@ -134,26 +148,22 @@ export const SupportTabsData = [
 export const links = [
   {
     name: "Home",
-    hash: "#Home",
+    link: "/",
   },
   {
     name: "Painting",
-    hash: "#Painting",
+    link: "/painting",
   },
   {
-    name: "Pricing",
-    hash: "#Pricing",
+    name: "Gallery",
+    link: "/gallery",
   },
   {
     name: "Supporting",
-    hash: "#Supporting",
-  },
-  {
-    name: "Testimonials",
-    hash: "#Testimonials",
+    link: "/supporting",
   },
   {
     name: "Contact",
-    hash: "#Contact",
+    link: "/contact",
   },
 ] as const;

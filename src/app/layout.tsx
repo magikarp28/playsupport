@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import ActiveSectionContextProvider from "@/components/context/active-section-context";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Header from "@/components/header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -65,9 +67,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="en"
+      className="!scroll-smooth"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative max-w-[100%] overflow-x-hidden`}
+        className={`${inter.className} text-gray-950 relative max-w-[100%] overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
@@ -76,7 +83,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ActiveSectionContextProvider>
-            {children}
+            <Header />
+            <main className="">{children}</main>
+            <Footer />
           </ActiveSectionContextProvider>
         </ThemeProvider>
         <Analytics />

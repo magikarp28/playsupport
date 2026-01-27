@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 type Testimonial = {
@@ -20,13 +20,11 @@ export const AnimatedTestimonials = ({
 }) => {
   const [active, setActive] = useState(0);
   const [mounted, setMounted] = useState(false);
-
-  const rotateRefs = useRef<number[]>([]);
+  const [rotateAngles, setRotateAngles] = useState<number[]>([]);
 
   useEffect(() => {
-    // Only generate randoms on client
-    rotateRefs.current = testimonials.map(
-      () => Math.floor(Math.random() * 21) - 10
+    setRotateAngles(
+      testimonials.map(() => Math.floor(Math.random() * 21) - 10),
     );
     setMounted(true);
   }, [testimonials]);
@@ -55,7 +53,7 @@ export const AnimatedTestimonials = ({
     <div className="mx-auto max-w-sm px-4 pt-4 pb-10 md:py-10 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12 ">
       <div className="relative grid grid-cols-1 gap-5 md:gap-20 md:grid-cols-2  lg:h-96">
         <div className="flex items-center justify-center ">
-          <div className="relative h-60 w-60 md:h-80 md:w-80">
+          <div className="relative h-60 w-60 md:h-80 md:w-80 ">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -64,13 +62,13 @@ export const AnimatedTestimonials = ({
                     opacity: 0,
                     scale: 0.9,
                     z: -100,
-                    rotate: rotateRefs.current[index],
+                    rotate: rotateAngles[index] || 0,
                   }}
                   animate={{
                     opacity: isActive(index) ? 1 : 0.7,
                     scale: isActive(index) ? 1 : 0.95,
                     z: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : rotateRefs.current[index],
+                    rotate: isActive(index) ? 0 : rotateAngles[index] || 0,
                     zIndex: isActive(index)
                       ? 40
                       : testimonials.length + 2 - index,
@@ -80,7 +78,7 @@ export const AnimatedTestimonials = ({
                     opacity: 0,
                     scale: 0.9,
                     z: 100,
-                    rotate: rotateRefs.current[index],
+                    rotate: rotateAngles[index] || 0,
                   }}
                   transition={{
                     duration: 0.4,
@@ -101,7 +99,7 @@ export const AnimatedTestimonials = ({
                         width={400}
                         height={400}
                         draggable={false}
-                        className="h-full w-full rounded-3xl object-cover object-center"
+                        className="bg-black h-full w-full rounded-3xl object-cover object-center"
                       />
                     </a>
                   ) : (
