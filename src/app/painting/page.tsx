@@ -62,7 +62,7 @@ function page() {
     <section
       id="Painting"
       className="w-full text-center 
-    h-fit flex flex-col justify-center items-center text-white z-10 "
+    h-fit flex flex-col justify-center items-center text-white z-10 min-h-[calc(100vh-120px)]"
     >
       <div className="w-full bg-gradient-to-b from-black to-slate-900 flex flex-col items-center px-3">
         <div className="max-w-7xl w-full mt-28">

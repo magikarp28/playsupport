@@ -82,20 +82,19 @@ export const InfiniteMovingCards = ({
         )}
       >
         {items.map((item, idx) => (
-          <BackgroundGradient
-            key={"imagesReel" + idx}
-            className="w-[16rem] h-[16rem] sm:w-[26rem] sm:h-[24rem]"
-          >
-            <Image
-              sizes="(max-width: 768px) 70vw, 500px"
-              src={item}
-              alt={"image " + item}
-              width={400}
-              height={400}
-              style={{ objectFit: "cover" }}
-              className="rounded-3xl w-full h-full"
-            />
-          </BackgroundGradient>
+          <li key={"imagesReel" + idx} className="list-none">
+            <BackgroundGradient className="w-[16rem] h-[16rem] sm:w-[26rem] sm:h-[24rem]">
+              <Image
+                sizes="(max-width: 768px) 70vw, 500px"
+                src={item}
+                alt={"image " + item}
+                width={400}
+                height={400}
+                style={{ objectFit: "cover" }}
+                className="rounded-3xl w-full h-full"
+              />
+            </BackgroundGradient>
+          </li>
         ))}
       </ul>
     </div>

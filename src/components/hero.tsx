@@ -29,6 +29,9 @@ function Hero() {
             src={image2}
             alt="Warhammer painting showcase image 1"
             className="w-full max-w-[70%] h-auto max-h-[100%]"
+            sizes="(min-width: 1280px) 500px,(min-width: 768px) 350px,90vw"
+            fetchPriority="high"
+            loading="eager"
           />
         </div>
         <HeroText />
@@ -37,6 +40,9 @@ function Hero() {
             src={image}
             alt="Warhammer painting showcase image 2"
             className="w-full max-w-[90%] xl:max-w-[65%] h-auto max-h-[100%]"
+            sizes="(min-width: 1280px) 500px,(min-width: 768px) 350px,90vw"
+            fetchPriority="high"
+            loading="eager"
           />
         </div>
       </div>

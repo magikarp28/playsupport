@@ -77,6 +77,7 @@ function Header() {
                 href="https://www.instagram.com/playsupport/"
                 className="text-white hover:text-rose-500 transition-colors block p-2"
                 target="_blank"
+                aria-label="Visit PlaySupport on Instagram"
               >
                 <BsInstagram className="text-lg" />
               </Link>
@@ -84,6 +85,7 @@ function Header() {
                 href="https://www.youtube.com/@PlaySupportMinis"
                 className="text-white hover:text-rose-500 transition-colors block p-2"
                 target="_blank"
+                aria-label="Visit PlaySupport on YouTube"
               >
                 <BsYoutube className="text-lg" />
               </Link>

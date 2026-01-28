@@ -41,6 +41,7 @@ function PaintingHome() {
             src={image}
             alt="warhammerPaintingShowcaseImage"
             className="w-full max-w-[85%] h-auto"
+            sizes="(min-width: 1280px) 500px,(min-width: 768px) 350px,90vw"
           />
         </div>
       </div>

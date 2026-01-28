@@ -63,7 +63,7 @@ function page() {
   return (
     <section
       className="w-full text-center 
-    h-fit flex flex-col justify-center items-center text-white px-3 z-10 bg-gradient-to-b from-black via-slate-900 to-black"
+    h-fit flex flex-col justify-center items-center text-white px-3 z-10 bg-gradient-to-b from-black via-slate-900 to-black min-h-[calc(100vh-120px)]"
     >
       <div className="max-w-screen-xl w-full mt-28  p-6 rounded-lg shadow-lg">
         <PlaySuppGalleryWrapper />

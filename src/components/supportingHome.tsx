@@ -70,8 +70,9 @@ function SupportingHome() {
         <div className="md:basis-1/2 flex justify-center md:justify-start items-center mb-6 md:mb-0">
           <Image
             src={image}
-            alt="warhammerPaintingShowcaseImage"
+            alt="miniature 3d print supporting showcase"
             className="w-full max-w-[65%] h-auto"
+            sizes="(min-width: 1280px) 500px,(min-width: 768px) 350px,90vw"
           />
         </div>
       </div>
