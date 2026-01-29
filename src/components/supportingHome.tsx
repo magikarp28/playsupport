@@ -61,8 +61,8 @@ function SupportingHome() {
           </ul>
           <div className="w-full flex items-center justify-center">
             <PlaysuppButton
-              href="https://drive.google.com/file/d/1gQ1jys31MxcdCZwI0_iRmyEE_07Hnftf/view?usp=drive_link"
-              text="Download Free Pre Supported Miniature"
+              href="https://www.datocms-assets.com/160411/1769697786-ant-diplomat-v3.zip"
+              text="Download Miniature Free"
             />
           </div>
         </div>
