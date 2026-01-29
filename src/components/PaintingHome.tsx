@@ -39,7 +39,7 @@ function PaintingHome() {
         <div className="md:basis-1/2 flex justify-center md:justify-end items-center mb-6 md:mb-0">
           <Image
             src={image}
-            alt="warhammerPaintingShowcaseImage"
+            alt="Ogroid myrmidon painted miniature"
             className="w-full max-w-[85%] h-auto"
             sizes="(min-width: 1280px) 500px,(min-width: 768px) 350px,90vw"
           />

@@ -5,6 +5,7 @@ import { performRequest } from "@/lib/dato.js";
 
 type GalleryImage = {
   url: string;
+  title?: string;
 };
 
 type Gallery = {
@@ -23,6 +24,7 @@ const PAGE_CONTENT_QUERY = `
       id
       images {
         url(imgixParams: { w: 600, auto: [format] })
+        title
       }
       paintingTier
     }
@@ -34,9 +36,13 @@ async function MiniGallery() {
     PAGE_CONTENT_QUERY,
   )) as GalleriesResponse;
 
-  const images = response?.allGalleries
-    ?.flatMap((gallery: { images: { url: string }[] }) => gallery.images)
-    .map((img: { url: string }) => img.url);
+  const images =
+    response?.allGalleries
+      ?.flatMap((gallery) => gallery.images)
+      .map((img) => ({
+        src: img.url,
+        alt: img.title || "Painted miniature", // fallback if no title
+      })) || [];
 
   return (
     <section className="w-full bg-gradient-to-b from-black via-slate-900 to-black flex justify-center items-center">

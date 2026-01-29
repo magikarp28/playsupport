@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
-import image from "@/../public/images/paintShowcase/horse man.png";
+import image from "@/../public/images/paintShowcase/Chaos Lord on Daemonic Mount.png";
 import image2 from "@/../public/images/paintShowcase/imperial fist.png";
 import HeroText from "./HeroText";
 
@@ -27,7 +27,7 @@ function Hero() {
         <div className="hidden md:basis-1/3 2xl:flex justify-center md:justify-start mb-6 md:mb-0 h-full self-end">
           <Image
             src={image2}
-            alt="Warhammer painting showcase image 1"
+            alt="Chaos Lord on Daemonic Mount painted miniature"
             className="w-full max-w-[70%] h-auto max-h-[100%]"
             sizes="(min-width: 1280px) 500px,(min-width: 768px) 350px,90vw"
             fetchPriority="high"
@@ -38,7 +38,7 @@ function Hero() {
         <div className="hidden md:basis-1/3 md:flex justify-end md:justify-end mb-6 md:mb-0">
           <Image
             src={image}
-            alt="Warhammer painting showcase image 2"
+            alt="Imperial fist captain painted miniature"
             className="w-full max-w-[90%] xl:max-w-[65%] h-auto max-h-[100%]"
             sizes="(min-width: 1280px) 500px,(min-width: 768px) 350px,90vw"
             fetchPriority="high"

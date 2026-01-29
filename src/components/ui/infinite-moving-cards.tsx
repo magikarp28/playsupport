@@ -11,7 +11,7 @@ export const InfiniteMovingCards = ({
   pauseOnHover = false,
   className,
 }: {
-  items: string[];
+  items: { src: string; alt: string }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
@@ -86,8 +86,8 @@ export const InfiniteMovingCards = ({
             <BackgroundGradient className="w-[16rem] h-[16rem] sm:w-[26rem] sm:h-[24rem]">
               <Image
                 sizes="(max-width: 768px) 70vw, 500px"
-                src={item}
-                alt={"image " + item}
+                src={item.src}
+                alt={item.alt}
                 width={400}
                 height={400}
                 style={{ objectFit: "cover" }}
