@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import SupportingTab from "./supporting-tab";
 import { SupportTabsData } from "@/app/lib/data";
 

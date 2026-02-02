@@ -13,9 +13,7 @@ export const metadata: Metadata = {
     "miniature painting",
     "wargaming miniatures",
     "Warhammer painting",
-    "DnD miniatures",
-    "board game painting",
-    "display miniatures",
+    "board game miniature painting",
     "commission painting",
     "painting service",
   ],
@@ -90,7 +88,7 @@ function page() {
         <div className="max-w-7xl w-full mt-20">
           <PricingTable />
           <p className="text-sm mt-2 mb-2">
-            Estimated miniature painting price ranges by category and paintin
+            Estimated miniature painting price ranges by category and painting
             tier. Exact quote depends on model complexity and requests.
           </p>
         </div>

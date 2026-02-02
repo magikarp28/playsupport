@@ -8,16 +8,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://playsupport.art"),
   title: "Miniature 3D Print Presupport Service – PlaySupport",
   description:
-    "Professional manual supports for your miniatures and 3D models. Get optimal results for resin 3D printing with our Lychee Pro expertise. Free sample available.",
+    "Professional manual pre supports for your resin 3d printed miniatures and 3D models.",
   applicationName: "PlaySupport",
   keywords: [
     "3d print supports",
     "miniature presupport",
     "resin 3d printing",
-    "Lychee Pro",
     "manual supports",
-    "warhammer",
-    "DnD",
     "miniatures",
   ],
   alternates: {
@@ -41,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "PlaySupport.art",
     title: "Miniature 3D Print Presupport Service – PlaySupport",
     description:
-      "Manual supports for miniatures and 3D models. See our quality with a free sample. Resin 3D printing specialists.",
+      "Professional manual pre supports for your resin 3d printed miniatures and 3D models.",
     images: [
       {
         url: "/android-chrome-512x512.png",
@@ -83,7 +80,7 @@ function page() {
         </p>
         <Link
           className="p-[3px] relative mt-2"
-          href="https://drive.google.com/file/d/1gQ1jys31MxcdCZwI0_iRmyEE_07Hnftf/view?usp=drive_link"
+          href="https://www.datocms-assets.com/160411/1769697786-ant-diplomat-v3.zip"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-full" />
           <div className=" bg-slate-950  relative group transition duration-200 text-white hover:bg-transparent px-3 py-2 rounded-full flex justify-center items-center">
