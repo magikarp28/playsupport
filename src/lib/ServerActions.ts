@@ -1,30 +1,24 @@
 "use server";
-import { error } from "console";
 import React from "react";
 import { render } from "@react-email/render";
 import StyledEmail from "@/app/email/StyledEmail";
+import { Resend } from "resend";
 
-const nodemailer = require("nodemailer");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  host: process.env.STMP_SERVER,
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+export type FormState = {
+  success?: boolean;
+  error?: string;
+  message?: string;
+};
 
 const validateString = (value: unknown, maxLength: number) => {
   if (!value || typeof value !== "string" || value.length > maxLength)
     return false;
-
   return true;
 };
 
-export async function sendEmail(formData: FormData) {
+export async function sendEmail(formData: FormData): Promise<FormState> {
   const message = formData.get("message");
   const email = formData.get("email");
   const name = formData.get("name");
@@ -36,6 +30,7 @@ export async function sendEmail(formData: FormData) {
     !validateString(name, 100)
   ) {
     return {
+      success: false,
       error: "Invalid input",
     };
   }
@@ -49,38 +44,49 @@ export async function sendEmail(formData: FormData) {
     }),
     {
       pretty: true,
-    }
+    },
   );
 
-  const mailOptions = {
-    from: process.env.GMAIL_USER,
-    to: "playsuppminis@gmail.com",
-    subject: `Playsupport message from ${formData.get("name")}`,
-    replyTo: formData.get("email"),
-    html: html,
-  };
-
-  let data;
-
   try {
-    data = await transporter.sendMail(mailOptions);
-    console.log("Email sent: " + data.response);
-  } catch (error: unknown) {
+    const { error } = await resend.emails.send({
+      from: "Poruka sa playsupport stranice! <onboarding@resend.dev>",
+      to: ["playsuppminis@gmail.com"],
+      subject: `Playsupport message from ${name}`,
+      html,
+    });
+
+    if (error) {
+      console.error("Resend error:", error); // <-- Add this line
+      return {
+        success: false,
+        error:
+          typeof error === "string"
+            ? error
+            : "Failed to send email. Please try again.",
+      };
+    }
+
     return {
+      success: true,
+      message: "Success! I'll get back to you as soon as possible.",
+    };
+  } catch (error: unknown) {
+    console.error("Server action error:", error); // <-- Add this line
+    return {
+      success: false,
       error: getErrorMessage(error),
     };
   }
-
-  return data;
 }
 
 function getErrorMessage(error: unknown): string {
-  let message: string;
   if (error instanceof Error) {
-    message = error.message;
-  } else if (error && typeof error === "object" && "message" in error) {
-    message = String(error.message);
-  } else if (typeof error === "string") {
+    return error.message;
+  }
+  if (error && typeof error === "object" && "message" in error) {
+    return String((error as any).message);
+  }
+  if (typeof error === "string") {
     return error;
   }
   return "An error occurred";

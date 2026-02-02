@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { sendEmail } from "@/lib/ServerActions";
 import SubmitFormButton from "./SubmitFormButton";
 import { MdMarkEmailRead } from "react-icons/md";
@@ -20,9 +20,9 @@ function ContactForm() {
       ) : (
         <form
           action={async (formData) => {
-            const { data, error } = await sendEmail(formData);
-            if (error) {
-              alert(error);
+            const result = await sendEmail(formData);
+            if (!result.success) {
+              alert(result.error);
               return;
             }
             setFormSent(true);
