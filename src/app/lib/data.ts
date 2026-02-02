@@ -16,14 +16,14 @@ export const testemonialsData: Testimonial[] = [
     name: "Eons of Battle",
     designation:
       "Youtube channel and high quality miniature terrain for 3d printing",
-    src: "/images/testimonials/EOB_LOGO.png",
+    src: "/images/testimonials/EOB_LOGO.jpg",
     link: "https://eonsofbattle.com/",
   },
   {
     quote:
       "Playsupport's services were impeccable, creating beautiful minis that matched exactly what I was hoping for. Not only were the minis completed with incredible quality, but also added with features, terrain and styling that made them truly come alive. All in all, if you want your minis to shine, send them to Playsupport!",
     name: "Brian",
-    designation: "Multiple Art tier commisions",
+    designation: "Multiple Art tier commissions",
     src: "/images/testimonials/Dred.jpg",
   },
   {

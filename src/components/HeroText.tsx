@@ -15,7 +15,10 @@ function HeroText() {
         />
       </div>
       <div className="sm:text-left ">
-        <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 pb-3">
+        <h1
+          id="home-heading"
+          className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 pb-3"
+        >
           PlaySupport
         </h1>
         <div className="text-white text-lg md:text-xl max-w-xl mt-6 flex flex-col gap-4">

@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ["/privacypolicy"],
     },
     sitemap: "https://playsupport.art/sitemap.xml",
-    host: "https://playsupport.art/sitemap.xml",
+    host: "https://playsupport.art",
   };
 }

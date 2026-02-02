@@ -4,10 +4,14 @@ import image from "@/../public/images/paintShowcase/ogroid myrmidon.png";
 
 function PaintingHome() {
   return (
-    <section className="w-full bg-gradient-to-b from-black to-slate-900 flex justify-center items-center">
+    <section
+      className="w-full bg-gradient-to-b from-black to-slate-900 flex justify-center items-center"
+      aria-labelledby="miniature-painting-service-heading"
+    >
       <div className="w-full max-w-screen-xl flex flex-col-reverse md:flex-row py-6 px-4 md:px-0">
         <div className="md:basis-1/2 flex flex-col justify-center gap-2 mb-6 md:mb-0">
           <h2
+            id="miniature-painting-service-heading"
             className="text-3xl bg-clip-text text-transparent mb-1
         bg-gradient-to-b from-white to-slate-400 sm:text-4xl pb-2 font-semibold"
           >
@@ -23,7 +27,13 @@ function PaintingHome() {
           </p>
           <p className="max-w-full text-lg">
             We paint all kinds of miniatures, from wargaming figures like
-            Warhammer to Dungeons & Dragons, board games, and display pieces.
+            Warhammer to Dungeons & Dragons, board games, and beautiful display
+            pieces.
+          </p>
+          <p className="max-w-full text-lg">
+            There are different painting tiers to fit your budget and needs, all
+            at an above industry standard quality. Basing is always included in
+            the price.
           </p>
           <p className="max-w-full text-lg">
             A single display figure or a whole army, playsupport is here to make

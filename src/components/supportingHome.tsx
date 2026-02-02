@@ -9,10 +9,14 @@ import PlaysuppButton from "./PlaysuppButton";
 
 function SupportingHome() {
   return (
-    <section className="w-full bg-gradient-to-b from-slate-900 to-black flex justify-center items-center">
+    <section
+      className="w-full bg-gradient-to-b from-slate-900 to-black flex justify-center items-center"
+      aria-labelledby="miniature-3d-print-resin-service-heading"
+    >
       <div className="w-full max-w-screen-xl flex flex-col-reverse md:flex-row-reverse py-6 px-4 md:px-0">
         <div className="md:basis-1/2 flex flex-col justify-center gap-2 mb-6 md:mb-0">
           <h2
+            id="miniature-3d-print-resin-service-heading"
             className="text-2xl bg-clip-text text-transparent mb-1
         bg-gradient-to-b from-white to-slate-400 sm:text-3xl pb-2 font-semibold"
           >

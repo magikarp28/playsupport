@@ -65,7 +65,13 @@ function page() {
       className="w-full text-center 
     h-fit flex flex-col justify-center items-center text-white px-3 z-10 bg-gradient-to-b from-black via-slate-900 to-black min-h-[calc(100vh-120px)]"
     >
-      <div className="max-w-screen-xl w-full mt-28  p-6 rounded-lg shadow-lg">
+      <h1
+        className="text-4xl bg-clip-text text-transparent mb-1
+        bg-gradient-to-b from-white to-slate-400 sm:text-4xl pb-2 font-semibold mt-28"
+      >
+        Painted miniatures gallery
+      </h1>
+      <div className="max-w-screen-xl w-full p-6 rounded-lg shadow-lg">
         <PlaySuppGalleryWrapper />
       </div>
     </section>

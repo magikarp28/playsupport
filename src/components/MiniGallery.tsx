@@ -45,9 +45,13 @@ async function MiniGallery() {
       })) || [];
 
   return (
-    <section className="w-full bg-gradient-to-b from-black via-slate-900 to-black flex justify-center items-center">
+    <section
+      className="w-full bg-gradient-to-b from-black via-slate-900 to-black flex justify-center items-center"
+      ria-labelledby="miniature-painting-gallery-heading"
+    >
       <div className="w-full max-w-screen-xl overflow-hidden flex flex-col py-6 mx-4 md:mx-0 items-center">
         <h2
+          id="miniature-painting-gallery-heading"
           className="text-2xl bg-clip-text text-transparent mt-4 mb-1
         bg-gradient-to-b from-white to-slate-400 sm:text-3xl pb-2 font-semibold"
         >

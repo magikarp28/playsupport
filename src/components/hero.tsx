@@ -9,6 +9,7 @@ function Hero() {
   return (
     <section
       id="Home"
+      aria-labelledby="home-heading"
       className=" w-screen h-fit relative overflow-hidden flex justify-center items-center z-20 bg-gradient-to-r from-rose-950 to-slate-950"
     >
       <div
