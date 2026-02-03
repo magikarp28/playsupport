@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "@/components/header";
 import Footer from "@/components/Footer";
+import type { WithContext, ProfessionalService } from "schema-dts";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,6 +62,41 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceSchema: WithContext<ProfessionalService> = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "PlaySupport",
+  url: "https://playsupport.art",
+  logo: "https://playsupport.art/android-chrome-512x512.png",
+  image: "https://playsupport.art/android-chrome-512x512.png",
+  description:
+    "PlaySupport offers high-quality miniature painting commissions and resin pre-support services for tabletop gaming and 3D printing.",
+  sameAs: [
+    "https://www.instagram.com/playsupport/",
+    "https://www.youtube.com/@PlaySupportMinis",
+  ],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Miniature Painting Commissions",
+        description:
+          "Custom miniature painting commissions for tabletop games like warhammer and display pieces.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Resin Pre-Support Services",
+        description:
+          "Professional resin pre-supports optimized for reliable 3D printing.",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -73,6 +109,14 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(serviceSchema),
+          }}
+        />
+      </head>
       <body
         className={`${inter.className} text-gray-950 relative max-w-[100%] overflow-x-hidden`}
       >

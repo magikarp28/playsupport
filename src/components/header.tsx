@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { motion } from "motion/react";
 import { links } from "@/app/lib/data";
 import Link from "next/link";
@@ -77,6 +76,7 @@ function Header() {
                 href="https://www.instagram.com/playsupport/"
                 className="text-white hover:text-rose-500 transition-colors block p-2"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Visit PlaySupport on Instagram"
               >
                 <BsInstagram className="text-lg" />
@@ -85,6 +85,7 @@ function Header() {
                 href="https://www.youtube.com/@PlaySupportMinis"
                 className="text-white hover:text-rose-500 transition-colors block p-2"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Visit PlaySupport on YouTube"
               >
                 <BsYoutube className="text-lg" />
