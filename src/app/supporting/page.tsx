@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://playsupport.art"),
   title: "Miniature 3D Print Presupport Service – PlaySupport",
   description:
-    "Professional manual pre supports for your resin 3d printed miniatures and 3D models.",
+    "Professional manual pre supports for resin 3d printed miniatures and 3D models.",
   applicationName: "PlaySupport",
   keywords: [
     "3d print supports",
     "miniature presupport",
     "resin 3d printing",
-    "manual supports",
+    "manual 3D print supports",
     "miniatures",
   ],
   alternates: {

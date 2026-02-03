@@ -12,10 +12,6 @@ export const metadata: Metadata = {
     "painted miniatures",
     "Warhammer gallery",
     "DnD miniatures",
-    "miniature showcase",
-    "painting examples",
-    "commission painting",
-    "PlaySupport gallery",
   ],
   alternates: {
     canonical: "https://playsupport.art/gallery",

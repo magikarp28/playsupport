@@ -3,18 +3,15 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://playsupport.art"),
-  title: "Contact – PlaySupport",
+  title: "Contact – PlaySupport miniature painting & 3D print presupporting",
   description:
     "Contact PlaySupport for miniature painting, 3D print presupporting, commissions, pricing, or any questions. Reach us via email or the contact form.",
   applicationName: "PlaySupport",
   keywords: [
     "contact",
     "miniature painting contact",
-    "3d print support contact",
     "commission inquiry",
-    "PlaySupport email",
     "miniature painting quote",
-    "resin printing quote",
   ],
   alternates: {
     canonical: "https://playsupport.art/contact",
