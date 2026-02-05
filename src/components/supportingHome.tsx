@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
-import { HiOutlineQuestionMarkCircle } from "react-icons/hi";
+import { HiOutlineDownload, HiOutlineQuestionMarkCircle } from "react-icons/hi";
 import { MdOutlineSpeed } from "react-icons/md";
 import image from "@/../public/images/paintShowcase/Rendered ant supported.png";
 import supportIcon from "@/../public/icons/SupportedSoldier.svg";
@@ -66,7 +66,8 @@ function SupportingHome() {
           <div className="w-full flex items-center justify-center">
             <PlaysuppButton
               href="https://www.datocms-assets.com/160411/1769697786-ant-diplomat-v3.zip"
-              text="Download Miniature Free"
+              text="Free miniature"
+              icon={HiOutlineDownload}
             />
           </div>
         </div>

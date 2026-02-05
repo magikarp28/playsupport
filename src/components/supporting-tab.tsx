@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 
 type SupportingTabProps = {
   title: string;
@@ -8,67 +7,51 @@ type SupportingTabProps = {
   video?: string;
 };
 
+function getAbsoluteVideoUrl(video?: string): string | undefined {
+  if (!video) return undefined;
+  if (video.startsWith("/")) {
+    return video;
+  }
+  return video;
+}
+
 function SupportingTab({
   title,
   description,
   imageUrl,
   video,
 }: SupportingTabProps) {
-  const [videoUrl, setVideoUrl] = useState(video || ""); // Default to an empty string if video is undefined
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (video && video.startsWith("/")) {
-      const absoluteUrl = `${window.location.origin}${video}`;
-      setVideoUrl(absoluteUrl);
-    } else {
-      setVideoUrl(video || ""); // Fallback for external URLs
-    }
-  }, [video]);
-
-  useEffect(() => {
-    const videoElement = videoRef.current;
-
-    if (videoElement) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            videoElement.play(); // Play video when it enters the viewport
-          } else {
-            videoElement.pause(); // Pause video when it leaves the viewport
-          }
-        },
-        { threshold: 0.5 } // Adjust threshold as needed (50% visibility)
-      );
-
-      observer.observe(videoElement);
-
-      return () => {
-        observer.unobserve(videoElement);
-      };
-    }
-  }, []);
-
+  const videoUrl = getAbsoluteVideoUrl(video);
   return (
-    <div className="p-[3px] relative mt-2 w-[18rem] sm:w-[24rem] lg:w-[28rem]">
-      <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-2xl" />
-      <div className="p-4 flex flex-col bg-gradient-to-b from-black to-slate-800 relative group justify-start items-center w-full h-full rounded-2xl">
-        <div className="flex flex-col items-center text-center">
-          <video
-            ref={videoRef}
-            muted
-            loop
-            src={videoUrl}
-            className="rounded-2xl mb-4 w-full h-auto"
-          ></video>
-          <h3
-            className="text-xl bg-clip-text text-transparent mt-4 mb-1
-        bg-gradient-to-b from-white to-slate-400 sm:text-2xl pb-2 font-semibold"
+    <div className="p-[3px] relative w-full h-full">
+      <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-fuchsia-600 rounded-xl sm:rounded-2xl" />
+      <div className="p-4 sm:p-6 flex flex-col bg-gradient-to-b from-black to-slate-800 relative group h-full rounded-xl sm:rounded-2xl">
+        {/* Video section */}
+        {videoUrl && (
+          <div className="mb-4 w-full overflow-hidden rounded-lg sm:rounded-xl">
+            <video
+              muted
+              loop
+              autoPlay
+              src={videoUrl}
+              className="w-full h-40 sm:h-48 lg:h-56 object-cover"
+              playsInline
+            ></video>
+          </div>
+        )}
+
+        {/* Content section */}
+        <div className="flex flex-col flex-grow">
+          <h2
+            className="text-lg sm:text-xl lg:text-2xl bg-clip-text text-transparent mb-2 sm:mb-3
+            bg-gradient-to-b from-white to-slate-400 font-semibold text-center px-1"
           >
             {title}
-          </h3>
+          </h2>
+          <p className="text-gray-300 text-sm sm:text-base text-center flex-grow px-1 sm:px-2">
+            {description}
+          </p>
         </div>
-        <p>{description}</p>
       </div>
     </div>
   );

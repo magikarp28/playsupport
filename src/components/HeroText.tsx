@@ -17,7 +17,7 @@ function HeroText() {
       <div className="sm:text-left ">
         <h1
           id="home-heading"
-          className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 pb-3"
+          className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 pb-3"
         >
           PlaySupport
         </h1>
@@ -38,11 +38,11 @@ function HeroText() {
               <li className="ml-2 flex items-start">
                 <FaPaintBrush className="inline mr-2 mt-1 text-3xl" />
                 Getting your miniatures ready for the tabletop – painting,
-                assembling, magnetizing
+                assembling, basing, magnetizing
               </li>
               <li className="ml-2 flex items-start">
                 <Gi3dMeeple className="inline mr-2 mt-1 text-3xl" />
-                Supporting your 3D miniatures for resin 3D printing so they
+                Supporting your 3D miniature files for resin 3D printing so they
                 print properly every time
               </li>
             </ul>

@@ -1,11 +1,10 @@
-"use client";
 import SupportingTab from "./supporting-tab";
 import { SupportTabsData } from "@/app/lib/data";
 
 function Supportperks() {
   return (
-    <div className="mb-10 w-full flex flex-wrap justify-center items-center max-w-screen-2xl mt-10 ">
-      <div className="w-full flex gap-5 justify-center flex-wrap items-stretch">
+    <div className="mb-10 w-full mt-10">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {SupportTabsData.map((tab, index) => (
           <SupportingTab
             key={index}
