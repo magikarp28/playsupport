@@ -25,7 +25,7 @@ const config = {
       fontFamily: {
         hero: ['"Grenze Gotisch"', "serif"],
         army: ['"IM Fell French Canon"', "serif"],
-        art: ['"Dynalight"', "serif"],
+        art: ['"PetitFormalScript"', "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -107,7 +107,7 @@ export default config;
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
   );
 
   addBase({
