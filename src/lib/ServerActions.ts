@@ -51,7 +51,8 @@ export async function sendEmail(formData: FormData): Promise<FormState> {
     const { error } = await resend.emails.send({
       from: "Poruka sa playsupport stranice! <onboarding@resend.dev>",
       to: ["playsuppminis@gmail.com"],
-      subject: `Playsupport message from ${name}`,
+      replyTo: email as string,
+      subject: `${inquiryType} Playsupport miniatures contact form`,
       html,
     });
 
