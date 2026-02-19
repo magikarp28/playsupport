@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -170,6 +171,16 @@ export const AnimatedTestimonials = ({
                 </motion.span>
               ))}
             </motion.p>
+            {testimonials[active].link && (
+              <Link
+                href={testimonials[active].link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-4 text-rose-300 underline underline-offset-2 hover:text-rose-500 transition-colors duration-200 text-sm"
+              >
+                Explore {testimonials[active].name}
+              </Link>
+            )}
           </motion.div>
           <div className="flex gap-4 pt-8 md:pt-0 justify-center ">
             <button
