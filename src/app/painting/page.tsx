@@ -85,12 +85,27 @@ function page() {
         </div>
       </div>
       <div className="w-full bg-gradient-to-b from-slate-900 to-black flex flex-col items-center">
-        <div className="max-w-7xl w-full mt-20">
+        <div className="max-w-[85%] md:max-w-6xl w-full mt-20 flex flex-col items-center ">
           <PricingTable />
-          <p className="text-sm mt-2 mb-2">
+          <p className="text-xs md:text-sm mt-2 mb-2">
             Estimated miniature painting price ranges by category and painting
             tier. Exact quote depends on model complexity and requests.
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-3  max-w-5xl">
+            <p className="text-xs md:text-sm flex items-center justify-center p-2 bg-slate-800/30 rounded-lg border border-slate-700">
+              <span>
+                <span className="font-semibold">Non-EU:</span> Customer
+                responsible for potential additional import fees and customs.
+              </span>
+            </p>
+            <p className="text-xs md:text-sm flex items-start gap-2 bg-slate-800/30 p-2 rounded-lg border border-slate-700">
+              <span>
+                <span className="font-semibold">EU:</span> VAT free! No
+                additional fees in Germany, Austria, Denmark, France,
+                Netherlands, Belgium, etc.
+              </span>
+            </p>
+          </div>
         </div>
         <PlaysuppButton text="Get a Free Quote" href="/contact" />
       </div>
