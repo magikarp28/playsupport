@@ -63,7 +63,7 @@ function page() {
     h-fit flex flex-col justify-center items-center text-white z-10 min-h-[calc(100vh-120px)]"
     >
       <div className="w-full bg-gradient-to-b from-black to-slate-900 flex flex-col items-center px-3">
-        <div className="max-w-7xl w-full mt-28">
+        <div className="max-w-7xl w-full mt-32">
           <h1
             className="text-3xl bg-clip-text text-transparent mt-4 mb-1
         bg-gradient-to-b from-white to-slate-400 sm:text-4xl pb-2 font-semibold"

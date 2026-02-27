@@ -62,7 +62,7 @@ function page() {
       id="Contact"
       className="w-full text-center h-fit flex flex-col justify-center items-center text-white z-10 bg-gradient-to-b from-black via-slate-900 to-black min-h-[calc(100vh-120px)]"
     >
-      <div className="w-full max-w-screen-xl mt-20 md:mt-28 flex flex-col px-4 sm:px-6 lg:px-8 justify-center items-center gap-8 md:gap-12">
+      <div className="w-full max-w-screen-xl mt-36 md:mt-28 lg:mt-14 flex flex-col px-4 sm:px-6 lg:px-8 justify-center items-center gap-8 md:gap-12">
         <div className="flex flex-col lg:flex-row w-full items-center gap-8 md:gap-12">
           <div className="lg:basis-1/2 w-full text-center lg:text-left flex flex-col items-center lg:items-start gap-6">
             <h1

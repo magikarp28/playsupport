@@ -58,7 +58,7 @@ function page() {
       className="w-full text-center 
     h-fit flex flex-col justify-center items-center text-white bg-gradient-to-b from-black via-slate-900 to-black z-10 min-h-[calc(100vh-120px)]"
     >
-      <div className="w-full max-w-screen-md mt-28 flex flex-col justify-center items-center gap-2 px-3">
+      <div className="w-full max-w-screen-md mt-32 flex flex-col justify-center items-center gap-2 px-3">
         <h1
           className="text-4xl bg-clip-text text-transparent mt-4 mb-1
         bg-gradient-to-b from-white to-slate-400 sm:text-4xl pb-2 font-semibold"

@@ -63,7 +63,7 @@ function page() {
     >
       <h1
         className="text-4xl bg-clip-text text-transparent mb-1
-        bg-gradient-to-b from-white to-slate-400 sm:text-4xl pb-2 font-semibold mt-28"
+        bg-gradient-to-b from-white to-slate-400 sm:text-4xl pb-2 font-semibold mt-36"
       >
         Painted miniatures gallery
       </h1>
