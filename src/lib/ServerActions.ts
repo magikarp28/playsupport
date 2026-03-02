@@ -5,6 +5,8 @@ import StyledEmail from "@/app/email/StyledEmail";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const DHES = require("detect-high-entropy-strings");
+const detector = new DHES();
 
 export type FormState = {
   success?: boolean;
@@ -27,7 +29,9 @@ export async function sendEmail(formData: FormData): Promise<FormState> {
   if (
     !validateString(message, 1000) ||
     !validateString(email, 100) ||
-    !validateString(name, 100)
+    !validateString(name, 100) ||
+    detector.isHighEntropyString(name as string) ||
+    detector.isHighEntropyString(message as string)
   ) {
     return {
       success: false,
@@ -52,7 +56,7 @@ export async function sendEmail(formData: FormData): Promise<FormState> {
       from: "Poruka sa playsupport stranice! <onboarding@resend.dev>",
       to: ["playsuppminis@gmail.com"],
       replyTo: email as string,
-      subject: `${inquiryType} Playsupport miniatures contact form`,
+      subject: `Playsupport miniatures inquiry from ${name}`,
       html,
     });
 

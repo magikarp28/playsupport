@@ -36,6 +36,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      detect-high-entropy-strings:
+        specifier: ^1.0.4
+        version: 1.0.4
       fs:
         specifier: 0.0.1-security
         version: 0.0.1-security
@@ -1364,6 +1367,9 @@ packages:
   des.js@1.1.0:
     resolution: {integrity: sha512-r17GxjhUCjSRy8aiJpr8/UadFIzMzJGexI3Nmz4ADi9LYSFx4gTBp80+NaX/YsXWWLhpZ7v/v/ubEc/bCNfKwg==}
 
+  detect-high-entropy-strings@1.0.4:
+    resolution: {integrity: sha512-UPnjeHLuft74bQLqrHgEoUutzP4DgRyXCsZMJR/rUQHjbHq2MfsNQgQ96zLaRyn4Sk29uyg1MbNXrlii4hp03A==}
+
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
@@ -1877,7 +1883,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
@@ -4980,6 +4986,8 @@ snapshots:
     dependencies:
       inherits: 2.0.4
       minimalistic-assert: 1.0.1
+
+  detect-high-entropy-strings@1.0.4: {}
 
   detect-libc@2.1.2:
     optional: true
