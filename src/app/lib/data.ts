@@ -12,6 +12,14 @@ type Testimonial = {
 export const testemonialsData: Testimonial[] = [
   {
     quote:
+      "Everything is absolutely perfect and very profesionally made. Their work is super efficient and the files work perfectly. Files well sorted and organized. Clear commincation, very friendly and helpful in many points - I am looking forward to our next project!",
+    name: "MiniScape Studio",
+    designation: "Epic Bases for Display Miniatures",
+    src: "/images/testimonials/MiniscapeStudio.jpg",
+    link: "https://miniscape-studio.com/",
+  },
+  {
+    quote:
       "Always a pleasure working with PlaySupport! Perfect supports every time has us always coming back to get our monthly terrain packs professionally supported. Communication is always top notch!",
     name: "Eons of Battle",
     designation:
