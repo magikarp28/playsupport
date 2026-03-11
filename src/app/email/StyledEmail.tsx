@@ -17,6 +17,7 @@ interface StyledEmailProps {
   senderEmail: string;
   senderName: string;
   inquiryType: string;
+  honey: string;
 }
 
 function StyledEmail(StyledEmailProps: StyledEmailProps) {

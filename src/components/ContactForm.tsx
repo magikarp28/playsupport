@@ -71,6 +71,15 @@ function ContactForm() {
             required
             className="p-2 h-44 resize-none rounded-lg border border-transparent focus:border-fuchsia-600 focus:outline-none transition duration-300"
           />
+
+          <input
+            name="honey"
+            type="text"
+            maxLength={25}
+            placeholder=""
+            className="hidden"
+          />
+
           <SubmitFormButton />
         </form>
       )}

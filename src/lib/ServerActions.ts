@@ -23,6 +23,13 @@ export async function sendEmail(formData: FormData): Promise<FormState> {
   const email = formData.get("email");
   const name = formData.get("name");
   const inquiryType = formData.get("inquiryType");
+  const honey = formData.get("honey");
+  if (honey && typeof honey === "string" && honey.trim() !== "") {
+    return {
+      success: false,
+      error: "Bot detected",
+    };
+  }
 
   if (
     !validateString(message, 5000) ||
@@ -41,6 +48,7 @@ export async function sendEmail(formData: FormData): Promise<FormState> {
       senderEmail: email as string,
       senderName: name as string,
       inquiryType: inquiryType as string,
+      honey: honey as string,
     }),
     {
       pretty: true,
