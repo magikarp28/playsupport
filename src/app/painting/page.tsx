@@ -1,3 +1,4 @@
+import PaintingProcess from "@/components/PaintingProcess";
 import PaintingTiers from "@/components/PaintingTiers";
 import PlaysuppButton from "@/components/PlaysuppButton";
 import PricingTable from "@/components/PricingTable";
@@ -71,8 +72,9 @@ function page() {
             Miniature painting service
           </h1>
           <p className="max-w-screen-xl text-lg">
-            We paint all kinds of miniatures, from wargaming figures like
-            Warhammer to Dungeons & Dragons, board games, and display pieces.
+            In our commision painting service paint all kinds of miniatures,
+            from wargaming figures like Warhammer to Dungeons & Dragons, board
+            games, and display pieces.
           </p>
           <h4
             className="text-lg bg-clip-text text-transparent mt-4 mb-1
@@ -86,6 +88,7 @@ function page() {
       </div>
       <div className="w-full bg-gradient-to-b from-slate-900 to-black flex flex-col items-center">
         <div className="max-w-[85%] md:max-w-6xl w-full mt-20 flex flex-col items-center ">
+          <PaintingProcess />
           <PricingTable />
           <p className="text-xs md:text-sm mt-2 mb-2">
             Estimated miniature painting price ranges by category and painting
@@ -107,7 +110,6 @@ function page() {
             </p>
           </div>
         </div>
-        <PlaysuppButton text="Get a Free Quote" href="/contact" />
       </div>
     </section>
   );

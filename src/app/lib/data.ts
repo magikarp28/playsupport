@@ -1,5 +1,49 @@
 import supportedSoldier from "@/../public/SupportedSoldier.svg";
-import { title } from "process";
+
+export type PaintingStep = {
+  title: string;
+  description: string;
+  ImgSrc: string;
+  color: string;
+};
+
+export const paintingSteps: PaintingStep[] = [
+  {
+    title: "Choose how to provide your miniatures",
+    description:
+      "Send your models to us, ask us to purchase them for you, or have us 3D print them using high-resolution resin printers.",
+    ImgSrc: "/images/paintingProcess/step1.jpg",
+    color: "oklch(74% 0.238 322.16)",
+  },
+  {
+    title: "List your miniatures",
+    description:
+      "Provide a clear list of models, squads, or armies you want painted.",
+    ImgSrc: "/images/paintingProcess/step2.jpg",
+    color: "oklch(64.5% 0.246 16.439)",
+  },
+  {
+    title: "Select a painting tier",
+    description:
+      "Choose between Army, Hero, or Art tier depending on your desired level of detail.",
+    ImgSrc: "/images/paintingProcess/step3.jpg",
+    color: "oklch(64.5% 0.246 16.439)",
+  },
+  {
+    title: "Choose your basing style",
+    description:
+      "Let us know your preferred base theme such as snow, desert, jungle, or grasslands.",
+    ImgSrc: "/images/paintingProcess/step4.jpg",
+    color: "oklch(74% 0.238 322.16)",
+  },
+  {
+    title: "Add special requests",
+    description:
+      "Include color schemes, references, or any specific instructions for your miniatures.",
+    ImgSrc: "/images/paintingProcess/step5.jpg",
+    color: "oklch(74% 0.238 322.16)",
+  },
+];
 
 type Testimonial = {
   quote: string;

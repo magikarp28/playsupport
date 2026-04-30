@@ -95,10 +95,7 @@ function PaintingHome() {
           </div>
 
           <div className="w-full flex justify-center mt-4">
-            <PlaysuppButton
-              text="See Painting Tiers and Pricing"
-              href="/painting"
-            />
+            <PlaysuppButton text="Painting Service" href="/painting" />
           </div>
         </div>
         <div className="md:basis-1/2 flex justify-center md:justify-end items-center mb-6 md:mb-0">
