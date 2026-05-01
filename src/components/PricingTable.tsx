@@ -36,9 +36,11 @@ const pricing = [
 
 function PricingTable() {
   return (
-    <section className="text-slate-100 w-full flex justify-center">
+    <section className="text-slate-100 w-full flex justify-center pt-12">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-semibold mt-2 mb-3">Our Pricing chart</h2>
+        <h2 className="text-2xl sm:text-4xl font-semibold mb-3 text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 py-2">
+          Our Pricing Chart
+        </h2>
 
         {/* Desktop table-like grid */}
         <div className="hidden md:block border rounded-lg overflow-hidden shadow-sm bg-slate-900/40">

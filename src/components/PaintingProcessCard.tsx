@@ -39,7 +39,7 @@ function PaintingProcessCard({ step, index }: PaintingProcessCardProps) {
           sizes="(max-width: 768px) 100vw, 45vw"
           className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90" />
+        <div className="pointer-events-none absolute inset-0 b opacity-100" />
         <div className="absolute bottom-4 left-4 sm:bottom-5 sm:left-5">
           <span
             style={badgeStyles}
@@ -58,7 +58,7 @@ function PaintingProcessCard({ step, index }: PaintingProcessCardProps) {
             {step.title}
           </h3>
 
-          <p className="text-mg leading-relaxed text-slate-300">
+          <p className="text-mg leading-relaxed text-slate-300 whitespace-pre-line">
             {step.description}
           </p>
         </div>

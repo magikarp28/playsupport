@@ -5,43 +5,42 @@ export type PaintingStep = {
   description: string;
   ImgSrc: string;
   color: string;
+  alt?: string;
 };
 
 export const paintingSteps: PaintingStep[] = [
   {
-    title: "Choose how to provide your miniatures",
-    description:
-      "Send your models to us, ask us to purchase them for you, or have us 3D print them using high-resolution resin printers.",
-    ImgSrc: "/images/paintingProcess/step1.jpg",
-    color: "oklch(74% 0.238 322.16)",
-  },
-  {
     title: "List your miniatures",
     description:
-      "Provide a clear list of models, squads, or armies you want painted.",
-    ImgSrc: "/images/paintingProcess/step2.jpg",
+      "Provide a clear list of models, squads, or armies you want painted and if you need them assembled, magnetized or if they need paint removal. \nWe work with anything, from a small single miniature to a large army commision.",
+    ImgSrc:
+      "/images/paintingProcess/Slaves to darkness EOS army playsupport.jpg",
     color: "oklch(64.5% 0.246 16.439)",
+    alt: "List of miniatures",
+  },
+  {
+    title: "Tell us about your models",
+    description:
+      "Tell us if you want to send your miniatures to us, if you want us to get them for you or if you'd like us to 3d print them for you with our high quality resin 3d printers.",
+    ImgSrc: "/images/paintingProcess/ManyMiniatures.jpg",
+    color: "oklch(74% 0.238 322.16)",
+    alt: "All kinds of miniatures",
   },
   {
     title: "Select a painting tier",
     description:
-      "Choose between Army, Hero, or Art tier depending on your desired level of detail.",
-    ImgSrc: "/images/paintingProcess/step3.jpg",
+      "Choose between Army, Hero, or Art tier for each individual miniature or squad. \nArmy tier is perfect for larger squads, Hero tier is great for characters and Art tier is here for pieces that you want to truly stand out.",
+    ImgSrc: "/images/paintingProcess/painting tiers examples.jpg",
     color: "oklch(64.5% 0.246 16.439)",
+    alt: "Painting tier examples",
   },
   {
-    title: "Choose your basing style",
+    title: "Choose your paint scheme and basing style",
     description:
-      "Let us know your preferred base theme such as snow, desert, jungle, or grasslands.",
-    ImgSrc: "/images/paintingProcess/step4.jpg",
+      "Let us know what paint scheme or syle you want your miniatures painted in and your preferred base theme such as snow, desert, jungle, ruined city etc.",
+    ImgSrc: "/images/paintingProcess/Painted miniatures.jpg",
     color: "oklch(74% 0.238 322.16)",
-  },
-  {
-    title: "Add special requests",
-    description:
-      "Include color schemes, references, or any specific instructions for your miniatures.",
-    ImgSrc: "/images/paintingProcess/step5.jpg",
-    color: "oklch(74% 0.238 322.16)",
+    alt: "Painted miniature scheme",
   },
 ];
 

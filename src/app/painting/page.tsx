@@ -1,6 +1,5 @@
 import PaintingProcess from "@/components/PaintingProcess";
 import PaintingTiers from "@/components/PaintingTiers";
-import PlaysuppButton from "@/components/PlaysuppButton";
 import PricingTable from "@/components/PricingTable";
 import { Metadata } from "next";
 
@@ -87,7 +86,7 @@ function page() {
         </div>
       </div>
       <div className="w-full bg-gradient-to-b from-slate-900 to-black flex flex-col items-center">
-        <div className="max-w-[85%] md:max-w-6xl w-full mt-20 flex flex-col items-center ">
+        <div className="max-w-[85%] md:max-w-screen-xl w-full mt-20 flex flex-col items-center ">
           <PaintingProcess />
           <PricingTable />
           <p className="text-xs md:text-sm mt-2 mb-2">
