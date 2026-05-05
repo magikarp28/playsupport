@@ -66,7 +66,7 @@ function ContactForm() {
           </div>
           <textarea
             name="message"
-            maxLength={1000}
+            maxLength={5000}
             placeholder="Message"
             required
             className="p-2 h-44 resize-none rounded-lg border border-transparent focus:border-fuchsia-600 focus:outline-none transition duration-300"

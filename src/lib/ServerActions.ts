@@ -32,7 +32,7 @@ export async function sendEmail(formData: FormData): Promise<FormState> {
   }
 
   if (
-    !validateString(message, 5000) ||
+    !validateString(message, 6000) ||
     !validateString(email, 100) ||
     !validateString(name, 100)
   ) {
