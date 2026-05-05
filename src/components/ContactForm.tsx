@@ -69,7 +69,9 @@ function ContactForm() {
             maxLength={5000}
             placeholder="Message"
             required
-            className="p-2 h-44 resize-none rounded-lg border border-transparent focus:border-fuchsia-600 focus:outline-none transition duration-300"
+            rows={10}
+            className="p-2 resize-none rounded-lg border border-transparent focus:border-fuchsia-600 focus:outline-none transition duration-300"
+            style={{ minHeight: "14rem" }}
           />
 
           <input
