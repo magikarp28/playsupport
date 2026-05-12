@@ -141,11 +141,12 @@
       "prefix": "Wir bieten einen ",
       "highlight": "professionellen Service",
       "middle": "an, um deine Miniaturen",
-      "suffix": "zu basen, zu magnetisieren und spielbereit oder perfekt für die Vitrine zu machen."
+      "middle2": " zu bemalen",
+      "suffix": " zu basen, zu magnetisieren und spielbereit oder perfekt für die Vitrine zu machen."
     },
     "card2": {
       "prefix": "Wir können deine Miniaturen auch",
-      "highlight": "in 3D drucken",
+      "highlight": " in 3D drucken",
       "suffix": "mit hochwertigen Resin-3D-Druckern."
     },
     "card3": {

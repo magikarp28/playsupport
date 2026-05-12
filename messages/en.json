@@ -140,7 +140,8 @@
     "card1": {
       "prefix": "We offer a ",
       "highlight": "professional service",
-      "middle": "to get your miniatures ",
+      "middle": "to get your miniatures",
+      "middle2": " painted",
       "suffix": " based, magnetized and ready for gaming or display."
     },
     "card2": {

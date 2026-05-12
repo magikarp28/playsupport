@@ -38,8 +38,10 @@ function PaintingHome() {
                   {t("card1.highlight")}
                 </span>{" "}
                 {t("card1.middle")}
-                <span className="text-fuchsia-300 font-medium">painted</span>,
-                {t("card1.suffix")}
+                <span className="text-fuchsia-300 font-medium">
+                  {t("card1.middle2")}
+                </span>
+                ,{t("card1.suffix")}
               </p>
               <FaPaintBrush className="text-fuchsia-500 text-3xl flex-shrink-0 group-hover:scale-110" />
             </div>
@@ -63,11 +65,13 @@ function PaintingHome() {
               <p className="text-md flex-1">
                 {t("card3.prefix")}
                 <span className="text-fuchsia-300 font-medium">
+                  {" "}
                   Warhammer
                 </span>{" "}
                 {t("card3.middle")}
                 <span className="text-fuchsia-300 font-medium">
-                  Dungeons & Dragons
+                  {" "}
+                  Dungeons & Dragonss
                 </span>
                 , {t("card3.suffix")}
               </p>
