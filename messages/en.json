@@ -138,14 +138,14 @@
   "PaintingHome": {
     "title": "Miniature painting service",
     "card1": {
-      "prefix": "We offer a",
+      "prefix": "We offer a ",
       "highlight": "professional service",
-      "middle": "to get your miniatures",
-      "suffix": "based, magnetized and ready for gaming or display."
+      "middle": "to get your miniatures ",
+      "suffix": " based, magnetized and ready for gaming or display."
     },
     "card2": {
       "prefix": "We can also",
-      "highlight": "3D print your miniatures",
+      "highlight": " 3D print your miniatures",
       "suffix": "with a high quality resin 3D printer."
     },
     "card3": {
