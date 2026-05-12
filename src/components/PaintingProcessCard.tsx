@@ -5,9 +5,14 @@ import type { CSSProperties } from "react";
 type PaintingProcessCardProps = {
   step: PaintingStep;
   index: number;
+  stepLabel: string;
 };
 
-function PaintingProcessCard({ step, index }: PaintingProcessCardProps) {
+function PaintingProcessCard({
+  step,
+  index,
+  stepLabel,
+}: PaintingProcessCardProps) {
   const cardStyles = {
     borderColor: `color-mix(in oklab, ${step.color} 30%, transparent)`,
     boxShadow: `0 8px 30px color-mix(in oklab, ${step.color} 12%, transparent)`,
@@ -46,7 +51,7 @@ function PaintingProcessCard({ step, index }: PaintingProcessCardProps) {
             className="inline-flex items-center gap-2 rounded-full border bg-black/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] backdrop-blur-md transition-all duration-500 group-hover:translate-x-2"
           >
             <span style={dotStyles} className="h-1.5 w-1.5 rounded-full " />
-            Step {index + 1}
+            {stepLabel} {index + 1}
           </span>
         </div>
       </div>

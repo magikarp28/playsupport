@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/privacypolicy"],
+      disallow: ["/privacypolicy", "/de/privacypolicy"],
     },
     sitemap: "https://playsupport.art/sitemap.xml",
     host: "https://playsupport.art",

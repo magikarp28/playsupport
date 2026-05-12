@@ -1,0 +1,230 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "painting": "Painting",
+    "gallery": "Gallery",
+    "supporting": "Supporting",
+    "contact": "Contact"
+  },
+  "ContactPage": {
+    "metadata": {
+      "title": "Contact - PlaySupport miniature painting & 3D print presupporting",
+      "description": "Contact PlaySupport for miniature painting, 3D print presupporting, commissions, pricing, or any questions. Reach us via email or the contact form.",
+      "ogTitle": "Contact - PlaySupport",
+      "ogDescription": "Get in touch with PlaySupport for miniature painting, 3D print presupporting, commissions, and more."
+    },
+    "title": "Contact us",
+    "subtitle": "You can also ask for a commission, pricing info, or any other question you have in mind at"
+  },
+  "PaintingPage": {
+    "metadata": {
+      "title": "Miniature Painting Service - PlaySupport",
+      "description": "Professional miniature painting for wargaming, DnD, board games, and display pieces. Explore our painting tiers and pricing. Based in the EU.",
+      "ogTitle": "Miniature Painting Service - PlaySupport",
+      "ogDescription": "Commission painting for miniatures: Warhammer, DnD, board games, and more. See our tiers and pricing."
+    },
+    "title": "Miniature painting service",
+    "intro": "In our commission painting service, we paint all kinds of miniatures, from wargaming figures like Warhammer to Dungeons & Dragons, board games, and display pieces.",
+    "tiersLead": "Take a look at our painting tiers and pricing, the results and value speak for themselves!",
+    "priceNote": "Estimated miniature painting price ranges by category and painting tier. Exact quote depends on model complexity and requests.",
+    "nonEu": "Customer responsible for potential additional import fees and customs.",
+    "eu": "VAT free! No additional fees in Germany, Austria, Denmark, France, Netherlands, Belgium, etc."
+  },
+  "PaintingProcess": {
+    "steps": [
+      {
+        "title": "List your miniatures",
+        "description": "Provide a clear list of models, squads, or armies you want painted and whether you need them assembled, magnetized, or paint removed. We work with anything, from a single miniature to a large army commission."
+      },
+      {
+        "title": "Tell us about your models",
+        "description": "Tell us if you want to send your miniatures to us, if you want us to get them for you, or if you want us to 3D print them for you with our high-quality resin printers."
+      },
+      {
+        "title": "Select a painting tier",
+        "description": "Choose between Army, Hero, or Art tier for each miniature or squad. Army tier is perfect for larger squads, Hero tier is great for characters, and Art tier is for pieces that should truly stand out."
+      },
+      {
+        "title": "Choose your paint scheme and basing style",
+        "description": "Let us know what paint scheme or style you want and your preferred base theme such as snow, desert, jungle, ruined city, etc."
+      }
+    ]
+  },
+  "PaintingTiers": {
+    "levels": [
+      {
+        "title": "Army Tier",
+        "text": "Clean transitions and highlights for an awesome army."
+      },
+      {
+        "title": "Hero Tier",
+        "text": "More attention to every detail with more advanced techniques."
+      },
+      {
+        "title": "Art Tier",
+        "text": "Every surface has its own texture, every miniature a unique story."
+      }
+    ]
+  },
+  "SupportTabs": {
+    "items": [
+      {
+        "title": "Reliability",
+        "description": "Careful manual support placement and island checking ensures the best print success rate possible."
+      },
+      {
+        "title": "Easy support removal",
+        "description": "Despite the high reliability of our supports, they are easy to remove and do not leave large marks."
+      },
+      {
+        "title": "Hollowing large files",
+        "description": "To make sure you do not waste resin and printer lifetime, we hollow your miniatures wherever appropriate."
+      }
+    ]
+  },
+  "Testimonials": {
+    "items": [
+      {
+        "quote": "Everything is absolutely perfect and very professionally made. Their work is super efficient and the files work perfectly.",
+        "name": "MiniScape Studio",
+        "designation": "Epic Bases for Display Miniatures"
+      },
+      {
+        "quote": "Always a pleasure working with PlaySupport! Perfect supports every time has us always coming back.",
+        "name": "Eons of Battle",
+        "designation": "YouTube channel and high quality miniature terrain for 3D printing"
+      },
+      {
+        "quote": "PlaySupport's services were impeccable, creating beautiful minis that matched exactly what I hoped for.",
+        "name": "Brian",
+        "designation": "Multiple Art tier commissions"
+      }
+    ]
+  },
+  "Gallery": {
+    "title": "Painted miniatures gallery",
+    "filters": {
+      "all": "All",
+      "army": "Army",
+      "hero": "Hero",
+      "art": "Art"
+    },
+    "tiers": {
+      "army": "Army",
+      "hero": "Hero",
+      "art": "Art"
+    },
+    "pagination": {
+      "showing": "Showing {start}-{end} of {total} items"
+    }
+  },
+  "SupportingPage": {
+    "title": "Miniature pre support service",
+    "description1": "We provide professional manual supports service for your warhammer-like, DnD or any other miniatures or 3D models, made with Lychee Plus software, allowing us to make optimal results for resin 3D printing.",
+    "description2": "Let us handle the creation of supports so you can focus your craft and make the best possible miniatures",
+    "description3": "You can download a free sample below to see the quality of our work.",
+    "buttonFree": "Free miniature",
+    "buttonQuote": "Get a Free Quote"
+  },
+  "Hero": {
+    "brand": "Playsupport",
+    "intro": "There is no worse fate for a hobby than it becoming a chore. Our lives are filled with enough obligations as it is. We are here to support you so that you can focus on playing.",
+    "supportLead": "offers you support with:",
+    "item1": "Getting your miniatures ready for the tabletop – painting, assembling, basing, magnetizing",
+    "item2": "Supporting your 3D miniature files for resin 3D printing so they print properly every time",
+    "location": "Based in Croatia, EU.",
+    "cta": "Get In Touch"
+  },
+  "PaintingHome": {
+    "title": "Miniature painting service",
+    "card1": {
+      "prefix": "We offer a",
+      "highlight": "professional service",
+      "middle": "to get your miniatures",
+      "suffix": "based, magnetized and ready for gaming or display."
+    },
+    "card2": {
+      "prefix": "We can also",
+      "highlight": "3D print your miniatures",
+      "suffix": "with a high quality resin 3D printer."
+    },
+    "card3": {
+      "prefix": "We paint all kinds of miniatures, from wargaming figures like",
+      "middle": "to",
+      "suffix": "board games, and beautiful display pieces."
+    },
+    "card4": {
+      "title": "Flexible Pricing",
+      "body": "Different painting tiers to fit your budget and needs, all at above industry standard quality. Basing is included in price."
+    },
+    "card5": {
+      "title": "Any Kind of Project",
+      "body": "A single display figure or a whole army, playsupport is here to make it happen!"
+    },
+    "cta": "Painting Service"
+  },
+  "SupportingHome": {
+    "title": "Resin 3D print pre supporting service",
+    "item1": "Reliable supports that won't fail you",
+    "item2": "Easy to remove with minimal support damage",
+    "item3": "Free troubleshooting and assistance if you need dialing in settings or have printer issues",
+    "item4": "Optional test printing",
+    "item5": "Fast turnaround and fair pricing",
+    "cta": "Free miniature"
+  },
+  "ContactSection": {
+    "title": "Contact",
+    "subtitle": "Ask for a miniature painting, resin 3d pre-supporting service or any question you have!"
+  },
+  "MiniGallery": {
+    "title": "Recently painted miniatures",
+    "cta": "Check Gallery"
+  },
+  "PricingTable": {
+    "title": "Our Pricing Chart",
+    "labels": {
+      "category": "Category",
+      "armyTier": "Army Tier",
+      "heroTier": "Hero Tier",
+      "artTier": "Art Tier",
+      "army": "Army",
+      "hero": "Hero",
+      "art": "Art"
+    },
+    "categories": {
+      "smallInfantry": "Small infantry",
+      "infantry": "Infantry",
+      "largeInfantry": "Large infantry",
+      "smallWalker": "Small Walker/Rider/Monster",
+      "walker": "Walker/Monster/Vehicle",
+      "largeWalker": "Large Walker/Monster/Vehicle",
+      "hugeModel": "Huge Model"
+    }
+  },
+  "PaintingProcess": {
+    "flowLabel": "Commission Flow",
+    "stepLabel": "Step",
+    "heading": "How to Order Your Miniatures",
+    "intro": "The process stays simple from first message to finished army. Follow the steps below and we will get back to you with a quote and timeline for your project.",
+    "outro": "And that's it! Once we get your message we will get back to you with a quote and timeline for your project along with any additional information we need.",
+    "cta": "Click For Your Quote!",
+    "steps": [
+      {
+        "title": "List your miniatures",
+        "description": "Provide a clear list of models, squads, or armies you want painted and if you need them assembled, magnetized or if they need paint removal. \nWe work with anything, from a small single miniature to a large army commision."
+      },
+      {
+        "title": "Tell us about your models",
+        "description": "Tell us if you want to send your miniatures to us, if you want us to get them for you or if you'd like us to 3d print them for you with our high quality resin 3d printers."
+      },
+      {
+        "title": "Select a painting tier",
+        "description": "Choose between Army, Hero, or Art tier for each individual miniature or squad. \nArmy tier is perfect for larger squads, Hero tier is great for characters and Art tier is here for pieces that you want to truly stand out."
+      },
+      {
+        "title": "Choose your paint scheme and basing style",
+        "description": "Let us know what paint scheme or syle you want your miniatures painted in and your preferred base theme such as snow, desert, jungle, ruined city etc."
+      }
+    ]
+  }
+}

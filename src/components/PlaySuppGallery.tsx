@@ -5,6 +5,7 @@ import clsx from "clsx";
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
 
 type GalleryImage = {
   url: string;
@@ -27,7 +28,7 @@ const BackgroundGradients = [
 const BackgroundColors = ["#c9885e", "#a5bcc7", "#e2c78c"];
 const fonts = ["font-army", "font-hero", "font-art"];
 const levelNames = ["Army", "Hero", "Art"];
-const filterOptions = ["All", "Army", "Hero", "Art"];
+const filterOptions = ["all", "army", "hero", "art"] as const;
 
 const ITEMS_PER_PAGE = 9;
 
@@ -43,12 +44,19 @@ type PlaySuppGalleryProps = {
 };
 
 function PlaySuppGallery({ galleries }: PlaySuppGalleryProps) {
+  const t = useTranslations("Gallery");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [activeFilter, setActiveFilter] = useState<string>("All");
+  const [activeFilter, setActiveFilter] = useState<string>("all");
   const [currentPage, setCurrentPage] = useState<number>(1);
 
+  const localizedLevelNames = [
+    t("tiers.army"),
+    t("tiers.hero"),
+    t("tiers.art"),
+  ];
+
   const filteredGalleries =
-    activeFilter === "All"
+    activeFilter === "all"
       ? galleries
       : galleries.filter(
           (g) => g.paintingTier.toLowerCase() === activeFilter.toLowerCase(),
@@ -110,7 +118,7 @@ function PlaySuppGallery({ galleries }: PlaySuppGalleryProps) {
                     : BackgroundColors[filterIdx],
               }}
             >
-              {filter}
+              {t(`filters.${filter}`)}
             </button>
           );
         })}
@@ -155,7 +163,7 @@ function PlaySuppGallery({ galleries }: PlaySuppGalleryProps) {
                     WebkitBackgroundClip: "text",
                   }}
                 >
-                  {levelNames[tierIdx]}
+                  {localizedLevelNames[tierIdx]}
                 </p>
               </div>
             </div>
@@ -218,9 +226,11 @@ function PlaySuppGallery({ galleries }: PlaySuppGalleryProps) {
       {/* Page Info */}
       {totalPages > 1 && (
         <p className="text-center text-gray-400 mt-3 text-sm">
-          Showing {startIndex + 1}-
-          {Math.min(endIndex, filteredGalleries.length)} of{" "}
-          {filteredGalleries.length} items
+          {t("pagination.showing", {
+            start: startIndex + 1,
+            end: Math.min(endIndex, filteredGalleries.length),
+            total: filteredGalleries.length,
+          })}
         </p>
       )}
 
@@ -250,7 +260,7 @@ function PlaySuppGallery({ galleries }: PlaySuppGalleryProps) {
                     }`}
                     style={{ color: BackgroundColors[customSlide.tierIdx] }}
                   >
-                    {levelNames[customSlide.tierIdx]}
+                    {localizedLevelNames[customSlide.tierIdx]}
                   </div>
                 </div>
               );

@@ -260,59 +260,22 @@ function PrivacyPolicy() {
               https://azop.hr
             </a>
           </li>
-          <li>
-            EU Data Protection Authorities:{" "}
-            <a
-              href="https://edpb.europa.eu/about-edpb/about-edpb/members_en"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
-              Find your authority
-            </a>
-          </li>
         </ul>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-4">10. Data Security</h2>
+        <h2 className="text-2xl font-semibold mt-6 mb-4">10. Contact Us</h2>
         <p className="mb-4">
-          We implement appropriate technical and organizational measures to
-          protect your personal data against unauthorized access, alteration,
-          disclosure, or destruction. This includes:
+          If you have questions about this privacy policy or wish to exercise
+          your GDPR rights, please contact us at:
         </p>
-        <ul className="list-disc list-inside mb-4 space-y-2">
-          <li>Encrypted data transmission (HTTPS/TLS)</li>
-          <li>Secure email communication</li>
-          <li>Regular security updates and monitoring</li>
-          <li>Limited access to personal data on a need-to-know basis</li>
-        </ul>
-
-        <h2 className="text-2xl font-semibold mt-6 mb-4">11. Cookies</h2>
-        <p className="mb-4">
-          Our website{" "}
-          <span className="font-semibold">does not use cookies</span>. We use
-          privacy-friendly analytics (Vercel Analytics) that does not set
-          cookies or track individual users. No consent banner is required.
-        </p>
-
-        <h2 className="text-2xl font-semibold mt-6 mb-4">12. Contact Us</h2>
-        <p className="mb-4">
-          If you have any questions about this privacy policy or how we handle
-          your personal data, please contact us:
-        </p>
-        <div className="bg-gray-100 p-4 rounded mb-6">
-          <p>Email: playsuppminis [at] gmail [dot] com</p>
-        </div>
-
-        <div className="w-full flex justify-center">
-          <button
-            onClick={() => {
-              router.push("/");
-            }}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors duration-200"
+        <p className="font-semibold">
+          Email:{" "}
+          <a
+            href="mailto:playsuppminis@gmail.com"
+            className="text-blue-600 hover:underline"
           >
-            Back To Home
-          </button>
-        </div>
+            playsuppminis@gmail.com
+          </a>
+        </p>
       </div>
     </section>
   );

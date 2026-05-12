@@ -39,6 +39,12 @@ const BackgroundColors = ["#c9885e", "#a5bcc7", "#e2c78c"];
 const fonts = ["font-army", "font-hero", "font-art"];
 const levelNames = ["Army", "Hero", "Art"];
 
+type MiniGalleryProps = {
+  title: string;
+  cta: string;
+  galleryHref: string;
+};
+
 function getTierIndex(tier: string) {
   const idx = levelNames.findIndex(
     (name) => name.toLowerCase() === tier.toLowerCase(),
@@ -46,7 +52,7 @@ function getTierIndex(tier: string) {
   return idx !== -1 ? idx : 0;
 }
 
-async function MiniGallery() {
+async function MiniGallery({ title, cta, galleryHref }: MiniGalleryProps) {
   const response = (await performRequest(
     PAGE_CONTENT_QUERY,
   )) as GalleriesResponse;
@@ -71,12 +77,12 @@ async function MiniGallery() {
           className="text-2xl bg-clip-text text-transparent mt-4 mb-1
         bg-gradient-to-b from-white to-slate-400 sm:text-3xl pb-2 font-semibold"
         >
-          Recently painted miniatures
+          {title}
         </h2>
 
         <InfiniteMovingCards items={images} showTierStyling />
 
-        <PlaysuppButton text="Check Gallery" href="/gallery" />
+        <PlaysuppButton text={cta} href={galleryHref} />
       </div>
     </section>
   );

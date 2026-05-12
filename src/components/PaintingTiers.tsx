@@ -1,5 +1,8 @@
+"use client";
+
 import { LevelImages } from "@/app/lib/data";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const BackgroundGradients = [
   "linear-gradient(to bottom, #b37952 27%, #e0af81 40%, #462611 78%)",
@@ -12,6 +15,9 @@ const BackgroundColors = ["#b37952", "#8B9FA9", "#e2c78c"];
 const fonts = ["font-army", "font-hero", "font-art"];
 
 function PaintingTiers() {
+  const t = useTranslations("PaintingTiers");
+  const levels = t.raw("levels") as Array<{ title: string; text: string }>;
+
   return (
     <div className="w-full flex flex-wrap">
       <div className="w-full grid auto-rows-[22rem] md:auto-rows-[25rem] grid-cols-1 md:grid-cols-3 gap-4 mx-auto my-5 relative px-5 md:px-0">
@@ -25,7 +31,7 @@ function PaintingTiers() {
           >
             <Image
               src={item.src}
-              alt={item.title}
+              alt={levels[index]?.title ?? item.title}
               fill={true}
               sizes="(max-width: 768px) 70vw, 60vw"
               style={{ objectFit: "cover" }}
@@ -45,9 +51,9 @@ function PaintingTiers() {
                   WebkitBackgroundClip: "text",
                 }}
               >
-                {item.title || `Level ${index + 1}`}
+                {levels[index]?.title ?? item.title ?? `Level ${index + 1}`}
               </h4>
-              <p className="text-left">{item.text}</p>
+              <p className="text-left">{levels[index]?.text ?? item.text}</p>
             </div>
           </div>
         ))}

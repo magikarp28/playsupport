@@ -1,6 +1,11 @@
+"use client";
+
 import ContactForm from "./ContactForm";
+import { useTranslations } from "next-intl";
 
 function ContactSection() {
+  const t = useTranslations("ContactSection");
+
   return (
     <section
       id="Contact"
@@ -13,12 +18,9 @@ function ContactSection() {
         className="text-3xl bg-clip-text text-transparent mt-4 mb-1
         bg-gradient-to-b from-white to-slate-400 sm:text-4xl pb-2 font-semibold"
       >
-        Contact
+        {t("title")}
       </h2>
-      <p className="max-w-screen-xl">
-        Ask for a miniature painting, resin 3d pre-supporting service or any
-        question you have!
-      </p>
+      <p className="max-w-screen-xl">{t("subtitle")}</p>
       <ContactForm />
     </section>
   );

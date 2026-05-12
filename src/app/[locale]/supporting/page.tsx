@@ -1,62 +1,60 @@
+import { getTranslations } from "next-intl/server";
 import PlaysuppButton from "@/components/PlaysuppButton";
 import Supportperks from "@/components/support-perks";
 import { HiOutlineDownload } from "react-icons/hi";
 import type { Metadata } from "next";
 import image from "@/../public/images/paintShowcase/Rendered ant supported.png";
 import Image from "next/image";
+import { buildLocalizedMetadata } from "@/lib/seo";
+import { hasLocale } from "next-intl";
+import { defaultLocale, locales, type AppLocale } from "../../../../i18n";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://playsupport.art"),
-  title: "Miniature 3D Print Presupport Service – PlaySupport",
-  description:
-    "Professional manual pre supports for resin 3d printed miniatures and 3D models.",
-  applicationName: "PlaySupport",
-  keywords: [
-    "3d print supports",
-    "miniature presupport",
-    "resin 3d printing",
-    "manual 3D print supports",
-    "miniatures",
-  ],
-  alternates: {
-    canonical: "https://playsupport.art/supporting",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  openGraph: {
-    type: "website",
-    url: "https://playsupport.art/supporting",
-    siteName: "PlaySupport.art",
-    title: "Miniature 3D Print Presupport Service – PlaySupport",
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale: AppLocale = hasLocale(locales, rawLocale)
+    ? rawLocale
+    : defaultLocale;
+
+  return buildLocalizedMetadata({
+    locale,
+    path: "/supporting",
+    title:
+      locale === "de"
+        ? "Miniatur 3D-Druck Presupport-Service - PlaySupport"
+        : "Miniature 3D Print Presupport Service - PlaySupport",
     description:
-      "Professional manual pre supports for your resin 3d printed miniatures and 3D models.",
-    images: [
-      {
-        url: "/android-chrome-512x512.png",
-        width: 1200,
-        height: 630,
-        alt: "PlaySupport",
-      },
-    ],
-  },
-  icons: {
-    icon: "/icon.png",
-    shortcut: "/favicon.ico",
-    apple: "/apple-icon.png",
-  },
-};
+      locale === "de"
+        ? "Professionelle manuelle Supports fuer resin 3D-gedruckte Miniaturen und 3D-Modelle."
+        : "Professional manual pre-supports for resin 3D-printed miniatures and 3D models.",
+    keywords:
+      locale === "de"
+        ? [
+            "resin supports",
+            "miniatur presupport",
+            "3d druck supports",
+            "lychee supports",
+            "miniaturen",
+          ]
+        : [
+            "3d print supports",
+            "miniature presupport",
+            "resin 3d printing",
+            "manual 3D print supports",
+            "miniatures",
+          ],
+  });
+}
 
-function page() {
+async function Page({ params }: PageProps) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "SupportingPage" });
+  const contactHref = locale === "en" ? "/contact" : `/${locale}/contact`;
   return (
     <section
       id="Contact"
@@ -69,33 +67,28 @@ function page() {
               className="text-2xl sm:text-3xl lg:text-4xl bg-clip-text text-transparent
               bg-gradient-to-b from-white to-slate-400 font-bold leading-tight max-w-2xl"
             >
-              Miniature pre support service
+              {t("title")}
             </h1>
 
             <div className="space-y-4 max-w-2xl">
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                We provide professional manual supports service for your
-                warhammer-like, DnD or any other miniatures or 3D models, made
-                with Lychee Plus software, allowing us to make optimal results
-                for resin 3D printing.
+                {t("description1")}
               </p>
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                Let us handle the creation of supports so you can focus your
-                craft and make the best possible miniatures
+                {t("description2")}
               </p>
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                You can download a free sample below to see the quality of our
-                work.
+                {t("description3")}
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start">
               <PlaysuppButton
-                text="Free miniature"
+                text={t("buttonFree")}
                 href="https://www.datocms-assets.com/160411/1769697786-ant-diplomat-v3.zip"
                 icon={HiOutlineDownload}
               />
-              <PlaysuppButton text="Get a Free Quote" href="/contact" />
+              <PlaysuppButton text={t("buttonQuote")} href={contactHref} />
             </div>
           </div>
 
@@ -118,4 +111,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
