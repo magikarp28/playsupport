@@ -6,7 +6,7 @@ import PaintingProcessCard from "./PaintingProcessCard";
 import { useLocale, useTranslations } from "next-intl";
 
 function PaintingProcess() {
-  const t = useTranslations("PaintingProcess");
+  const t = useTranslations("PaintingProcess2");
   const locale = useLocale();
   const steps = t.raw("steps") as Array<{ title: string; description: string }>;
 

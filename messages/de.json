@@ -1,52 +1,52 @@
 {
   "Navigation": {
     "home": "Startseite",
-    "painting": "Bemalung",
+    "painting": "Miniaturbemalung",
     "gallery": "Galerie",
-    "supporting": "Supporting",
+    "supporting": "Presupports",
     "contact": "Kontakt"
   },
   "ContactPage": {
     "metadata": {
-      "title": "Kontakt - PlaySupport Miniaturbemalung & 3D-Druck Presupporting",
-      "description": "Kontaktieren Sie PlaySupport für Miniaturbemalung, 3D-Druck Presupporting, Aufträge, Preise oder Fragen. Erreichen Sie uns per E-Mail oder über das Kontaktformular.",
-      "ogTitle": "Kontakt - PlaySupport",
-      "ogDescription": "Setzen Sie sich mit PlaySupport in Verbindung für Miniaturbemalung, 3D-Druck Presupporting, Aufträge und mehr."
+      "title": "Kontakt – PlaySupport Miniaturbemalung & Resin-3D-Druck Presupport-Service",
+      "description": "Kontaktiere PlaySupport für Miniaturbemalung, Resin-3D-Druck Presupports, Auftragsarbeiten, Preise oder allgemeine Fragen. Erreiche uns per E-Mail oder über das Kontaktformular.",
+      "ogTitle": "Kontakt – PlaySupport",
+      "ogDescription": "Kontaktiere PlaySupport für Miniaturbemalung, Resin-3D-Druck Presupports, Auftragsarbeiten und mehr."
     },
-    "title": "Kontaktieren Sie uns",
-    "subtitle": "Sie können auch nach einem Auftrag, Preisinformationen oder anderen Fragen fragen unter"
+    "title": "Kontaktiere uns",
+    "subtitle": "Du kannst uns hier auch nach Auftragsarbeiten, Preisen oder allem anderen fragen"
   },
   "PaintingPage": {
     "metadata": {
-      "title": "Miniaturbemalung Service - PlaySupport",
-      "description": "Professionelle Miniaturbemalung für Wargaming, DnD, Brettspiele und Ausstellungsstücke. Entdecken Sie unsere Bemalungsstufen und Preise. Basierend in der EU.",
-      "ogTitle": "Miniaturbemalung Service - PlaySupport",
-      "ogDescription": "Auftragsbemalung für Miniaturen: Warhammer, DnD, Brettspiele und mehr. Sehen Sie unsere Stufen und Preise."
+      "title": "Miniaturbemalung-Service – PlaySupport",
+      "description": "Professionelle Miniaturbemalung für Wargaming, DnD, Brettspiele und Display-Modelle. Entdecke unsere Bemalungsstufen und Preise. Sitz in der EU.",
+      "ogTitle": "Miniaturbemalung-Service – PlaySupport",
+      "ogDescription": "Professionelle Auftragsbemalung für Miniaturen: Warhammer, DnD, Brettspiele und mehr. Sieh dir unsere Bemalungsstufen und Preise an."
     },
-    "title": "Miniaturbemalung Service",
-    "intro": "In unserem Auftragsbemalungsservice bemalen wir alle Arten von Miniaturen, von Wargaming-Figuren wie Warhammer bis hin zu Dungeons & Dragons, Brettspielen und Ausstellungsstücken.",
-    "tiersLead": "Werfen Sie einen Blick auf unsere Bemalungsstufen und Preise – die Ergebnisse und das Preis-Leistungs-Verhältnis sprechen für sich!",
-    "priceNote": "Geschätzte Preisspannen für die Miniaturbemalung nach Kategorie und Bemalungsstufe. Der genaue Preis hängt von der Komplexität des Modells und Ihren Wünschen ab.",
-    "nonEu": "Kunde ist für eventuelle zusätzliche Einfuhrabgaben und Zollgebühren verantwortlich.",
-    "eu": "Mehrwertsteuerfrei! Keine zusätzlichen Gebühren in Deutschland, Österreich, Dänemark, Frankreich, Niederlande, Belgien usw."
+    "title": "Miniaturbemalung-Service",
+    "intro": "In unserem Auftragsbemalungs-Service bemalen wir alle Arten von Miniaturen – von Wargaming-Figuren wie Warhammer über Dungeons & Dragons bis hin zu Brettspielen und hochwertigen Display-Modellen.",
+    "tiersLead": "Sieh dir unsere Bemalungsstufen und Preise an – Qualität und Preis-Leistung sprechen für sich!",
+    "priceNote": "Geschätzte Preisbereiche für Miniaturbemalung nach Kategorie und Bemalungsstufe. Der endgültige Preis hängt von Modellkomplexität und individuellen Wünschen ab.",
+    "nonEu": "Kunden außerhalb der EU sind für mögliche Einfuhrabgaben und Zollgebühren verantwortlich.",
+    "eu": "Mehrwertsteuerfrei! Keine zusätzlichen Gebühren in Deutschland, Österreich, Dänemark, Frankreich, den Niederlanden, Belgien usw."
   },
   "PaintingProcess": {
     "steps": [
       {
-        "title": "Listen Sie Ihre Miniaturen auf",
-        "description": "Geben Sie eine klare Liste der Modelle, Einheiten oder Armeen, die bemalt werden sollen, und an, ob sie zusammengebaut, magnetisiert oder von Farbe befreit werden müssen. Wir arbeiten mit allem, von einer einzelnen Miniatur bis hin zu einem großen Armee-Auftrag."
+        "title": "Liste deine Miniaturen auf",
+        "description": "Gib eine klare Liste der Modelle, Trupps oder Armeen an, die du bemalen lassen möchtest, sowie ob sie zusammengebaut, magnetisiert oder entlackt werden sollen. Wir arbeiten an allem – von einzelnen Miniaturen bis hin zu großen Armeeprojekten."
       },
       {
-        "title": "Erzählen Sie uns von Ihren Modellen",
-        "description": "Teilen Sie uns mit, ob Sie uns Ihre Miniaturen zusenden möchten, ob wir sie für Sie besorgen sollen oder ob wir sie für Sie mit unseren hochwertigen Harz-3D-Druckern drucken sollen."
+        "title": "Erzähl uns mehr über deine Modelle",
+        "description": "Sag uns, ob du deine Miniaturen zu uns schicken möchtest, ob wir sie für dich besorgen sollen oder ob wir sie mit unseren hochwertigen Resin-3D-Druckern für dich drucken sollen."
       },
       {
-        "title": "Wählen Sie eine Bemalungsstufe",
-        "description": "Wählen Sie für jede Miniatur oder Einheit zwischen Army-, Hero- oder Art-Stufe. Die Army-Stufe ist ideal für größere Einheiten, die Hero-Stufe großartig für Charaktere und die Art-Stufe für Stücke, die wirklich hervorstechen sollen."
+        "title": "Wähle eine Bemalungsstufe",
+        "description": "Wähle zwischen Army-, Hero- oder Art-Stufe für jede Miniatur oder jeden Trupp. Die Army-Stufe eignet sich perfekt für größere Einheiten, die Hero-Stufe für Charaktermodelle und die Art-Stufe für echte Blickfänger."
       },
       {
-        "title": "Wählen Sie Ihr Farbschema und Basengestaltung",
-        "description": "Lassen Sie uns wissen, welches Farbschema oder welchen Stil Sie wünschen und Ihr bevorzugtes Basenthema wie Schnee, Wüste, Dschungel, Ruinenstadt usw."
+        "title": "Wähle dein Farbschema und den Basenstil",
+        "description": "Teile uns mit, welches Farbschema oder welchen Stil du dir wünschst und welches Basenthema du bevorzugst – zum Beispiel Schnee, Wüste, Dschungel oder zerstörte Städte."
       }
     ]
   },
@@ -54,50 +54,50 @@
     "levels": [
       {
         "title": "Army-Stufe",
-        "text": "Saubere Farbübergänge und Hervorhebungen für eine großartige Armee."
+        "text": "Saubere Highlights und Übergänge für eine beeindruckende Armee."
       },
       {
         "title": "Hero-Stufe",
-        "text": "Mehr Aufmerksamkeit für jedes Detail mit fortgeschritteneren Techniken."
+        "text": "Mehr Fokus auf jedes Detail mit fortgeschrittenen Techniken."
       },
       {
         "title": "Art-Stufe",
-        "text": "Jede Oberfläche hat ihre eigene Textur, jede Miniatur eine eigene Geschichte."
+        "text": "Jede Oberfläche hat ihre eigene Textur, jede Miniatur erzählt ihre eigene Geschichte."
       }
     ]
   },
   "SupportTabs": {
     "items": [
       {
-        "title": "Zuverlässigkeit",
-        "description": "Sorgfältige manuelle Stützplatzierung und Inselprüfung gewährleisten die bestmögliche Druckerfolgsrate."
+        "title": "Maximale Drucksicherheit",
+        "description": "Sorgfältig gesetzte Supports und gründliche Inselprüfung sorgen für die bestmögliche Druckerfolgsrate."
       },
       {
-        "title": "Einfache Stützentfernung",
-        "description": "Trotz der hohen Zuverlässigkeit unserer Stützen sind sie leicht zu entfernen und hinterlassen keine großen Spuren."
+        "title": "Einfach zu entfernende Supports",
+        "description": "Trotz ihrer hohen Stabilität lassen sich unsere Supports leicht entfernen und hinterlassen nur minimale Supportmarken."
       },
       {
-        "title": "Aushöhlen großer Dateien",
-        "description": "Damit Sie kein Harz und keine Druckerlebensdauer verschwenden, höhlen wir Ihre Miniaturen aus, wo immer es angebracht ist."
+        "title": "Aushöhlen großer Modelle",
+        "description": "Damit du kein Resin und keine Druckerlebensdauer verschwendest, höhlen wir große Miniaturen aus, wo immer es sinnvoll ist."
       }
     ]
   },
   "Testimonials": {
     "items": [
       {
-        "quote": "Alles ist absolut perfekt und sehr professionell gemacht. Ihre Arbeit ist super effizient und die Dateien funktionieren einwandfrei.",
+        "quote": "Alles ist absolut perfekt und extrem professionell umgesetzt. Die Arbeit ist super effizient und die Dateien funktionieren einwandfrei.",
         "name": "MiniScape Studio",
-        "designation": "Epische Bases für Ausstellungsminiaturen"
+        "designation": "Epische Bases für Display-Miniaturen"
       },
       {
-        "quote": "Immer wieder eine Freude, mit PlaySupport zusammenzuarbeiten! Perfekte Stützen jedes Mal – deshalb kommen wir immer wieder.",
+        "quote": "Es ist immer wieder eine Freude, mit PlaySupport zu arbeiten! Perfekte Supports jedes Mal – deshalb kommen wir immer wieder zurück.",
         "name": "Eons of Battle",
-        "designation": "YouTube-Kanal und hochwertiges Miniaturterrain für den 3D-Druck"
+        "designation": "YouTube-Kanal und hochwertiges Miniatur-Terrain für den 3D-Druck"
       },
       {
-        "quote": "Die Dienste von PlaySupport waren makellos und schufen wunderschöne Miniaturen, die genau meinen Vorstellungen entsprachen.",
+        "quote": "Die Services von PlaySupport waren makellos und haben wunderschöne Miniaturen erschaffen, die genau meinen Vorstellungen entsprachen.",
         "name": "Brian",
-        "designation": "Mehrere Art-Stufe-Aufträge"
+        "designation": "Mehrere Art-Stufe-Auftragsarbeiten"
       }
     ]
   },
@@ -105,125 +105,125 @@
     "title": "Galerie bemalter Miniaturen",
     "filters": {
       "all": "Alle",
-      "army": "Armee",
-      "hero": "Held",
-      "art": "Kunst"
+      "army": "Army",
+      "hero": "Hero",
+      "art": "Art"
     },
     "tiers": {
-      "army": "Armee",
-      "hero": "Held",
-      "art": "Kunst"
+      "army": "Army",
+      "hero": "Hero",
+      "art": "Art"
     },
     "pagination": {
-      "showing": "Zeige {start}-{end} von {total} Eintraegen"
+      "showing": "Zeige {start}-{end} von {total} Einträgen"
     }
   },
   "SupportingPage": {
-    "title": "Miniatur-Vorunterstützungsdienst",
-    "description1": "Wir bieten einen professionellen manuellen Unterstützungsservice für deine warhammer-ähnlichen Miniaturen, D&D oder andere Miniaturen oder 3D-Modelle an, die mit Lychee Plus-Software hergestellt werden, um optimale Ergebnisse für 3D-Druck in Resin zu erzielen.",
-    "description2": "Lass uns die Erstellung von Unterstützungen übernehmen, damit du dich auf dein Handwerk konzentrieren kannst und die besten möglichen Miniaturen erstellst",
-    "description3": "Du kannst unten ein kostenloses Muster herunterladen, um die Qualität unserer Arbeit zu sehen.",
+    "title": "Resin-3D-Druck Presupport-Service",
+    "description1": "Wir bieten professionelle manuell gesetzte Presupports für Warhammer-, D&D- und andere Miniaturen sowie 3D-Modelle für den Resin-3D-Druck.",
+    "description2": "Überlass uns das Setzen der Supports, damit du dich voll auf dein Hobby und deine Miniaturen konzentrieren kannst.",
+    "description3": "Lade dir unten eine kostenlose Beispielminiatur herunter und überzeuge dich selbst von der Qualität unserer Arbeit.",
     "buttonFree": "Kostenlose Miniatur",
-    "buttonQuote": "Kostenloses Angebot"
+    "buttonQuote": "Kostenloses Angebot anfordern"
   },
   "Hero": {
-    "brand": "Playsupport",
-    "intro": "Es gibt kein schlimmeres Schicksal für ein Hobby, als zur Pflicht zu werden. Unser Alltag ist schon voller Verpflichtungen. Wir sind hier, um dich zu unterstützen, damit du dich aufs Spielen konzentrieren kannst.",
-    "supportLead": "unterstützt dich bei:",
-    "item1": "Deine Miniaturen spielfertig machen – bemalen, zusammenbauen, basen und magnetisieren",
-    "item2": "Deine 3D-Miniaturdateien für den Harz-3D-Druck unterstützen, damit sie zuverlässig gelingen",
+    "brand": "PlaySupport",
+    "intro": "Nichts ruiniert ein Hobby schneller, als wenn es sich wie Arbeit anfühlt. Der Alltag bringt schon genug Verpflichtungen mit sich. Wir helfen dir dabei, dich auf das Spielen und Hobby zu konzentrieren.",
+    "supportLead": "PlaySupport hilft dir bei:",
+    "item1": "Deine Miniaturen spielfertig zu machen – bemalen, zusammenbauen, basen und magnetisieren",
+    "item2": "Dem Presupporten deiner 3D-Miniaturdateien für Resin-3D-Druck, damit sie zuverlässig und erfolgreich gedruckt werden",
     "location": "Sitz in Kroatien, EU.",
     "cta": "Kontakt aufnehmen"
   },
   "PaintingHome": {
-    "title": "Miniaturbemalungs-Service",
+    "title": "Miniaturbemalung-Service",
     "card1": {
       "prefix": "Wir bieten einen",
       "highlight": "professionellen Service",
       "middle": "an, um deine Miniaturen",
-      "suffix": "zu basen, zu magnetisieren und spiel- oder ausstellungsbereit zu machen."
+      "suffix": "zu basen, zu magnetisieren und spielbereit oder perfekt für die Vitrine zu machen."
     },
     "card2": {
       "prefix": "Wir können deine Miniaturen auch",
       "highlight": "in 3D drucken",
-      "suffix": "mit einem hochwertigen Harz-3D-Drucker."
+      "suffix": "mit hochwertigen Resin-3D-Druckern."
     },
     "card3": {
-      "prefix": "Wir bemalen alle Arten von Miniaturen, von Wargaming-Figuren wie",
-      "middle": "bis",
-      "suffix": "Brettspielen und beeindruckenden Ausstellungsstücken."
+      "prefix": "Wir bemalen alle Arten von Miniaturen – von Wargaming-Figuren wie",
+      "middle": "bis hin zu",
+      "suffix": "Brettspielen und beeindruckenden Display-Modellen."
     },
     "card4": {
-      "title": "Flexible Preise",
-      "body": "Verschiedene Bemalungsstufen passend zu Budget und Bedarf, alle in überdurchschnittlicher Branchenqualität. Basen sind im Preis enthalten."
+      "title": "Flexible Preisgestaltung",
+      "body": "Verschiedene Bemalungsstufen passend zu Budget und Anforderungen – alle auf überdurchschnittlichem Branchenstandard. Basen sind im Preis enthalten."
     },
     "card5": {
-      "title": "Jede Projektgröße",
-      "body": "Eine einzelne Display-Figur oder eine ganze Armee – Playsupport macht es möglich!"
+      "title": "Projekte jeder Größe",
+      "body": "Eine einzelne Display-Figur oder eine komplette Armee – PlaySupport macht es möglich!"
     },
-    "cta": "Bemalungsservice"
+    "cta": "Zum Bemalungsservice"
   },
   "SupportingHome": {
-    "title": "Harz-3D-Druck Presupport-Service",
-    "item1": "Zuverlässige Supports, die dich nicht im Stich lassen",
-    "item2": "Leicht zu entfernen mit minimalen Support-Spuren",
-    "item3": "Kostenlose Fehlerhilfe und Unterstützung bei Druckereinstellungen oder Problemen",
+    "title": "Resin-3D-Druck Presupport-Service",
+    "item1": "Zuverlässige Supports für erfolgreiche Drucke",
+    "item2": "Leicht zu entfernen mit minimalen Supportmarken",
+    "item3": "Kostenlose Fehlerbehebung und Unterstützung bei Druckereinstellungen oder Druckproblemen",
     "item4": "Optionaler Testdruck",
     "item5": "Schnelle Bearbeitung und faire Preise",
     "cta": "Kostenlose Miniatur"
   },
   "ContactSection": {
     "title": "Kontakt",
-    "subtitle": "Frag nach Miniaturbemalung, Harz-3D-Presupporting oder stell uns jede andere Frage!"
+    "subtitle": "Frag uns nach Miniaturbemalung, Resin-3D-Druck Presupports oder allem anderen rund ums Hobby!"
   },
   "MiniGallery": {
-    "title": "Kuerzlich bemalte Miniaturen",
+    "title": "Kürzlich bemalte Miniaturen",
     "cta": "Galerie ansehen"
   },
   "PricingTable": {
     "title": "Unsere Preistabelle",
     "labels": {
       "category": "Kategorie",
-      "armyTier": "Armee-Stufe",
-      "heroTier": "Helden-Stufe",
-      "artTier": "Kunst-Stufe",
-      "army": "Armee",
-      "hero": "Held",
-      "art": "Kunst"
+      "armyTier": "Army-Stufe",
+      "heroTier": "Hero-Stufe",
+      "artTier": "Art-Stufe",
+      "army": "Army",
+      "hero": "Hero",
+      "art": "Art"
     },
     "categories": {
       "smallInfantry": "Kleine Infanterie",
       "infantry": "Infanterie",
-      "largeInfantry": "Grosse Infanterie",
-      "smallWalker": "Kleiner Laeufer/Reiter/Monster",
-      "walker": "Laeufer/Monster/Fahrzeug",
-      "largeWalker": "Grosser Laeufer/Monster/Fahrzeug",
+      "largeInfantry": "Große Infanterie",
+      "smallWalker": "Kleiner Läufer/Reiter/Monster",
+      "walker": "Läufer/Monster/Fahrzeug",
+      "largeWalker": "Großer Läufer/Monster/Fahrzeug",
       "hugeModel": "Riesenmodell"
     }
   },
-  "PaintingProcess": {
+  "PaintingProcess2": {
     "flowLabel": "Ablauf",
     "stepLabel": "Schritt",
-    "heading": "So bestellst du deine Miniaturen",
-    "intro": "Der Prozess bleibt vom ersten Kontakt bis zur fertigen Armee einfach. Folge den untenstehenden Schritten und wir melden uns mit Angebot und Zeitplan fuer dein Projekt.",
-    "outro": "Und das war's! Sobald wir deine Nachricht erhalten, melden wir uns mit einem Angebot, einem Zeitplan und eventuell benoetigten Zusatzinfos.",
-    "cta": "Klicke fuer dein Angebot!",
+    "heading": "So läuft deine Auftragsbemalung ab",
+    "intro": "Vom ersten Kontakt bis zur fertigen Armee bleibt der Ablauf einfach und unkompliziert. Folge den untenstehenden Schritten und wir melden uns mit einem Angebot und Zeitplan für dein Projekt.",
+    "outro": "Und das war's! Sobald wir deine Nachricht erhalten, melden wir uns mit einem Angebot, einem Zeitplan und allen weiteren Informationen, die wir benötigen.",
+    "cta": "Hier dein Angebot anfordern!",
     "steps": [
       {
         "title": "Liste deine Miniaturen auf",
-        "description": "Gib eine klare Liste der Modelle, Trupps oder Armeen an, die du bemalt haben moechtest, und ob sie zusammengebaut, magnetisiert oder entlackt werden sollen. \nWir arbeiten an allem, von einer einzelnen Miniatur bis zu einer grossen Armee-Auftragsarbeit."
+        "description": "Gib eine klare Liste der Modelle, Trupps oder Armeen an, die du bemalen lassen möchtest, und ob sie zusammengebaut, magnetisiert oder entlackt werden sollen. Wir arbeiten an allem – von einzelnen Miniaturen bis hin zu großen Armeeprojekten."
       },
       {
-        "title": "Erzaehl uns von deinen Modellen",
-        "description": "Sag uns, ob du uns deine Miniaturen zusenden willst, ob wir sie fuer dich besorgen sollen oder ob wir sie mit unseren hochwertigen Harz-3D-Druckern fuer dich drucken sollen."
+        "title": "Erzähl uns mehr über deine Modelle",
+        "description": "Sag uns, ob du deine Miniaturen zu uns schicken möchtest, ob wir sie für dich besorgen sollen oder ob wir sie mit unseren hochwertigen Resin-3D-Druckern für dich drucken sollen."
       },
       {
-        "title": "Waehle eine Bemalungsstufe",
-        "description": "Waehle fuer jede einzelne Miniatur oder jeden Trupp zwischen Armee-, Helden- oder Kunst-Stufe. \nDie Armee-Stufe ist ideal fuer groessere Trupps, die Helden-Stufe fuer Charaktermodelle und die Kunst-Stufe fuer echte Blickfaenger."
+        "title": "Wähle eine Bemalungsstufe",
+        "description": "Wähle zwischen Army-, Hero- oder Art-Stufe für jede einzelne Miniatur oder jeden Trupp. Die Army-Stufe eignet sich perfekt für größere Einheiten, die Hero-Stufe für Charaktermodelle und die Art-Stufe für echte Blickfänger."
       },
       {
-        "title": "Waehle Farbschema und Basenstil",
-        "description": "Sag uns, welches Farbschema oder welchen Stil du dir wuenschst und welches Basenthema du bevorzugst, z. B. Schnee, Wueste, Dschungel oder zerstoerte Stadt."
+        "title": "Wähle Farbschema und Basenstil",
+        "description": "Sag uns, welches Farbschema oder welchen Stil du dir wünschst und welches Basenthema du bevorzugst – zum Beispiel Schnee, Wüste, Dschungel oder zerstörte Städte."
       }
     ]
   }
