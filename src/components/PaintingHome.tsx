@@ -1,8 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import PlaysuppButton from "./PlaysuppButton";
-import image from "@/../public/images/paintShowcase/ogroid myrmidon.png";
+import image from "@/../public/images/paintShowcase/ogroid myrmidon.webp";
 import { FaPaintBrush } from "react-icons/fa";
 import { GiDivergence, GiSwordman } from "react-icons/gi";
 import { MdWorkspacePremium } from "react-icons/md";

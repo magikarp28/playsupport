@@ -3,7 +3,7 @@ import PlaysuppButton from "@/components/PlaysuppButton";
 import Supportperks from "@/components/support-perks";
 import { HiOutlineDownload } from "react-icons/hi";
 import type { Metadata } from "next";
-import image from "@/../public/images/paintShowcase/Rendered ant supported.png";
+import image from "@/../public/images/paintShowcase/Rendered ant supported.webp";
 import Image from "next/image";
 import { buildLocalizedMetadata } from "@/lib/seo";
 import { hasLocale } from "next-intl";

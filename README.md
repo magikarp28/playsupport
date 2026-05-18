@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PlaySupport — Miniature Painting & 3D Print Business Website
 
-## Getting Started
+**Live site → [playsupport.art](https://playsupport.art)**
 
-First, run the development server:
+A production business website for my miniature painting and resin 3D print pre-support service. Built as a full-stack Next.js application with a focus on performance, SEO, and a polished user experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Layer      | Technology                        |
+| ---------- | --------------------------------- |
+| Framework  | Next.js 16 (App Router)           |
+| Language   | TypeScript                        |
+| Styling    | Tailwind CSS                      |
+| Animations | Motion (Framer Motion)            |
+| CMS        | DatoCMS (GraphQL)                 |
+| i18n       | next-intl (EN / DE)               |
+| Email      | Resend + React Email              |
+| Analytics  | Vercel Analytics & Speed Insights |
+| Deployment | Vercel                            |
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Internationalisation** — full English and German translations via `next-intl`, including locale-aware routing (`/de/...`)
+- **CMS-driven gallery** — images and content fetched from DatoCMS via GraphQL, with on-demand ISR revalidation
+- **Contact form** — server action with input validation, spam protection, and styled transactional emails via Resend
+- **SEO** — dynamic `sitemap.xml`, `robots.txt`, per-page metadata, Open Graph tags, and JSON-LD structured data
+- **Performance** — image optimisation via `next/image`, lazy-loaded components, Vercel Speed Insights
+- **Animations** — smooth page transitions, an interactive 3D card, animated hero vortex, and infinite scrolling testimonials
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Pages
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Route         | Description                                                                     |
+| ------------- | ------------------------------------------------------------------------------- |
+| `/`           | Hero, mini gallery, painting preview, supporting preview, testimonials, contact |
+| `/painting`   | Commission tiers, painting process walkthrough                                  |
+| `/gallery`    | Full lightbox gallery (DatoCMS)                                                 |
+| `/supporting` | Pre-support service info and pricing                                            |
+| `/contact`    | Contact form with server-side email dispatch                                    |

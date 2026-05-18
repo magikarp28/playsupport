@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
-import image from "@/../public/images/paintShowcase/Chaos Lord on Daemonic Mount.png";
-import image2 from "@/../public/images/paintShowcase/imperial fist.png";
+import image from "@/../public/images/paintShowcase/Chaos Lord on Daemonic Mount.webp";
+import image2 from "@/../public/images/paintShowcase/imperial fist.webp";
 import HeroText from "./HeroText";
 
 function Hero() {
@@ -24,7 +24,7 @@ function Hero() {
       />
       <div className="absolute top-10 left-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[38rem] sm:h-56 bg-rose-800 z-10 sm:blur-[14rem]" />
       <div className="absolute top-10 right-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[38rem] sm:h-56 bg-sky-800 z-10 sm:blur-[14rem]" />
-      <div className="flex flex-row flex-wrap items-stretch pt-24 2xl:pt-10 px-4 md:px-16 text-center pb-10 w-full max-w-screen z-10 justify-between">
+      <div className="flex flex-row flex-wrap items-stretch pt-32 2xl:pt-10 px-4 md:px-16 text-center pb-10 w-full max-w-screen z-10 justify-between">
         <div className="hidden md:basis-1/3 2xl:flex justify-center md:justify-start mb-6 md:mb-0 h-full self-end">
           <Image
             src={image2}

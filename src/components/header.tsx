@@ -83,7 +83,7 @@ function Header() {
   return (
     <header className="z-30 absolute">
       <nav
-        className="overflow-visible fixed left-1/2 w-full min-w-fit sm:w-[42rem] sm:bg-transparent bg-opacity-80 -translate-x-1/2 sm:rounded-full
+        className="overflow-visible fixed md:top-3 left-1/2 w-full min-w-fit sm:w-[42rem] sm:bg-transparent bg-opacity-80 -translate-x-1/2 sm:rounded-full
                   flex items-center justify-between sm:gap-2 bg-slate-800 min-h-[5rem] sm:backdrop-blur-none "
       >
         <Link
@@ -98,12 +98,12 @@ function Header() {
           />
         </Link>
         <div className="relative flex-1 flex justify-center">
-          <ul className="relative flex flex-wrap items-center justify-center sm:justify-between text-center gap-3 sm:bg-slate-800 sm:bg-opacity-80 py-4 px-4 sm:px-6 rounded-full">
+          <ul className="relative flex flex-wrap items-center justify-center sm:justify-between text-center gap-1.5 sm:gap-3 sm:bg-slate-800 sm:bg-opacity-80 py-4 px-4 sm:px-6 rounded-full">
             {links.map((link) => (
               <li key={link.link} className="relative">
                 <Link
                   className={clsx(
-                    "text-gray-50 px-3 py-2 relative z-20 transition-colors duration-300 block",
+                    "text-sm sm:text-base text-gray-50 px-3 py-2 relative z-20 transition-colors duration-300 block",
                   )}
                   href={getLocalizedPath(link.link)}
                 >

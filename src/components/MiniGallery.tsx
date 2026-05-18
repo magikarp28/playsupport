@@ -30,27 +30,11 @@ const PAGE_CONTENT_QUERY = `
   }
 `;
 
-const BackgroundGradients = [
-  "linear-gradient(to bottom, #b37952 27%, #e0af81 40%, #462611 78%)",
-  "linear-gradient(to bottom, #8B9FA9 27%, #d9e5ee 40%, #404c52 78%)",
-  "linear-gradient(to bottom, #e2c78c 27%, #fff4d1 40%, #533f15 78%)",
-];
-const BackgroundColors = ["#c9885e", "#a5bcc7", "#e2c78c"];
-const fonts = ["font-army", "font-hero", "font-art"];
-const levelNames = ["Army", "Hero", "Art"];
-
 type MiniGalleryProps = {
   title: string;
   cta: string;
   galleryHref: string;
 };
-
-function getTierIndex(tier: string) {
-  const idx = levelNames.findIndex(
-    (name) => name.toLowerCase() === tier.toLowerCase(),
-  );
-  return idx !== -1 ? idx : 0;
-}
 
 async function MiniGallery({ title, cta, galleryHref }: MiniGalleryProps) {
   const response = (await performRequest(
@@ -79,9 +63,7 @@ async function MiniGallery({ title, cta, galleryHref }: MiniGalleryProps) {
         >
           {title}
         </h2>
-
         <InfiniteMovingCards items={images} showTierStyling />
-
         <PlaysuppButton text={cta} href={galleryHref} />
       </div>
     </section>

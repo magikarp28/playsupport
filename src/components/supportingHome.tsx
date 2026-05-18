@@ -4,7 +4,7 @@ import Image from "next/image";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { HiOutlineDownload, HiOutlineQuestionMarkCircle } from "react-icons/hi";
 import { MdOutlineSpeed } from "react-icons/md";
-import image from "@/../public/images/paintShowcase/Rendered ant supported.png";
+import image from "@/../public/images/paintShowcase/Rendered ant supported.webp";
 import supportIcon from "@/../public/icons/SupportedSoldier.svg";
 import printerIcon from "@/../public/icons/3dPrinter.svg";
 import PlaysuppButton from "./PlaysuppButton";
