@@ -24,11 +24,9 @@ A production business website for my miniature painting and resin 3D print pre-s
 
 ## Features
 
-- **Internationalisation** — full English and German translations via `next-intl`, including locale-aware routing (`/de/...`)
-- **CMS-driven gallery** — images and content fetched from DatoCMS via GraphQL, with on-demand ISR revalidation
-- **Contact form** — server action with input validation, spam protection, and styled transactional emails via Resend
-- **SEO** — dynamic `sitemap.xml`, `robots.txt`, per-page metadata, Open Graph tags, and JSON-LD structured data
-- **Performance** — image optimisation via `next/image`, lazy-loaded components, Vercel Speed Insights
+- **Internationalisation** — full English and German translations, locale-aware routing (`/de/...`)
+- **CMS-driven gallery** — images and content fetched from DatoCMS via GraphQL
+- **Contact form** — server action with input validation, spam protection, Resend
 - **Animations** — smooth page transitions, an interactive 3D card, animated hero vortex, and infinite scrolling testimonials
 
 ---
