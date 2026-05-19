@@ -81,7 +81,7 @@ function Header() {
   };
 
   return (
-    <header className="z-30 absolute">
+    <header className="z-50 absolute">
       <nav
         className="overflow-visible fixed md:top-3 left-1/2 w-full min-w-fit sm:w-[42rem] sm:bg-transparent bg-opacity-80 -translate-x-1/2 sm:rounded-full
                   flex items-center justify-between sm:gap-2 bg-slate-800 min-h-[5rem] sm:backdrop-blur-none "
