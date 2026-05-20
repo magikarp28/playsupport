@@ -1,9 +1,8 @@
-import ContactSection from "@/components/ContactSection";
 import Hero from "@/components/hero";
-import TestemonialsSection from "@/components/TestemonialsSection";
 import PaintingHome from "@/components/PaintingHome";
 import SupportingHome from "@/components/supportingHome";
 import MiniGallery from "@/components/MiniGallery";
+import HomeDeferredSections from "@/components/HomeDeferredSections";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buildLocalizedMetadata } from "@/lib/seo";
@@ -60,8 +59,7 @@ export default async function Home({ params }: HomeProps) {
         cta={t("cta")}
         galleryHref={locale === "en" ? "/gallery" : `/${locale}/gallery`}
       />
-      <TestemonialsSection />
-      <ContactSection />
+      <HomeDeferredSections />
     </main>
   );
 }

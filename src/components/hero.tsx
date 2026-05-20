@@ -1,11 +1,11 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Image from "next/image";
 import image from "@/../public/images/paintShowcase/Chaos Lord on Daemonic Mount.webp";
 import image2 from "@/../public/images/paintShowcase/imperial fist.webp";
 import HeroText from "./HeroText";
+import DesktopVortex from "./DesktopVortex";
 
 function Hero() {
-  const DesktopVortex = React.lazy(() => import("./DesktopVortex"));
   return (
     <section
       id="Home"
@@ -48,9 +48,7 @@ function Hero() {
         </div>
       </div>
       <div className="hidden lg:block">
-        <Suspense>
-          <DesktopVortex />
-        </Suspense>
+        <DesktopVortex />
       </div>
     </section>
   );
