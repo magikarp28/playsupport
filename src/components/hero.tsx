@@ -26,25 +26,29 @@ function Hero() {
       <div className="absolute top-10 right-20 transform w-[12rem] h-24 blur-[8rem] sm:w-[38rem] sm:h-56 bg-sky-800 z-10 sm:blur-[14rem]" />
       <div className="flex flex-row flex-wrap items-stretch pt-32 2xl:pt-10 px-4 md:px-16 text-center pb-10 w-full max-w-screen z-10 justify-between">
         <div className="hidden md:basis-1/3 2xl:flex justify-center md:justify-start mb-6 md:mb-0 h-full self-end">
-          <Image
-            src={image2}
-            alt="Chaos Lord on Daemonic Mount painted miniature"
-            className="w-full max-w-[70%] h-auto max-h-[100%]"
-            sizes="(min-width: 1280px) 500px,(min-width: 768px) 350px,90vw"
-            fetchPriority="high"
-            loading="eager"
-          />
+          <div className="relative w-full max-w-[70%] aspect-[3/4]">
+            <Image
+              src={image2}
+              alt="Imperial fist captain painted miniature"
+              fill
+              className="object-contain"
+              sizes="(min-width: 1280px) 500px, (min-width: 768px) 350px, 90vw"
+              priority
+            />
+          </div>
         </div>
         <HeroText />
         <div className="hidden md:basis-1/3 md:flex justify-end md:justify-end mb-6 md:mb-0">
-          <Image
-            src={image}
-            alt="Imperial fist captain painted miniature"
-            className="w-full max-w-[90%] xl:max-w-[65%] h-auto max-h-[100%]"
-            sizes="(min-width: 1280px) 500px,(min-width: 768px) 350px,90vw"
-            fetchPriority="high"
-            loading="eager"
-          />
+          <div className="relative w-full max-w-[70%] aspect-[image.width/image.height]">
+            <Image
+              src={image}
+              alt="..."
+              fill
+              className="object-contain"
+              sizes="..."
+              priority
+            />
+          </div>
         </div>
       </div>
       <div className="hidden lg:block">
