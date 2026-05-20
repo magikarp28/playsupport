@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import PlaySuppGalleryWrapper from "@/components/PlaySuppGalleryWrapper";
 import type { Metadata } from "next";
 import { buildLocalizedMetadata } from "@/lib/seo";
@@ -51,6 +51,7 @@ export async function generateMetadata({
 
 async function Page({ params }: PageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Gallery" });
   return (
     <section

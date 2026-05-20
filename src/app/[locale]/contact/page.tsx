@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import { buildLocalizedMetadata } from "@/lib/seo";
@@ -42,6 +42,7 @@ export async function generateMetadata({
 
 async function Page({ params }: PageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "ContactPage" });
   return (
     <section

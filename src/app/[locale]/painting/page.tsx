@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import PaintingProcess from "@/components/PaintingProcess";
 import PaintingTiers from "@/components/PaintingTiers";
 import PricingTable from "@/components/PricingTable";
@@ -52,6 +52,7 @@ export async function generateMetadata({
 
 async function Page({ params }: PageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "PaintingPage" });
   return (
     <section

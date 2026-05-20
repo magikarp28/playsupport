@@ -5,7 +5,7 @@ import PaintingHome from "@/components/PaintingHome";
 import SupportingHome from "@/components/supportingHome";
 import MiniGallery from "@/components/MiniGallery";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buildLocalizedMetadata } from "@/lib/seo";
 import { hasLocale } from "next-intl";
 import { defaultLocale, locales, type AppLocale } from "../../../i18n";
@@ -47,6 +47,7 @@ export async function generateMetadata({
 
 export default async function Home({ params }: HomeProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "MiniGallery" });
 
   return (

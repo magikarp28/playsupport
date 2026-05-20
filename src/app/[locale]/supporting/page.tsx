@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import PlaysuppButton from "@/components/PlaysuppButton";
 import Supportperks from "@/components/support-perks";
 import { HiOutlineDownload } from "react-icons/hi";
@@ -53,6 +53,7 @@ export async function generateMetadata({
 
 async function Page({ params }: PageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "SupportingPage" });
   const contactHref = locale === "en" ? "/contact" : `/${locale}/contact`;
   return (
