@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/privacypolicy", "/de/privacypolicy"],
     },
-    sitemap: "https://playsupport.art/sitemap.xml",
-    host: "https://playsupport.art",
+    sitemap: "https://www.playsupport.art/sitemap.xml",
+    host: "https://www.playsupport.art",
   };
 }

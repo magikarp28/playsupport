@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { defaultLocale, type AppLocale, locales } from "../../i18n";
 
-const BASE_URL = "https://playsupport.art";
+const BASE_URL = "https://www.playsupport.art";
 
 const localePath = (locale: AppLocale, path: `/${string}` | "/") => {
   const normalized = path === "/" ? "" : path;

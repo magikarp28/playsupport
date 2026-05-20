@@ -21,7 +21,7 @@ const serviceSchema = {
   provider: {
     "@type": "Organization",
     name: "PlaySupport",
-    url: "https://playsupport.art",
+    url: "https://www.playsupport.art",
   },
   areaServed: [
     { "@type": "Country", name: "United States" },
