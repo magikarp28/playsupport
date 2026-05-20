@@ -10,7 +10,7 @@ function Hero() {
     <section
       id="Home"
       aria-labelledby="home-heading"
-      className="w-screen h-fit relative overflow-hidden flex justify-center items-center z-20 bg-gradient-to-r from-rose-950 to-slate-950 md:pt-3 lg:pt-20"
+      className="w-screen h-fit relative overflow-hidden flex justify-center items-center z-20 bg-gradient-to-r from-rose-950 to-slate-950 md:pt-4 lg:pt-20"
     >
       <div
         className="absolute inset-0 z-0 block md:hidden"

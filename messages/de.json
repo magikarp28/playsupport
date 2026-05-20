@@ -18,12 +18,12 @@
   },
   "PaintingPage": {
     "metadata": {
-      "title": "Miniaturbemalung-Service – PlaySupport",
+      "title": "Miniaturenbemalung auf Auftrag – PlaySupport",
       "description": "Professionelle Miniaturbemalung für Wargaming, DnD, Brettspiele und Display-Modelle. Entdecke unsere Bemalungsstufen und Preise. Sitz in der EU.",
-      "ogTitle": "Miniaturbemalung-Service – PlaySupport",
+      "ogTitle": "Miniaturenbemalung auf Auftrag – PlaySupport",
       "ogDescription": "Professionelle Auftragsbemalung für Miniaturen: Warhammer, DnD, Brettspiele und mehr. Sieh dir unsere Bemalungsstufen und Preise an."
     },
-    "title": "Miniaturbemalung-Service",
+    "title": "Miniaturenbemalung auf Auftrag",
     "intro": "In unserem Auftragsbemalungs-Service bemalen wir alle Arten von Miniaturen – von Wargaming-Figuren wie Warhammer über Dungeons & Dragons bis hin zu Brettspielen und hochwertigen Display-Modellen.",
     "tiersLead": "Sieh dir unsere Bemalungsstufen und Preise an – Qualität und Preis-Leistung sprechen für sich!",
     "priceNote": "Geschätzte Preisbereiche für Miniaturbemalung nach Kategorie und Bemalungsstufe. Der endgültige Preis hängt von Modellkomplexität und individuellen Wünschen ab.",
@@ -136,7 +136,7 @@
     "cta": "Kontakt aufnehmen"
   },
   "PaintingHome": {
-    "title": "Miniaturbemalung-Service",
+    "title": "Miniaturenbemalung auf Auftrag",
     "card1": {
       "prefix": "Wir bieten einen ",
       "highlight": "professionellen Service",
