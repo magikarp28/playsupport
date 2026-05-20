@@ -34,6 +34,7 @@ function Hero() {
               className="object-contain"
               sizes="(min-width: 1280px) 500px, (min-width: 768px) 350px, 90vw"
               priority
+              fetchPriority="high"
             />
           </div>
         </div>
@@ -42,11 +43,12 @@ function Hero() {
           <div className="relative w-full max-w-[70%] aspect-[image.width/image.height]">
             <Image
               src={image}
-              alt="..."
+              alt="Chaos Lord on Daemonic Mount painted miniature"
               fill
               className="object-contain"
-              sizes="..."
+              sizes="(min-width: 1280px) 500px, (min-width: 768px) 350px, 90vw"
               priority
+              fetchPriority="high"
             />
           </div>
         </div>
