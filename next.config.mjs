@@ -11,16 +11,6 @@ const withNextIntl = createNextIntlPlugin("./i18n.ts");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   turbopack: {},
-  async rewrites() {
-    return [
-      { source: "/", destination: "/en" },
-      { source: "/painting", destination: "/en/painting" },
-      { source: "/gallery", destination: "/en/gallery" },
-      { source: "/supporting", destination: "/en/supporting" },
-      { source: "/contact", destination: "/en/contact" },
-      { source: "/privacypolicy", destination: "/en/privacypolicy" },
-    ];
-  },
   images: {
     remotePatterns: [
       {

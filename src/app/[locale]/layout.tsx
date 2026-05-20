@@ -53,19 +53,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages({ locale });
 
   return (
-    <html
-      lang={locale}
-      className="!scroll-smooth"
-      data-scroll-behavior="smooth"
-      suppressHydrationWarning
-    >
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-        />
-      </head>
-      <body
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
+      <div
         className={`${inter.className} text-gray-950 relative max-w-[100%] overflow-x-hidden`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
@@ -84,7 +78,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />
-      </body>
-    </html>
+      </div>
+    </>
   );
 }

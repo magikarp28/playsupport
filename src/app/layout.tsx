@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import "./globals.css";
 import { seoBaseMetadata } from "@/lib/seo";
 
@@ -7,10 +8,22 @@ export const metadata: Metadata = {
   title: "PlaySupport",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return children as React.ReactElement;
+  const h = await headers();
+  const locale = h.get("x-next-intl-locale") ?? "en";
+
+  return (
+    <html
+      lang={locale}
+      className="!scroll-smooth"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
+      <body>{children}</body>
+    </html>
+  );
 }
