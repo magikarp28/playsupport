@@ -33,8 +33,6 @@ function Hero() {
               fill
               className="object-contain"
               sizes="(min-width: 1280px) 500px, (min-width: 768px) 350px, 90vw"
-              priority
-              fetchPriority="high"
             />
           </div>
         </div>
@@ -47,8 +45,6 @@ function Hero() {
               fill
               className="object-contain"
               sizes="(min-width: 1280px) 500px, (min-width: 768px) 350px, 90vw"
-              priority
-              fetchPriority="high"
             />
           </div>
         </div>

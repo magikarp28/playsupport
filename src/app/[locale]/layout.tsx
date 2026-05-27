@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import "../globals.css";
 import type { ReactNode } from "react";
 import Header from "@/components/header";
 import Footer from "@/components/Footer";
@@ -8,11 +10,14 @@ import { hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales } from "../../../i18n";
-import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { seoBaseMetadata } from "@/lib/seo";
 
-const inter = Inter({ subsets: ["latin"] });
+export const metadata: Metadata = {
+  ...seoBaseMetadata,
+  title: "PlaySupport",
+};
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -53,32 +58,37 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages({ locale });
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
+    <html
+      lang={locale}
+      className="!scroll-smooth"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
 
-      <div
-        className={`${inter.className} text-gray-950 relative max-w-[100%] overflow-x-hidden`}
-      >
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <ActiveSectionContextProvider>
-              <Header />
-              <main>{children}</main>
-              <Footer />
-            </ActiveSectionContextProvider>
-          </ThemeProvider>
-        </NextIntlClientProvider>
-        <Analytics />
-        <SpeedInsights />
-      </div>
-    </>
+        <div className="text-gray-950 relative max-w-[100%] overflow-x-hidden">
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <ActiveSectionContextProvider>
+                <Header />
+                <main>{children}</main>
+                <Footer />
+              </ActiveSectionContextProvider>
+            </ThemeProvider>
+          </NextIntlClientProvider>
+          <Analytics />
+          <SpeedInsights />
+        </div>
+      </body>
+    </html>
   );
 }
