@@ -104,19 +104,13 @@ export const testemonialsData: Testimonial[] = [
 
 export const LevelImages = [
   {
-    src: "/images/lelevImages/level1.jpg",
-    title: "Army Tier",
-    text: "Clean transitions and highlights for an awsome army.",
+    src: "/images/lelevImages/level1.webp",
   },
   {
-    src: "/images/lelevImages/level2.jpg",
-    title: "Hero Tier",
-    text: "More attention given to every detail with more advanced techniques.",
+    src: "/images/lelevImages/level2.webp",
   },
   {
-    src: "/images/lelevImages/level3.jpg",
-    title: "Art Tier",
-    text: "Every surface has its own texture, every miniature a unique story.",
+    src: "/images/lelevImages/level3.webp",
   },
 ];
 
