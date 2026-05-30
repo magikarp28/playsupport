@@ -12,11 +12,6 @@ const BackgroundGradients = [
 
 const BackgroundColors = ["#b37952", "#8B9FA9", "#e2c78c"];
 const fonts = ["font-army", "font-hero", "font-art"];
-const tierOffsets = [
-  "md:-translate-y-2",
-  "md:translate-y-3",
-  "md:-translate-y-1",
-];
 
 function PaintingTiers() {
   const t = useTranslations("PaintingTiers");
@@ -24,46 +19,41 @@ function PaintingTiers() {
 
   return (
     <section className="w-full">
-      <div className="mx-auto my-8 grid w-full max-w-7xl grid-cols-1 auto-rows-[23rem] gap-6 px-4 sm:px-6 md:grid-cols-3 md:auto-rows-[27rem] md:gap-5 md:px-0">
+      <div className="mx-auto my-8 grid w-full max-w-7xl grid-cols-1 auto-rows-[30rem] gap-6 px-4 sm:px-6 md:grid-cols-3 md:auto-rows-[32rem] md:gap-6 md:px-0">
         {LevelImages.map((item, index) => (
           <article
             key={index}
-            className={[
-              "relative h-full overflow-hidden rounded-2xl",
-              "shadow-[0_18px_45px_-22px_rgba(0,0,0,0.7)]",
-              "ring-1 ring-white/15",
-              tierOffsets[index] || "",
-            ].join(" ")}
-            style={{ backgroundImage: BackgroundGradients[index] }}
+            className="relative flex h-full flex-col items-center transition-all duration-300 hover:scale-[1.02]"
           >
-            <div
-              className="absolute left-0 top-0 z-20 h-1.5 w-full opacity-90"
-              style={{ backgroundColor: BackgroundColors[index] }}
-            />
+            <div className="relative h-[75%] w-[calc(100%+4rem)] md:h-[77%] md:w-[calc(100%+6rem)]">
+              <Image
+                src={item.src}
+                alt={levels[index]?.title ?? "Level " + (index + 1)}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-contain drop-shadow-2xl"
+                priority={index === 1}
+              />
+            </div>
 
-            <Image
-              src={item.src}
-              alt={levels[index]?.title}
-              fill
-              sizes="(max-width: 768px) 100vw, 33vw"
-              className="rounded-2xl object-cover p-[0.5rem]"
-              priority={index === 1}
-            />
-
-            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
-
-            <div className="absolute inset-x-3 bottom-3 z-30">
-              <div className="rounded-xl border border-white/20 bg-black/45 p-3 backdrop-blur-md">
-                <div className="mb-2 flex items-center gap-2">
-                  <span
-                    className="inline-flex h-6 min-w-6 items-center justify-center rounded-full px-2 text-xs font-semibold text-black/80"
-                    style={{ backgroundColor: BackgroundColors[index] }}
+            <div className="relative z-10 mx-auto -mt-2 w-[72%] md:w-[68%]">
+              <div className="relative rounded-2xl bg-gradient-to-br from-white/5 to-white/0 p-5 backdrop-blur-sm">
+                <div className="mb-3 flex items-center gap-3">
+                  <div
+                    className="flex h-8 w-8 items-center justify-center rounded-full shadow-inner"
+                    style={{ backgroundColor: BackgroundColors[index] + "40" }}
                   >
-                    {index + 1}
-                  </span>
+                    <span
+                      className="text-sm font-bold"
+                      style={{ color: BackgroundColors[index] }}
+                    >
+                      {index + 1}
+                    </span>
+                  </div>
+
                   <h4
                     className={[
-                      "text-left text-3xl font-bold text-transparent bg-clip-text",
+                      "bg-clip-text text-left text-2xl font-bold tracking-tight text-transparent md:text-3xl",
                       fonts[index] || "",
                     ].join(" ")}
                     style={{
@@ -75,9 +65,19 @@ function PaintingTiers() {
                   </h4>
                 </div>
 
-                <p className="text-left text-sm leading-relaxed text-zinc-100/95">
+                <p className="text-left text-sm leading-relaxed text-white/75">
                   {levels[index]?.text}
                 </p>
+
+                <div
+                  className="absolute bottom-0 left-4 right-4 h-px"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, transparent, " +
+                      BackgroundColors[index] +
+                      ", transparent)",
+                  }}
+                />
               </div>
             </div>
           </article>
