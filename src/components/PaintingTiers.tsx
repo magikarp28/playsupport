@@ -19,19 +19,20 @@ function PaintingTiers() {
 
   return (
     <section className="w-full">
-      <div className="mx-auto my-8 grid w-full max-w-7xl grid-cols-1 auto-rows-[30rem] gap-6 px-4 sm:px-6 md:grid-cols-3 md:auto-rows-[32rem] md:gap-6 md:px-0">
+      <div className="mx-auto my-8 grid w-full max-w-7xl grid-cols-1 items-start gap-6 px-4 sm:px-6 md:grid-cols-3 md:gap-6 md:px-0">
         {LevelImages.map((item, index) => (
           <article
             key={index}
-            className="relative flex h-full flex-col items-center transition-all duration-300 hover:scale-[1.02]"
+            className="relative flex flex-col items-center transition-all duration-300 hover:scale-[1.02]"
           >
-            <div className="relative h-[75%] w-[calc(100%+4rem)] md:h-[77%] md:w-[calc(100%+6rem)]">
+            <div className="relative w-full">
               <Image
                 src={item.src}
                 alt={levels[index]?.title ?? "Level " + (index + 1)}
-                fill
+                width={1200}
+                height={1800}
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-contain drop-shadow-2xl"
+                className="h-auto w-full object-contain drop-shadow-2xl"
                 priority={index === 1}
               />
             </div>
