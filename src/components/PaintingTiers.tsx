@@ -1,5 +1,4 @@
 "use client";
-
 import { LevelImages } from "@/app/lib/data";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -19,7 +18,7 @@ function PaintingTiers() {
 
   return (
     <section className="w-full">
-      <div className="mx-auto my-8 grid w-full max-w-7xl grid-cols-1 items-start gap-6 px-4 sm:px-6 md:grid-cols-3 md:gap-6 md:px-0">
+      <div className="mx-auto my-8 mt-[-40%] sm:mt-0 grid w-full max-w-7xl grid-cols-1 items-start gap-6 px-4 sm:px-6 md:grid-cols-3 md:gap-6 md:px-0">
         {LevelImages.map((item, index) => (
           <article
             key={index}

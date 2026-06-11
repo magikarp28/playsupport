@@ -28,7 +28,6 @@ function PaintingHome() {
             {t("title")}
           </h2>
 
-          {/* First row - full width alternating */}
           <div className="grid grid-cols-1 gap-4">
             <div className="flex items-center group justify-between gap-4 bg-slate-800/30 p-4 rounded-lg border-l-4 border-fuchsia-500 hover:bg-slate-800/50 transition-colors">
               <p className="text-md flex-1">
