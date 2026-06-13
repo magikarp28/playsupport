@@ -9,7 +9,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
   }
 
-  revalidatePath("/"); // revalidate homepage
-  revalidatePath("/gallery"); // revalidate gallery page
-  return NextResponse.json({ revalidated: true });
+  const paths = ["/", "/gallery", "/de", "/de/gallery"];
+  for (const path of paths) revalidatePath(path);
+
+  return NextResponse.json({ revalidated: true, paths });
 }
