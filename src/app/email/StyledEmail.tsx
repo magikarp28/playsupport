@@ -21,10 +21,17 @@ interface StyledEmailProps {
 }
 
 function StyledEmail(StyledEmailProps: StyledEmailProps) {
+  const previewText = [
+    "PlaySupport website inquiry",
+    StyledEmailProps.inquiryType?.trim() || "General",
+    "from",
+    StyledEmailProps.senderName?.trim() || "Visitor",
+  ].join(" ");
+
   return (
     <Html>
       <Head />
-      <Preview>New message</Preview>
+      <Preview>{previewText.slice(0, 120)}</Preview>
       <Tailwind>
         <Body className="bg-gray-100 w-full text-center ">
           <Container>
