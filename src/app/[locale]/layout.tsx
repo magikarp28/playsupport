@@ -64,7 +64,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <body>
+      <body suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -75,7 +75,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <ThemeProvider
               attribute="class"
               defaultTheme="dark"
-              enableSystem
+              enableSystem={false}
               disableTransitionOnChange
             >
               <ActiveSectionContextProvider>
