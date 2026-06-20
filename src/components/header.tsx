@@ -14,6 +14,7 @@ const supportedLocales = ["en", "de"] as const;
 function Header() {
   const pathname = usePathname();
   const params = useParams();
+
   const localeParam = (params.locale as string) || "en";
   const locale = supportedLocales.includes(
     localeParam as (typeof supportedLocales)[number],
@@ -21,6 +22,16 @@ function Header() {
     ? localeParam
     : "en";
   const t = useTranslations("Navigation");
+
+  const getPathWithoutLocale = (path: string) => {
+    const localePattern = new RegExp(
+      `^/(${supportedLocales.join("|")})(?=/|$)`,
+    );
+    const strippedPath = path.replace(localePattern, "");
+    return strippedPath === "" ? "/" : strippedPath;
+  };
+
+  const currentPath = getPathWithoutLocale(pathname || "/");
 
   // Helper function to add locale prefix to paths
   const getLocalizedPath = (path: string) => {
@@ -32,36 +43,13 @@ function Header() {
 
   // Helper function to check if a link is active
   const isActive = (linkPath: string) => {
-    const localizedPath = getLocalizedPath(linkPath);
-    if (localizedPath === "/" || linkPath === "/") {
-      return (
-        pathname === `/${locale}` ||
-        pathname === "/" ||
-        pathname === "/en" ||
-        (pathname.startsWith("/en/") === false && pathname === "")
-      );
+    if (linkPath === "/") {
+      return currentPath === "/";
     }
-    return (
-      pathname === localizedPath || pathname.startsWith(localizedPath + "/")
-    );
-  };
-
-  // Find the active link name for the motion animation
-  const activeLink = links.find((link) => isActive(link.link));
-
-  const getPathWithoutLocale = () => {
-    if (!pathname) return "/";
-
-    const localePattern = new RegExp(
-      `^/(${supportedLocales.join("|")})(?=/|$)`,
-    );
-    const strippedPath = pathname.replace(localePattern, "");
-    return strippedPath === "" ? "/" : strippedPath;
+    return currentPath === linkPath || currentPath.startsWith(linkPath + "/");
   };
 
   const getLocaleHref = (targetLocale: string) => {
-    const currentPath = getPathWithoutLocale();
-
     if (targetLocale === "en") {
       return currentPath;
     }
