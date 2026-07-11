@@ -24,13 +24,22 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
   }
 
-  const paths = ["/", "/gallery", "/de", "/de/gallery"];
-  for (const path of paths) revalidatePath(path);
+  const urlPaths = ["/", "/gallery", "/de", "/de/gallery"];
+  for (const path of urlPaths) {
+    revalidatePath(path);
+  }
+
+  // Invalidate dynamic app-router entries as well, which can be the actual cache keys.
+  revalidatePath("/[locale]", "page");
+  revalidatePath("/[locale]/gallery", "page");
 
   console.info("[revalidate] Success", {
-    paths,
+    paths: [...urlPaths, "/[locale]", "/[locale]/gallery"],
     userAgent: req.headers.get("user-agent"),
   });
 
-  return NextResponse.json({ revalidated: true, paths });
+  return NextResponse.json({
+    revalidated: true,
+    paths: [...urlPaths, "/[locale]", "/[locale]/gallery"],
+  });
 }

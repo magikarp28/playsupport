@@ -17,7 +17,7 @@ type GalleriesResponse = {
 
 const PAGE_CONTENT_QUERY = `
   query Home {
-    allGalleries {
+    allGalleries(first: 200, orderBy: _updatedAt_DESC) {
       id
       images {
         url
