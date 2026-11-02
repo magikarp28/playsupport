@@ -250,14 +250,7 @@ export default function GamutTool() {
     setExportError(false);
     setExporting(true);
     try {
-      const canvas = buildGamutExport(points, value, hueLabels, {
-        title: t("exportTitle"),
-        paletteHeading: t("paletteHeading"),
-        mixesHeading: t("mixesHeading"),
-        footer: t("exportFooter"),
-        valueLabel: `${t("valueLabel")}: ${Math.round(value * 100)}%`,
-        paintNames: points.map((point) => hueNameFor(point.hue)),
-      });
+      const canvas = buildGamutExport(points, value);
       const blob = await canvasToCmykPdf(canvas);
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");

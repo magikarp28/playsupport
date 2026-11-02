@@ -4,7 +4,6 @@ import {
   convexHull,
   hslToRgb,
   hueToScreenAngle,
-  paintMixPalette,
   pointColorHex,
   pointXY,
 } from "@/lib/gamut";
@@ -117,6 +116,21 @@ function polygonPath(
   ctx.closePath();
 }
 
+function drawClippedWheel(
+  ctx: CanvasRenderingContext2D,
+  geom: WheelGeometry,
+  full: HTMLCanvasElement,
+  hull: WheelPoint[],
+) {
+  const { cx, cy, R } = geom;
+  ctx.save();
+  ctx.beginPath();
+  polygonPath(ctx, geom, hull);
+  ctx.clip();
+  ctx.drawImage(full, cx - R, cy - R, R * 2, R * 2);
+  ctx.restore();
+}
+
 /**
  * Shows the whole wheel while dragging, or clips it to the gamut mask at rest.
  */
@@ -136,12 +150,7 @@ export function drawWheelWithMask(
   if (revealOutsideMask) {
     ctx.drawImage(full, cx - R, cy - R, R * 2, R * 2);
   } else {
-    ctx.save();
-    ctx.beginPath();
-    polygonPath(ctx, geom, hull);
-    ctx.clip();
-    ctx.drawImage(full, cx - R, cy - R, R * 2, R * 2);
-    ctx.restore();
+    drawClippedWheel(ctx, geom, full, hull);
   }
 
   ctx.save();
@@ -187,21 +196,10 @@ export function drawPoints(
   });
 }
 
-export interface ExportStrings {
-  title: string;
-  paletteHeading: string;
-  mixesHeading: string;
-  footer: string;
-  valueLabel: string;
-  paintNames: string[];
-}
-
-/** Composes the printable wheel, anchor swatches, and mixing ramps. */
+/** Composes the printable mask on a white page. */
 export function buildGamutExport(
   points: WheelPoint[],
   value: number,
-  hueLabels: string[],
-  strings: ExportStrings,
 ): HTMLCanvasElement {
   const W = 1800;
   const H = 1260;
@@ -211,99 +209,14 @@ export function buildGamutExport(
   const ctx = canvas.getContext("2d");
   if (!ctx) throw new Error("Unable to create the export canvas");
 
-  // A white page avoids using ink for the background.
   ctx.fillStyle = "#ffffff";
   ctx.fillRect(0, 0, W, H);
 
-  // Wheel (left side)
-  const geom: WheelGeometry = { cx: 590, cy: 655, R: 480 };
-  const full = renderWheelDisc(geom.R * 2, value);
   const hull = convexHull(points);
-  drawWheelWithMask(ctx, geom, full, hull);
-  drawGuideRings(ctx, geom);
-  drawPoints(ctx, geom, points, value, 26);
-  drawHueLabels(ctx, geom, hueLabels, 20, "#334155");
-
-  // Title
-  ctx.fillStyle = "#0f172a";
-  ctx.font = `700 44px ${FONT_STACK}`;
-  ctx.textAlign = "left";
-  ctx.textBaseline = "alphabetic";
-  ctx.fillText(strings.title, 60, 90);
-  ctx.fillStyle = "#475569";
-  ctx.font = `400 22px ${FONT_STACK}`;
-  ctx.fillText(strings.valueLabel, 60, 128);
-
-  // Right column
-  const colX = 1220;
-  let y = 210;
-  ctx.fillStyle = "#1e293b";
-  ctx.font = `600 28px ${FONT_STACK}`;
-  ctx.fillText(strings.paletteHeading, colX, y);
-  y += 30;
-
-  const rowH = Math.min(62, Math.floor(430 / Math.max(points.length, 1)));
-  points.forEach((p, i) => {
-    const hex = pointColorHex(p, value);
-    const sy = y + i * rowH;
-    ctx.fillStyle = hex;
-    const sw = rowH - 16;
-    ctx.beginPath();
-    ctx.roundRect(colX, sy, sw, sw, 8);
-    ctx.fill();
-    ctx.strokeStyle = "#64748b";
-    ctx.lineWidth = 1;
-    ctx.stroke();
-    ctx.fillStyle = "#0f172a";
-    ctx.font = `600 22px ${FONT_STACK}`;
-    ctx.fillText(
-      `${i + 1}. ${strings.paintNames[i]}`,
-      colX + sw + 18,
-      sy + sw / 2 + 4,
-    );
-    ctx.fillStyle = "#475569";
-    ctx.font = `400 17px ${FONT_STACK}`;
-    ctx.fillText(
-      `${Math.round(p.chroma * 100)}%`,
-      colX + sw + 18,
-      sy + sw / 2 + 28,
-    );
-  });
-  y += points.length * rowH + 46;
-
-  // Mixing ramps between neighbouring anchor paints
-  if (hull.length >= 3) {
-    ctx.fillStyle = "#1e293b";
-    ctx.font = `600 28px ${FONT_STACK}`;
-    ctx.fillText(strings.mixesHeading, colX, y);
-    y += 26;
-    const rowHeight = Math.min(72, Math.floor((H - y - 90) / hull.length));
-    const stripH = Math.min(34, rowHeight - 22);
-    const pairs = hull.map((p, i) => [p, hull[(i + 1) % hull.length]]);
-    pairs.forEach(([a, b], i) => {
-      const hexA = pointColorHex(a, value);
-      const hexB = pointColorHex(b, value);
-      const ramp = paintMixPalette(hexA, hexB, 24);
-      const sy = y + i * rowHeight;
-      const w = (W - 60 - colX) / ramp.length;
-      ramp.forEach((hex, j) => {
-        ctx.fillStyle = hex;
-        ctx.fillRect(colX + j * w, sy, Math.ceil(w), stripH);
-      });
-      ctx.strokeStyle = "#64748b";
-      ctx.strokeRect(colX, sy, W - 60 - colX, stripH);
-      const ia = points.indexOf(a) + 1;
-      const ib = points.indexOf(b) + 1;
-      ctx.fillStyle = "#334155";
-      ctx.font = `500 15px ${FONT_STACK}`;
-      ctx.fillText(`${ia} ↔ ${ib}`, colX + 6, sy + stripH + 18);
-    });
-  }
-
-  // Footer
-  ctx.fillStyle = "#475569";
-  ctx.font = `400 20px ${FONT_STACK}`;
-  ctx.fillText(strings.footer, 60, H - 40);
+  if (hull.length < 3) throw new Error("Cannot export a gamut mask without a polygon");
+  const geom: WheelGeometry = { cx: W / 2, cy: H / 2, R: 540 };
+  const full = renderWheelDisc(geom.R * 2, value);
+  drawClippedWheel(ctx, geom, full, hull);
 
   return canvas;
 }
