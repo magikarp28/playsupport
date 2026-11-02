@@ -164,7 +164,14 @@ test("PDF composition enlarges the pigment triangle and retains the multi-paint 
     const text = calls.filter((call) => call[0] === "fillText").map((call) => call[1]);
     assert.ok(text.includes("triangle (50%)"));
     assert.ok(!text.some((line) => line.startsWith("wheel")));
-    assert.equal(calls.filter((call) => call[0] === "strokeRect").length, 3);
+    const swatches = calls.filter((call) => call[0] === "strokeRect" && call[3] === 185 && call[4] === 64);
+    assert.equal(swatches.length, 3);
+    assert.ok(text.includes("paints"));
+    assert.ok(text.includes("1  " + gamutModule.exports.pointColorHex(three[0], 0.5)));
+    assert.ok(text.includes("2  " + gamutModule.exports.pointColorHex(three[1], 0.5)));
+    assert.ok(text.includes("3  " + gamutModule.exports.pointColorHex(three[2], 0.5)));
+    const rampBorders = calls.filter((call) => call[0] === "strokeRect" && call[3] === 610);
+    assert.equal(rampBorders.length, 3);
 
     const multiCanvas = wheelModule.exports.buildGamutExport(
       points, 0.5, buildMixPreviews(points, 0.5), labels,

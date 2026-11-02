@@ -258,6 +258,21 @@ export function buildGamutExport(
     ctx.fillText(`${labels.triangle} (${Math.round(value * 100)}%)`, 60, 125);
     const triangle = renderMixTriangle(points, value, 1050);
     ctx.drawImage(triangle, 40, 150);
+    ctx.fillStyle = "#0f172a";
+    ctx.font = `700 26px ${FONT_STACK}`;
+    ctx.fillText(labels.paints, 1130, 200);
+    points.forEach((point, i) => {
+      const x = 1130 + i * 205;
+      const y = 220;
+      ctx.fillStyle = pointColorHex(point, value);
+      ctx.fillRect(x, y, 185, 64);
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 2;
+      ctx.strokeRect(x, y, 185, 64);
+      ctx.fillStyle = "#0f172a";
+      ctx.font = `700 20px ${FONT_STACK}`;
+      ctx.fillText(`${i + 1}  ${pointColorHex(point, value)}`, x, y + 92);
+    });
   } else {
     ctx.fillText(`${labels.wheel} (${Math.round(value * 100)}%)`, 60, 125);
     ctx.fillText(labels.manyPaints, 930, 125);
@@ -304,10 +319,10 @@ export function buildGamutExport(
   ctx.fillStyle = "#0f172a";
   ctx.font = `700 28px ${FONT_STACK}`;
   const isTriangle = points.length === 3;
-  ctx.fillText(labels.mixes, isTriangle ? 1130 : 60, isTriangle ? 200 : 880);
+  ctx.fillText(labels.mixes, isTriangle ? 1130 : 60, isTriangle ? 380 : 880);
   previews.forEach((preview, i) => {
     const x = isTriangle ? 1130 : 60 + (i % 2) * 870;
-    const y = isTriangle ? 235 + i * 120 : 905 + Math.floor(i / 2) * 76;
+    const y = isTriangle ? 415 + i * 120 : 905 + Math.floor(i / 2) * 76;
     ctx.fillStyle = "#334155";
     ctx.font = `700 21px ${FONT_STACK}`;
     ctx.fillText(`${preview.from} - ${preview.to}`, x, y + 18);
