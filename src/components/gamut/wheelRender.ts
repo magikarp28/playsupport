@@ -1,5 +1,6 @@
 import {
   HUE_STOPS,
+  MixPreview,
   WheelPoint,
   convexHull,
   hslToRgb,
@@ -7,6 +8,7 @@ import {
   pointColorHex,
   pointXY,
 } from "@/lib/gamut";
+import { renderMixTriangle } from "./triangleRender";
 
 export interface WheelGeometry {
   cx: number;
@@ -196,10 +198,46 @@ export function drawPoints(
   });
 }
 
-/** Composes the printable mask on a white page. */
+export interface GamutExportLabels {
+  title: string;
+  wheel: string;
+  triangle: string;
+  manyPaints: string;
+  triangleHint: string;
+  manyPaintsHint: string;
+  paints: string;
+  mixes: string;
+  printHint: string;
+}
+
+function wrapText(
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  x: number,
+  y: number,
+  maxWidth: number,
+  lineHeight: number,
+) {
+  let line = "";
+  for (const word of text.split(/\s+/)) {
+    const next = line ? `${line} ${word}` : word;
+    if (line && ctx.measureText(next).width > maxWidth) {
+      ctx.fillText(line, x, y);
+      y += lineHeight;
+      line = word;
+    } else {
+      line = next;
+    }
+  }
+  if (line) ctx.fillText(line, x, y);
+}
+
+/** Composes the masks and displayed mixing previews on an A4 landscape page. */
 export function buildGamutExport(
   points: WheelPoint[],
   value: number,
+  previews: MixPreview[],
+  labels: GamutExportLabels,
 ): HTMLCanvasElement {
   const W = 1800;
   const H = 1260;
@@ -214,9 +252,79 @@ export function buildGamutExport(
 
   const hull = convexHull(points);
   if (hull.length < 3) throw new Error("Cannot export a gamut mask without a polygon");
-  const geom: WheelGeometry = { cx: W / 2, cy: H / 2, R: 540 };
-  const full = renderWheelDisc(geom.R * 2, value);
+  ctx.fillStyle = "#0f172a";
+  ctx.font = `700 42px ${FONT_STACK}`;
+  ctx.fillText(labels.title, 60, 65);
+  ctx.font = `700 28px ${FONT_STACK}`;
+  ctx.fillText(`${labels.wheel} (${Math.round(value * 100)}%)`, 60, 125);
+  ctx.fillText(points.length === 3 ? labels.triangle : labels.manyPaints, 930, 125);
+
+  const positions = hull.map(pointXY);
+  const minX = Math.min(...positions.map((p) => p.x));
+  const maxX = Math.max(...positions.map((p) => p.x));
+  const minY = Math.min(...positions.map((p) => p.y));
+  const maxY = Math.max(...positions.map((p) => p.y));
+  const scale = 544 / Math.max(maxX - minX, maxY - minY);
+  const geom: WheelGeometry = {
+    cx: 450 - ((minX + maxX) / 2) * scale,
+    cy: 525 - ((minY + maxY) / 2) * scale,
+    R: scale,
+  };
+  const full = renderWheelDisc(800, value);
   drawClippedWheel(ctx, geom, full, hull);
+  ctx.beginPath();
+  polygonPath(ctx, geom, hull);
+  ctx.strokeStyle = "#475569";
+  ctx.lineWidth = 3;
+  ctx.stroke();
+  drawPoints(ctx, geom, points, value, 16);
+
+  ctx.font = `22px ${FONT_STACK}`;
+  ctx.fillStyle = "#334155";
+  if (points.length === 3) {
+    wrapText(ctx, labels.triangleHint, 930, 170, 800, 29);
+    const triangle = renderMixTriangle(points, value, 360);
+    ctx.drawImage(triangle, 1030, 205, 640, 640);
+  } else {
+    wrapText(ctx, labels.manyPaintsHint, 930, 180, 800, 32);
+    ctx.fillStyle = "#0f172a";
+    ctx.font = `700 26px ${FONT_STACK}`;
+    ctx.fillText(labels.paints, 930, 340);
+    points.forEach((point, i) => {
+      const x = 930 + (i % 4) * 195;
+      const y = 380 + Math.floor(i / 4) * 95;
+      ctx.fillStyle = pointColorHex(point, value);
+      ctx.fillRect(x, y, 65, 65);
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 2;
+      ctx.strokeRect(x, y, 65, 65);
+      ctx.fillStyle = "#0f172a";
+      ctx.font = `700 25px ${FONT_STACK}`;
+      ctx.fillText(String(i + 1), x + 78, y + 42);
+    });
+  }
+
+  ctx.fillStyle = "#0f172a";
+  ctx.font = `700 28px ${FONT_STACK}`;
+  ctx.fillText(labels.mixes, 60, 880);
+  previews.forEach((preview, i) => {
+    const x = 60 + (i % 2) * 870;
+    const y = 905 + Math.floor(i / 2) * 76;
+    ctx.fillStyle = "#334155";
+    ctx.font = `700 21px ${FONT_STACK}`;
+    ctx.fillText(`${preview.from} - ${preview.to}`, x, y + 18);
+    const width = 790 / preview.colors.length;
+    preview.colors.forEach((color, j) => {
+      ctx.fillStyle = color;
+      ctx.fillRect(x + j * width, y + 25, width + 0.5, 35);
+    });
+    ctx.strokeStyle = "#94a3b8";
+    ctx.lineWidth = 1;
+    ctx.strokeRect(x, y + 25, 790, 35);
+  });
+  ctx.fillStyle = "#475569";
+  ctx.font = `19px ${FONT_STACK}`;
+  wrapText(ctx, labels.printHint, 60, 1230, 1680, 23);
 
   return canvas;
 }

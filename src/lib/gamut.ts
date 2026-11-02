@@ -1,4 +1,4 @@
-import { Color, palette } from "spectral.js";
+import { Color, mix, palette } from "spectral.js";
 
 /**
  * Geometry of the painter's gamut wheel.
@@ -88,9 +88,8 @@ export function pointColorHex(p: WheelPoint, value: number): string {
 
 /**
  * Convex hull (Andrew's monotone chain) of the anchor points in unit-circle
- * space. The hull is the mixable gamut: any color inside it can be mixed
- * from the anchor paints. Returns points in winding order, or fewer than 3
- * points when they are (nearly) collinear.
+ * space. This is a color-scheme boundary, not a physical mixing gamut.
+ * Returns points in winding order, or fewer than 3 when nearly collinear.
  */
 export function convexHull(points: WheelPoint[]): WheelPoint[] {
   if (points.length < 3) return [];
@@ -143,30 +142,64 @@ export const HUE_STOPS: { hue: number; key: string }[] = [
 ];
 
 /**
- * Realistic paint mixing (Kubelka-Munk via spectral.js): n steps of actual
- * pigment behavior from hexA to hexB. Complements collapse to a dark neutral
- * instead of passing through white.
+ * Estimated paint mixing (Kubelka-Munk via spectral.js). The input colors do
+ * not identify the actual pigments used in a physical paint.
  */
 export function paintMixPalette(
   hexA: string,
   hexB: string,
   steps: number,
 ): string[] {
-  try {
-    return palette(new Color(hexA), new Color(hexB), steps).map((c) =>
-      c.toString().toUpperCase(),
-    );
-  } catch {
-    // Fall back to a plain RGB ramp if the inputs cannot be parsed.
-    const parse = (hex: string) => {
-      const n = parseInt(hex.slice(1), 16);
-      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  return palette(new Color(hexA), new Color(hexB), steps).map((c) =>
+    c.toString().toUpperCase(),
+  );
+}
+
+export type TriangleWeights = [number, number, number];
+export type XY = { x: number; y: number };
+
+/** Mixing weights corresponding to a position in a non-degenerate triangle. */
+export function triangleWeights(
+  point: XY,
+  vertices: [XY, XY, XY],
+): TriangleWeights | null {
+  const [a, b, c] = vertices;
+  const denominator = (b.y - c.y) * (a.x - c.x) + (c.x - b.x) * (a.y - c.y);
+  if (Math.abs(denominator) < 1e-9) return null;
+  const first = ((b.y - c.y) * (point.x - c.x) + (c.x - b.x) * (point.y - c.y)) / denominator;
+  const second = ((c.y - a.y) * (point.x - c.x) + (a.x - c.x) * (point.y - c.y)) / denominator;
+  const third = 1 - first - second;
+  if (first < -1e-9 || second < -1e-9 || third < -1e-9) return null;
+  return [Math.max(0, first), Math.max(0, second), Math.max(0, third)];
+}
+
+export function mixTriangleColor(
+  colors: [Color, Color, Color],
+  weights: TriangleWeights,
+): string {
+  return mix(
+    [colors[0], weights[0]],
+    [colors[1], weights[1]],
+    [colors[2], weights[2]],
+  ).toString().toUpperCase();
+}
+
+export interface MixPreview {
+  key: string;
+  from: number;
+  to: number;
+  colors: string[];
+}
+
+export function buildMixPreviews(points: WheelPoint[], value: number): MixPreview[] {
+  const hull = convexHull(points);
+  return hull.map((a, i) => {
+    const b = hull[(i + 1) % hull.length];
+    return {
+      key: `${a.id}-${b.id}`,
+      from: points.indexOf(a) + 1,
+      to: points.indexOf(b) + 1,
+      colors: paintMixPalette(pointColorHex(a, value), pointColorHex(b, value), 9),
     };
-    const [r1, g1, b1] = parse(hexA);
-    const [r2, g2, b2] = parse(hexB);
-    return Array.from({ length: steps }, (_, i) => {
-      const t = steps <= 1 ? 0 : i / (steps - 1);
-      return rgbToHex(r1 + (r2 - r1) * t, g1 + (g2 - g1) * t, b1 + (b2 - b1) * t);
-    });
-  }
+  });
 }

@@ -13,8 +13,8 @@ import { BsDownload, BsTrash3, BsX } from "react-icons/bs";
 import {
   HUE_STOPS,
   WheelPoint,
+  buildMixPreviews,
   convexHull,
-  paintMixPalette,
   pointColorHex,
   pointXY,
   xyToHueChroma,
@@ -28,6 +28,7 @@ import {
   renderWheelDisc,
 } from "./wheelRender";
 import { canvasToCmykPdf } from "./cmykPdf";
+import MixTriangle from "./MixTriangle";
 
 const MAX_POINTS = 8;
 const LABEL_MARGIN = 46; // css px reserved around the disc for hue labels
@@ -86,7 +87,7 @@ export default function GamutTool() {
       ),
     );
   }, [makePoint, setPoints]);
-  const [value, setValue] = useState(0.55);
+  const [value, setValue] = useState(0.5);
   const [size, setSize] = useState(0);
   const [exporting, setExporting] = useState(false);
   const [exportError, setExportError] = useState(false);
@@ -102,6 +103,10 @@ export default function GamutTool() {
   } | null>(null);
 
   const hull = useMemo(() => convexHull(points), [points]);
+  const previews = useMemo(
+    () => buildMixPreviews(points, value),
+    [points, value],
+  );
   const hueLabels = useMemo(
     () => HUE_STOPS.map((s) => t(`hueNames.${s.key}`)),
     [t],
@@ -145,13 +150,7 @@ export default function GamutTool() {
         full: renderWheelDisc(px, value),
       };
     }
-    drawWheelWithMask(
-      ctx,
-      geom,
-      discCacheRef.current.full,
-      hull,
-      isDragging,
-    );
+    drawWheelWithMask(ctx, geom, discCacheRef.current.full, hull, isDragging);
 
     drawGuideRings(ctx, geom);
     drawPoints(ctx, geom, points, value, Math.max(12, geom.R * 0.045));
@@ -231,13 +230,16 @@ export default function GamutTool() {
     setIsDragging(false);
   };
 
-  const removePoint = useCallback((id: string) => {
-    setPoints((prev) => prev.filter((p) => p.id !== id));
-    if (dragIdRef.current === id) {
-      dragIdRef.current = null;
-      setIsDragging(false);
-    }
-  }, [setIsDragging, setPoints]);
+  const removePoint = useCallback(
+    (id: string) => {
+      setPoints((prev) => prev.filter((p) => p.id !== id));
+      if (dragIdRef.current === id) {
+        dragIdRef.current = null;
+        setIsDragging(false);
+      }
+    },
+    [setIsDragging, setPoints],
+  );
 
   const onContextMenu = (e: ReactPointerEvent<HTMLCanvasElement>) => {
     e.preventDefault();
@@ -250,7 +252,17 @@ export default function GamutTool() {
     setExportError(false);
     setExporting(true);
     try {
-      const canvas = buildGamutExport(points, value);
+      const canvas = buildGamutExport(points, value, previews, {
+        title: t("exportTitle"),
+        wheel: t("wheelHeading"),
+        triangle: t("triangleHeading"),
+        manyPaints: t("manyPaintsHeading"),
+        triangleHint: t("triangleExportHint"),
+        manyPaintsHint: t("manyPaintsHint"),
+        paints: t("paletteHeading"),
+        mixes: t("mixesHeading"),
+        printHint: t("printHint"),
+      });
       const blob = await canvasToCmykPdf(canvas);
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -286,6 +298,9 @@ export default function GamutTool() {
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
         {/* Wheel */}
         <div className="flex flex-col items-center">
+          <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-slate-300">
+            {t("wheelHeading")}
+          </h2>
           <div
             ref={wrapperRef}
             className="relative aspect-square w-full max-w-[620px] select-none"
@@ -446,15 +461,48 @@ export default function GamutTool() {
             className="group relative w-full rounded-full bg-gradient-to-r from-rose-600 to-fuchsia-600 p-[2px] transition disabled:cursor-not-allowed disabled:opacity-40"
           >
             <span className="flex w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition group-hover:bg-transparent group-disabled:bg-slate-950">
-              <BsDownload aria-hidden /> {exporting ? t("exporting") : t("download")}
+              <BsDownload aria-hidden />{" "}
+              {exporting ? t("exporting") : t("download")}
             </span>
           </button>
-          <p className="text-xs leading-relaxed text-slate-400">{t("printHint")}</p>
+          <p className="text-xs leading-relaxed text-slate-400">
+            {t("printHint")}
+          </p>
           {exportError && (
-            <p role="alert" className="text-sm text-rose-300">{t("exportError")}</p>
+            <p role="alert" className="text-sm text-rose-300">
+              {t("exportError")}
+            </p>
           )}
         </div>
       </div>
+
+      {(points.length > 3 || (points.length === 3 && hull.length === 3)) && (
+        <div className="mt-8 rounded-2xl border border-slate-700 bg-slate-900/60 p-4 text-left sm:p-6">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-300">
+            {points.length === 3
+              ? t("triangleHeading")
+              : t("manyPaintsHeading")}
+          </h3>
+          {points.length === 3 ? (
+            <>
+              <p className="mt-1 text-sm text-slate-400">{t("triangleHint")}</p>
+              <MixTriangle
+                points={points}
+                value={value}
+                isDragging={isDragging}
+                label={t("triangleAria")}
+              />
+              {isDragging && (
+                <p className="text-center text-xs text-slate-400">
+                  {t("triangleUpdating")}
+                </p>
+              )}
+            </>
+          ) : (
+            <p className="mt-1 text-sm text-slate-400">{t("manyPaintsHint")}</p>
+          )}
+        </div>
+      )}
 
       {/* Mixing ramps */}
       {hull.length >= 3 && (
@@ -464,22 +512,16 @@ export default function GamutTool() {
           </h3>
           <p className="mt-1 text-sm text-slate-400">{t("mixesHint")}</p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
-            {hull.map((a, i) => {
-              const b = hull[(i + 1) % hull.length];
-              const ramp = paintMixPalette(
-                pointColorHex(a, value),
-                pointColorHex(b, value),
-                9,
-              );
+            {previews.map((preview) => {
               return (
-                <div key={`${a.id}-${b.id}`}>
+                <div key={preview.key}>
                   <div className="mb-1 flex items-center justify-between text-xs text-slate-400">
                     <span className="font-semibold text-slate-300">
-                      {points.indexOf(a) + 1} ↔ {points.indexOf(b) + 1}
+                      {preview.from} ↔ {preview.to}
                     </span>
                   </div>
                   <div className="flex overflow-hidden rounded-lg border border-white/10">
-                    {ramp.map((hex, j) => (
+                    {preview.colors.map((hex, j) => (
                       <div
                         key={j}
                         className="h-9 flex-1"
