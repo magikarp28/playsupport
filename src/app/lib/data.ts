@@ -204,6 +204,10 @@ export const links = [
     link: "/gallery",
   },
   {
+    name: "Gamut Mask",
+    link: "/gamut",
+  },
+  {
     name: "Supporting",
     link: "/supporting",
   },

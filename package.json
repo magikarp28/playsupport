@@ -35,6 +35,7 @@
     "resend": "^4.0.0",
     "schema-dts": "^1.1.5",
     "simplex-noise": "^4.0.2",
+    "spectral.js": "^3.0.0",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "yet-another-react-lightbox": "^3.24.0"

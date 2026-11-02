@@ -4,7 +4,8 @@
     "painting": "Painting",
     "gallery": "Gallery",
     "supporting": "Supporting",
-    "contact": "Contact"
+    "contact": "Contact",
+    "gamut": "Gamut Mask"
   },
   "ContactPage": {
     "metadata": {
@@ -227,5 +228,64 @@
         "description": "Let us know what paint scheme or syle you want your miniatures painted in and your preferred base theme such as snow, desert, jungle, ruined city etc."
       }
     ]
+  },
+  "GamutPage": {
+    "metadata": {
+      "title": "Gamut mask tool for miniature painting - PlaySupport",
+      "description": "Easily make a harmonious miniature painting palette with a gamut mask tool.",
+      "ogTitle": "Gamut mask tool for miniature painting",
+      "ogDescription": "Easily make a nice, harmonious color palette for your miniature painting project."
+    },
+    "title": "Gamut mask tool for miniature painting",
+    "intro": "Easily make a nice, harmonious miniature painting palette! Place at least 3 colors to define a shape and use the colors inside the shape for your painting project.",
+    "wheelAria": "Interactive color wheel. Click to add a paint, drag to move it, double click or right click to remove it.",
+    "wheelHint": "Click the wheel to add a paint · drag to move · double-click or right-click to remove",
+    "needPoints": "Add at least 3 points on the wheel to form a gamut mask.",
+    "valueLabel": "Value (lightness)",
+    "valueDark": "Dark — browns live here",
+    "valueMid": "Mid",
+    "valueLight": "Light — tints",
+    "valueHint": "You can slide down for shadows where you will find browns and up for highlights",
+    "presetsHeading": "Mask presets",
+    "presets": {
+      "moody": "Moody triad",
+      "triad": "Classic triad",
+      "complementary": "Complementary"
+    },
+    "randomize": "Random",
+    "clear": "Clear",
+    "paletteHeading": "Your paints",
+    "noPaints": "No paints yet — click the wheel to add one.",
+    "removePaint": "Remove paint",
+    "download": "Download mask & palette (PDF)",
+    "exporting": "Creating PDF…",
+    "exportError": "Could not create the PDF. Please try again.",
+    "printHint": "The PDF uses approximate, unprofiled CMYK. Printed colors vary with the printer, paper and ink and may differ from both your screen and physical paints.",
+    "mixesHeading": "Paint mixing preview",
+    "mixesHint": "Since these mixes are digital and not actual pigments, the results will be slightly different",
+    "exportTitle": "Gamut Mask — playsupport.art",
+    "exportFooter": "Approximate unprofiled CMYK · Print and paint colors may vary · playsupport.art/gamut",
+    "aboutTitle": "What is a gamut mask?",
+    "aboutText": "A gamut mask is a simple way to pick your colors so that you get a nice color scheme for your miniatures or paintings! It was originally created by James Gurney.",
+    "maskTitle": "Making a gamut mask",
+    "maskText": "To make a gamut mask, you create a simple shape, like a triangle, and pick 3 or more points inside the color wheel. The gamut mask will show you what colors you can get by mixing these colors.",
+    "valueTitle": "Using the value slider",
+    "valueText": "Color science is a bit complicated, so we also have the value (lightness) slider. You can find browns and shadow colors by dragging it down, your saturated main colors by keeping it in the middle, and your highlights by dragging it up. I suggest first making a midtone shape and then dragging the value slider down to see what kind of dark colors you can add to your palette while maintaining perfect color harmony. Drag it up to see what kind of off-whites you could use for highlights, or just mix in your white. This will give you a very similar effect to GW's Tone Triads or Army Painter's triads.",
+    "paletteTitle": "Choosing paints for your palette",
+    "paletteText": "In miniature painting, we don't like to use only 3 colors plus black and white, but rather many different colors so we don't have to mix all the time. However, this can make our paint schemes less interesting and less visually moody or striking than mixing them from fewer colors. By checking what colors are inside your shape and comparing them to paints you already have or could get for your paint scheme, you can have the best of both worlds.",
+    "hueNames": {
+      "yellow": "Yellow",
+      "orange": "Orange",
+      "red": "Red",
+      "crimson": "Crimson",
+      "magenta": "Magenta",
+      "violet": "Violet",
+      "blue": "Blue",
+      "azure": "Azure",
+      "cyan": "Cyan",
+      "teal": "Teal",
+      "green": "Green",
+      "lime": "Lime"
+    }
   }
 }

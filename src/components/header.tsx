@@ -65,6 +65,7 @@ function Header() {
     if (path === "/gallery") return t("gallery");
     if (path === "/supporting") return t("supporting");
     if (path === "/contact") return t("contact");
+    if (path === "/gamut") return t("gamut");
     return path;
   };
 
