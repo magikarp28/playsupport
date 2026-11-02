@@ -267,7 +267,6 @@
     "wheelHeading": "HSL-Farbschema-Maske",
     "triangleHeading": "Geschätztes Farbmischdreieck",
     "triangleHint": "Dieses Dreieck simuliert das tatsächliche Mischverhalten von Farbpigmenten.",
-    "triangleExportHint": "Ecken sind Farben; Kanten mischen zwei Farben und das Innere alle drei. Digitale Schätzungen können von echten Pigmenten abweichen.",
     "triangleAria": "Geschätztes Mischdreieck für drei Farben. Die nummerierten Ecken entsprechen den ausgewählten Farben.",
     "triangleUpdating": "Das Mischdreieck wird aktualisiert, sobald du das Ziehen beendest.",
     "manyPaintsHeading": "Mehr als drei Farben mischen",

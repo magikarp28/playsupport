@@ -257,11 +257,9 @@ export default function GamutTool() {
         wheel: t("wheelHeading"),
         triangle: t("triangleHeading"),
         manyPaints: t("manyPaintsHeading"),
-        triangleHint: t("triangleExportHint"),
         manyPaintsHint: t("manyPaintsHint"),
         paints: t("paletteHeading"),
         mixes: t("mixesHeading"),
-        printHint: t("printHint"),
       });
       const blob = await canvasToCmykPdf(canvas);
       const url = URL.createObjectURL(blob);

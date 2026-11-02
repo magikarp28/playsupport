@@ -203,11 +203,9 @@ export interface GamutExportLabels {
   wheel: string;
   triangle: string;
   manyPaints: string;
-  triangleHint: string;
   manyPaintsHint: string;
   paints: string;
   mixes: string;
-  printHint: string;
 }
 
 function wrapText(
@@ -256,36 +254,35 @@ export function buildGamutExport(
   ctx.font = `700 42px ${FONT_STACK}`;
   ctx.fillText(labels.title, 60, 65);
   ctx.font = `700 28px ${FONT_STACK}`;
-  ctx.fillText(`${labels.wheel} (${Math.round(value * 100)}%)`, 60, 125);
-  ctx.fillText(points.length === 3 ? labels.triangle : labels.manyPaints, 930, 125);
-
-  const positions = hull.map(pointXY);
-  const minX = Math.min(...positions.map((p) => p.x));
-  const maxX = Math.max(...positions.map((p) => p.x));
-  const minY = Math.min(...positions.map((p) => p.y));
-  const maxY = Math.max(...positions.map((p) => p.y));
-  const scale = 544 / Math.max(maxX - minX, maxY - minY);
-  const geom: WheelGeometry = {
-    cx: 450 - ((minX + maxX) / 2) * scale,
-    cy: 525 - ((minY + maxY) / 2) * scale,
-    R: scale,
-  };
-  const full = renderWheelDisc(800, value);
-  drawClippedWheel(ctx, geom, full, hull);
-  ctx.beginPath();
-  polygonPath(ctx, geom, hull);
-  ctx.strokeStyle = "#475569";
-  ctx.lineWidth = 3;
-  ctx.stroke();
-  drawPoints(ctx, geom, points, value, 16);
-
-  ctx.font = `22px ${FONT_STACK}`;
-  ctx.fillStyle = "#334155";
   if (points.length === 3) {
-    wrapText(ctx, labels.triangleHint, 930, 170, 800, 29);
-    const triangle = renderMixTriangle(points, value, 360);
-    ctx.drawImage(triangle, 1030, 205, 640, 640);
+    ctx.fillText(`${labels.triangle} (${Math.round(value * 100)}%)`, 60, 125);
+    const triangle = renderMixTriangle(points, value, 1050);
+    ctx.drawImage(triangle, 40, 150);
   } else {
+    ctx.fillText(`${labels.wheel} (${Math.round(value * 100)}%)`, 60, 125);
+    ctx.fillText(labels.manyPaints, 930, 125);
+    const positions = hull.map(pointXY);
+    const minX = Math.min(...positions.map((p) => p.x));
+    const maxX = Math.max(...positions.map((p) => p.x));
+    const minY = Math.min(...positions.map((p) => p.y));
+    const maxY = Math.max(...positions.map((p) => p.y));
+    const scale = 544 / Math.max(maxX - minX, maxY - minY);
+    const geom: WheelGeometry = {
+      cx: 450 - ((minX + maxX) / 2) * scale,
+      cy: 525 - ((minY + maxY) / 2) * scale,
+      R: scale,
+    };
+    const full = renderWheelDisc(800, value);
+    drawClippedWheel(ctx, geom, full, hull);
+    ctx.beginPath();
+    polygonPath(ctx, geom, hull);
+    ctx.strokeStyle = "#475569";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    drawPoints(ctx, geom, points, value, 16);
+
+    ctx.font = `22px ${FONT_STACK}`;
+    ctx.fillStyle = "#334155";
     wrapText(ctx, labels.manyPaintsHint, 930, 180, 800, 32);
     ctx.fillStyle = "#0f172a";
     ctx.font = `700 26px ${FONT_STACK}`;
@@ -306,25 +303,24 @@ export function buildGamutExport(
 
   ctx.fillStyle = "#0f172a";
   ctx.font = `700 28px ${FONT_STACK}`;
-  ctx.fillText(labels.mixes, 60, 880);
+  const isTriangle = points.length === 3;
+  ctx.fillText(labels.mixes, isTriangle ? 1130 : 60, isTriangle ? 200 : 880);
   previews.forEach((preview, i) => {
-    const x = 60 + (i % 2) * 870;
-    const y = 905 + Math.floor(i / 2) * 76;
+    const x = isTriangle ? 1130 : 60 + (i % 2) * 870;
+    const y = isTriangle ? 235 + i * 120 : 905 + Math.floor(i / 2) * 76;
     ctx.fillStyle = "#334155";
     ctx.font = `700 21px ${FONT_STACK}`;
     ctx.fillText(`${preview.from} - ${preview.to}`, x, y + 18);
-    const width = 790 / preview.colors.length;
+    const rampWidth = isTriangle ? 610 : 790;
+    const width = rampWidth / preview.colors.length;
     preview.colors.forEach((color, j) => {
       ctx.fillStyle = color;
       ctx.fillRect(x + j * width, y + 25, width + 0.5, 35);
     });
     ctx.strokeStyle = "#94a3b8";
     ctx.lineWidth = 1;
-    ctx.strokeRect(x, y + 25, 790, 35);
+    ctx.strokeRect(x, y + 25, rampWidth, 35);
   });
-  ctx.fillStyle = "#475569";
-  ctx.font = `19px ${FONT_STACK}`;
-  wrapText(ctx, labels.printHint, 60, 1230, 1680, 23);
 
   return canvas;
 }

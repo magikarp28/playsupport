@@ -21,7 +21,7 @@ export default function MixTriangle({
     if (isDragging) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const rendered = renderMixTriangle(points, value, 360);
+    const rendered = renderMixTriangle(points, value, 720);
     canvas.width = rendered.width;
     canvas.height = rendered.height;
     const ctx = canvas.getContext("2d");

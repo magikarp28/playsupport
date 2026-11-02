@@ -267,7 +267,6 @@
     "wheelHeading": "HSL color-scheme mask",
     "triangleHeading": "Estimated paint mixing triangle",
     "triangleHint": "This triangle simulates actual paint pigment mixing behaviour.",
-    "triangleExportHint": "Corners are paints; edges mix two paints and the interior mixes all three. Digital estimates may differ from real pigments.",
     "triangleAria": "Estimated three-paint mixing triangle. Numbered corners correspond to the selected paints.",
     "triangleUpdating": "The mixing triangle updates when you finish dragging.",
     "manyPaintsHeading": "Mixing more than three paints",
